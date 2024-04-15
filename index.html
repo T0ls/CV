@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Giusteschi Giulio CV</title>
+		<link rel="icon" href="CvLogo.png" type="image/icon type">
+		<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<script src="gitHubREST.js" type="module" defer></script>
+		<script src="script.js"></script>
+	<style>
+		.repo-language-color {
+			background-color: rgb(0, 173, 216); --darkreader-inline-bgcolor: #38848e;
+			margin-top: 8px;
+			margin-right: 5px;
+			top: 1px;
+			width: 12px;
+			height: 12px;
+			border: 1px solid var(--borderColor-muted, var(--color-primer-border-contrast));
+			border-radius: 50%;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="genContainer" class="container">
+			<div class="position-absolute top-0 start-50 translate-middle-x ">
+				<div class="m-3 gap-0 column-gap-3 row align-items-start">
+					<div id="nameCard" class="card col pb-3" style="width: 1040px;">
+						<div class="row g-0">
+						<div class="col-md-4">
+								<img src="ProfileImg.png" class="mt-3 img-fluid rounded" alt="...">
+							</div>
+						<div class="col-md-8">
+								<div class="card-body">
+									<h5 class="card-title">Giusteschi Giulio</h5>
+									<br>
+									<h5>Stato corrente: studente Unimi</h5>
+									<p class="card-text"><b>Nato a</b> <strong>Milano</strong> il 17 settembre 2002</p>
+									<br>
+									<p class="card-text"><small class="text-body-secondary">Last updated 10/04/24</small></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="contactCard" class="card col pb-3" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">Contacts</h5>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
+								<li class="list-group-item"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
+								<li class="list-group-item"><b>Telegram:</b> <a href="https://t.me/T0ls_RG">@T0ls_RG</a></li>
+								<li class="list-group-item"><b>Github:</b> <a href="https://github.com/T0ls">https://github.com/T0ls</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="waiCard" class="card row align-items-start m-3" style="width: 97%;">
+					<div class="card-body">
+						<h5 class="card-title">Chi sono</h5>
+						<p class="card-text">Mi chiamo Giulio Giusteschi e sono un appassionato di programmazione informatica, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.</p>
+					</div>
+				</div>
+				<div id="myExperiences" class="card row align-items-start m-3" style="width: 97%;">
+					<div class="card-body pb-0">
+						<h5 class="card-title">Esperienze professionali</h5>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item pb-0">
+								<p class="d-inline-flex gap-1">
+									<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1"">
+										<div class="d-flex">
+											<h5>2019-2020</h5>
+										<span class="ps-2">Schiavo</span>
+										</div>	
+									</button>
+								<div class="collapse" id="multiCollapseExample1">
+									<div class="card card-body mb-2">
+									<h4 class="pe-3">Manitese:</h4>
+										<span class="ps-3">Lavorato come <strong>Schiavo</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
+										</p>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item pb-0">
+								<p class="d-inline-flex gap-1">
+									<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
+										<div class="d-flex">
+											<h5>2019-2020</h5>
+										<span class="ps-2">Schiavo</span>
+										</div>	
+									</button>
+								<div class="collapse" id="multiCollapseExample2">
+									<div class="card card-body mb-2">
+									<h4 class="pe-3">Manitese:</h4>
+										<span class="ps-3">Lavorato come <strong>Schiavo</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
+										</p>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item pb-0 mb-n1">
+								<p class="d-inline-flex gap-1">
+									<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">
+										<div class="d-flex">
+											<h5>2019-2020</h5>
+										<span class="ps-2">Schiavo</span>
+										</div>	
+									</button>
+								<div class="collapse" id="multiCollapseExample3">
+									<div class="card card-body mb-2">
+									<h4 class="pe-3">Manitese:</h4>
+										<span class="ps-3">Lavorato come <strong>Schiavo</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="studies" class="card row align-items-start m-3" style="width: 97%;">
+					<div class="card-body">
+						<h5 class="card-title">Formazione</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				<div id="" class="card row align-items-start m-3" style="width: 97%;">
+					<div id="gitHubProfile" class="card-body" style="display: block;">
+						<h5 class="card-title mb-3">My repositories</h5>
+						<div class="card mb-3 border-0" style="max-width: 100%;">
+							<div class="row g-0">
+								<div class="col-md-4" style="max-width: 250px;">
+									<img id="avatarGitHub" src="..." class="img-fluid rounded-circle border" alt="...">
+									<h3 class="mt-3"><b><a id="profileUrlGitHub" style="color: inherit; text-decoration: none;" href="" target="_blank">T0ls</a></b></h3>
+								</div>
+								<div class="col-md-9">
+									<div class="card-body" style="max-height: 225px;">
+										<div class="row">
+											<div class="col-4">
+												<nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+													<nav id="gitHubRepoList" class="nav nav-pills flex-column">
+														<script src="gitHubWriter.js" type="module"></script>
+													</nav>
+												</nav>
+											</div>
+											<div class="col-8">
+												<div id="gitHubRepoItems" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="false" style="max-height: 250px; overflow-y: scroll; -ms-overflow-style: none; scrollbar-width: none;" tabindex="0">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="gitHubRepoItem" style="display: none;">
+					</div>
+				</div>
+				<div id="" class="card row align-items-start m-3" style="width: 97%;">
+					<div class="card-body">
+						<h5 class="card-title">Interessi</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+				<div id="" class="card row align-items-start m-3" style="width: 97%;">
+					<div class="card-body">
+						<h5 class="card-title">copyright</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<!---integrity="sha384-yvpcryf0ty3lhb60nnkmxc5s9fdvzlesaaa55ndzoxhy9gkcidslk1en7n6jiehz"
+		crossorigin="anonymous"></script> -->
+		<script>
+		var box1 = document.getElementById("nameCard")
+		document.getElementById("contactCard").style.height = box1.offsetHeight + "px";
+
+		/*function hideBlock(x) {
+			var block = document.getElementById("sectionToToggle");
+			block.style.display = "none";
+			console.log(x);
+			showBlock(x);
+		}
+
+		function showBlock(x) {
+			console.log("CIAOOOO!!!" , x);
+			dataX = data[x];
+			//console.log(dataX);
+			
+//			var block = document.getElementById("gitHubRepoItem");
+//			block.style.display = "block";
+		} */ 
+		</script>
+	</body>
+</html>
