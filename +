@@ -409,14 +409,10 @@
 					</div>
 				</div>
 				<div id="" class="card row align-items-start m-3" style="width: 97%;">
-					<div class="card-body pt-1" style="text-align: center;">
+					<div class="card-body pt-1">
 						<h5 class="card-title"></h5>
-						<p class="card-text">Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base art. 13 del D. Lgs. 196/2003.</p>
+						<p class="card-text text-center">Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base art. 13 del D. Lgs. 196/2003.</p>
 						<p id="annoCorrente"></p>
-						<select class="form-select" aria-label="Language" style="width: 10%; margin: 0 auto;">
-							<option selected>Ita</option>
-							<option value="1">Eng</option>
-						</select>
 					</div>
 				</div>
 			</div>
@@ -456,7 +452,7 @@
 		var annoCurrP = document.getElementById("annoCorrente");
 		var oggi = new Date();
 		var annoCorrente = oggi.getFullYear();
-		annoCurrP.innerHTML = "@copyright Giulio Giusteschi " + annoCorrente;
+		annoCurrP.innerHTML = annoCorrente;
 
 		</script>
 	</body>
