@@ -34,9 +34,19 @@
 		<div id="genContainer" class="container">
 			<div class="position-absolute top-0 start-50 translate-middle-x">
 				<div id="popupMenù" class="sticky-top">
-					<span class="d-inline-block position-absolute top-0 start-50 translate-middle-x" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover" data-bs-placement="bottom">
-						<button class="btn btn-primary" type="button" disabled>Disabled button</button>
-					</span>
+					<div class="position-absolute top-0 start-50 translate-middle-x mt-1">
+						<button class="btn btn-primary" style="width: 155px;" onmouseover="showPopUpMenù()"></button>
+						<div id="popUpMenùToggle" class="mt-1" style="display: none; border: solid 1px red; border-radius: 10px;" onmouseout="hidePopUpMenù()">
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+								<label class="form-check-label" for="flexSwitchCheckDefault">Enable Darkmode</label>
+								<select class="form-select" aria-label="Language" style="width: 10%; margin: 0 auto;">
+									<option selected>Ita</option>
+									<option value="1">Eng</option>
+								</select>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="m-3 gap-0 column-gap-3 row align-items-start">
 					<div id="nameCard" class="card col pb-3" style="width: 1040px;">
@@ -495,6 +505,7 @@
 			}
 		}
 
+		// Posizionamento colonna tabella -- lo metto in codice js per non doverlo fare a mano
 		var tablePx = document.getElementsByTagName("tr")
 		for(var i=0; i<tablePx.length; i++) {
 			var tableChild = tablePx[i].firstElementChild;
@@ -506,6 +517,21 @@
 		var oggi = new Date();
 		var annoCorrente = oggi.getFullYear();
 		annoCurrP.innerHTML = "@copyright Giulio Giusteschi " + annoCorrente;
+
+		// Show popUpMenù
+		function showPopUpMenù() {
+			var divMenù = document.getElementById("popUpMenùToggle");
+			divMenù.style.display = "block";
+		}
+
+		function hidePopUpMenù() {
+			setTimeout(appoggioTimeout, 1000);
+		}
+
+		function appoggioTimeout() {
+			var divMenù = document.getElementById("popUpMenùToggle");
+			divMenù.style.display = "none";
+		}
 
 		</script>
 	</body>
