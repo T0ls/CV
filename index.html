@@ -21,11 +21,23 @@
 			border: 1px solid var(--borderColor-muted, var(--color-primer-border-contrast));
 			border-radius: 50%;
 		}
+		.progress {
+			/*background-color: #bfbfbf; /* #BFC8FF; */
+			margin-top: 5px;
+		}
+		.col-4::-webkit-scrollbar {
+			display: none; /* Nasconde la scrollbar su browser basati su WebKit (come Chrome e Safari) */
+		}
 		</style>
 	</head>
 	<body>
 		<div id="genContainer" class="container">
-			<div class="position-absolute top-0 start-50 translate-middle-x ">
+			<div class="position-absolute top-0 start-50 translate-middle-x">
+				<div id="popupMenù" class="sticky-top">
+					<span class="d-inline-block position-absolute top-0 start-50 translate-middle-x" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover" data-bs-placement="bottom">
+						<button class="btn btn-primary" type="button" disabled>Disabled button</button>
+					</span>
+				</div>
 				<div class="m-3 gap-0 column-gap-3 row align-items-start">
 					<div id="nameCard" class="card col pb-3" style="width: 1040px;">
 						<div class="row g-0">
@@ -179,10 +191,10 @@
 										<ul class="list-group list-group-flush">
 											<li class="list-group-item pt-2 pb-0"><b>Diploma superiore:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0">- nel 2022 ho conseguito il diploma, indirizzo Scienze Apllicate presso l'ITIS Feltrinelli con un punteggio di 60/100</p>
+													<p class="m-0">- nel 2022 ho conseguito il diploma, indirizzo Scienze Apllicate presso l'ITIS Feltrinelli</p>
 												</div>
 											</li>
-											<li class="list-group-item pt-2 pb-0"><b>Certificazioni GetM1mo:</b> 
+											<li class="list-group-item pt-2 pb-0"><b>Certificazioni GetMimo:</b> 
 												<div class="ps-3 mb-2">
 													<p class="m-0">Nel 2020 ho ottenuto le certificazioni in:</p>
 													<p class="m-0">- HTML</p>
@@ -193,7 +205,45 @@
 											</li>
 											<li class="list-group-item pt-2 pb-0"><b>Diploma di scuola media:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0">- nel 2015 ho ottenuto la licenza media presso il Convitto Nazionale Pietro Longone con un voto di y/x</p>
+													<p class="m-0">- nel 2015 ho ottenuto la licenza media presso il Convitto Nazionale Pietro Longone</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item pb-0">
+								<p class="d-inline-flex gap-1 mb-0"> 
+									<button id="buttonFormatio5" onclick="arrowController('Formatio5')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio5" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
+										<div class="d-flex">
+											<span id="arrowFormatio5" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+											<h5>Corsi Universitari</h5>
+										</div>	
+									</button>
+								</p>
+								<div class="collapse" id="targetCollapseFormFormatio5">
+									<div class="card card-body mb-2 pb-0 pt-0">
+										<h5><b>Competenze acquisite frequentando i seguenti corsi presso l'UNIMI:</b></h5>
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item pt-2 pb-0"><b>Cyber-Security:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/sicurezza-e-privatezza">Corso: Sicurezza e Privatezza</a></p>
+													<p class="m-0">- le basi concettuali e pratiche della Sicurezza Informatica e della Privacy</p>
+												</div>
+											</li>
+											<li class="list-group-item pt-2 pb-0"><b>DataBase:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/basi-di-dati-0">Corso: Basi di Dati</a></p>
+													<p class="m-0">- creazione e gestione di un DB</p>
+													<p class="m-0">- utilizzo di PostgreSQL</p>
+												</div>
+											</li>
+											<li class="list-group-item pt-2 pb-0"><b>Web-Development:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/programmazione-web-e-mobile-0">Corso: Programmazione Web e Mobile</a></p>
+													<p class="m-0">- creazione e progettazione di una apllicazione Web</p>
+													<p class="m-0">- utilizzo di Bootstrap</p>
+													<p class="m-0">- utilizzo di MongoDB</p>
 												</div>
 											</li>
 										</ul>
@@ -223,7 +273,7 @@
 													<th>Assembly Intel x64</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar " style="width: 25%">25%</div>
+															<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -231,7 +281,7 @@
 													<th>Assembly MIPS</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar " style="width: 25%">25%</div>
+															<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -239,7 +289,7 @@
 													<th>C</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -247,7 +297,7 @@
 													<th>C#</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -255,7 +305,7 @@
 													<th>C++</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -263,7 +313,7 @@
 													<th>Go</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -271,7 +321,7 @@
 													<th>HTML</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -279,7 +329,7 @@
 													<th>Java</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -287,7 +337,7 @@
 													<th>JavaScript</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -295,7 +345,7 @@
 													<th>Shell Scripting</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -303,7 +353,7 @@
 													<th>SQL</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -339,7 +389,7 @@
 													<th>Italiano</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar " style="width: 25%">25%</div>
+															<div class="progress-bar bg-danger" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -347,7 +397,7 @@
 													<th>Inglese</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-															<div class="progress-bar " style="width: 25%">25%</div>
+															<div class="progress-bar" style="width: 55%">55%</div>
 														</div>
 													</th>
 												</tr>
@@ -355,7 +405,7 @@
 													<th>Spagnolo</th>
 													<th>
 														<div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-														<div class="progress-bar " style="width: 25%">25%</div>
+														<div class="progress-bar" style="width: 25%">25%</div>
 														</div>
 													</th>
 												</tr>
@@ -382,8 +432,8 @@
 								<div class="col-md-9">
 									<div class="card-body" style="max-height: 225px;">
 										<div class="row">
-											<div class="col-4">
-												<nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+											<div class="col-4 border-end" style="overflow-y: auto; max-height: 250px; -ms-overflow-style: none; scrollbar-width: none;">
+												<nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4">
 													<nav id="gitHubRepoList" class="nav nav-pills flex-column">
 														<script src="gitHubWriter.js" type="module"></script>
 													</nav>
@@ -438,7 +488,6 @@
 			arrow.innerHTML = "⮚";
 		}
 		function arrowController(str) {
-		//document.getElementById('button' + str).addEventListener('click', function() {
 			if (document.getElementById('arrow' + str).innerHTML === "⮚") {
 				arrowDown(str);
 			} else {
@@ -461,3 +510,12 @@
 		</script>
 	</body>
 </html>
+
+
+<!--
+	To do:
+		- sito ita eng
+		- style page + dark mode
+		- creare la pagine dinamicamente tramite interfaccia apposita
+
+-->
