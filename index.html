@@ -68,13 +68,13 @@
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item pb-0">
 								<p class="d-inline-flex gap-1">
-									<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1"">
+									<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseExp1" aria-expanded="false" aria-controls="targetCollapseExp11"">
 										<div class="d-flex">
 											<h5>2019-2020</h5>
 										<span class="ps-2">Schiavo</span>
 										</div>	
 									</button>
-								<div class="collapse" id="multiCollapseExample1">
+								<div class="collapse" id="targetCollapseExp1">
 									<div class="card card-body mb-2">
 									<h4 class="pe-3">Manitese:</h4>
 										<span class="ps-3">Lavorato come <strong>Schiavo</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
@@ -84,13 +84,13 @@
 							</li>
 							<li class="list-group-item pb-0">
 								<p class="d-inline-flex gap-1">
-									<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
+									<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseExp2" aria-expanded="false" aria-controls="targetCollapseExp2">
 										<div class="d-flex">
 											<h5>2019-2020</h5>
 										<span class="ps-2">Schiavo</span>
 										</div>	
 									</button>
-								<div class="collapse" id="multiCollapseExample2">
+								<div class="collapse" id="targetCollapseExp2">
 									<div class="card card-body mb-2">
 									<h4 class="pe-3">Manitese:</h4>
 										<span class="ps-3">Lavorato come <strong>Schiavo</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
@@ -98,15 +98,15 @@
 									</div>
 								</div>
 							</li>
-							<li class="list-group-item pb-0 mb-n1">
+							<li class="list-group-item pb-0 mb-2">
 								<p class="d-inline-flex gap-1">
-									<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">
+									<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseExp3" aria-expanded="false" aria-controls="targetCollapseExp3">
 										<div class="d-flex">
 											<h5>2019-2020</h5>
 										<span class="ps-2">Schiavo</span>
 										</div>	
 									</button>
-								<div class="collapse" id="multiCollapseExample3">
+								<div class="collapse" id="targetCollapseExp3">
 									<div class="card card-body mb-2">
 									<h4 class="pe-3">Manitese:</h4>
 										<span class="ps-3">Lavorato come <strong>Schiavo</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
@@ -118,9 +118,111 @@
 					</div>
 				</div>
 				<div id="studies" class="card row align-items-start m-3" style="width: 97%;">
-					<div class="card-body">
-						<h5 class="card-title">Formazione</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<div class="card-body pb-0">
+						<h5 class="card-title">Formazione / Competenze</h5>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item pb-0">
+								<p class="d-inline-flex gap-1 mb-0"> 
+									<button id="buttonExp1" onclick="arrowController('Exp1')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseForm1" aria-expanded="false" aria-controls="targetCollapseForm1"">
+										<div class="d-flex">
+											<span id="arrowExp1" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+											<h5>Self-Tought</h5>
+										</div>	
+									</button>
+								</p>
+								<div class="collapse" id="targetCollapseForm1">
+									<div class="card card-body mb-2 pb-0 pt-0">
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item pt-2 pb-0"><b>Unity Engine:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0">- mi sono cimentato per diversi mesi nello sviluppo di videogiochi (principalmente 2D ma conosco anche il mondo del 3D)</p>
+												</div>
+											</li>
+											<li class="list-group-item pt-2 pb-0"><b>C / C++:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0">- possiedo una buona infarinatura sul C e delle ottime basi di C++</p>
+													<p class="m-0">- ho sviluppato diversi progetti in C++ tra cui il mio primo gioco in stile avventura testuale</p>
+												</div>
+											</li>
+											<li class="list-group-item pt-2 pb-0"><b>Dicord Bots:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0">- ho creato alcuni bot discord (nulla di troppo complesso però)</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item pb-0">
+								<p class="d-inline-flex gap-1 mb-0"> 
+									<button id="buttonExp2" onclick="arrowController('Exp2')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseForm2" aria-expanded="false" aria-controls="targetCollapseForm1"">
+										<div class="d-flex">
+											<span id="arrowExp2" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+											<h5>Titoli di Studio</h5>
+										</div>	
+									</button>
+								</p>
+								<div class="collapse" id="targetCollapseForm2">
+									<div class="card card-body mb-2 pb-0 pt-0">
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item pt-2 pb-0"><b>Diploma superiore:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0">- nel 2022 ho conseguito il diploma, indirizzo Scienze Apllicate presso l'ITIS Feltrinelli con un punteggio di 60/100</p>
+												</div>
+											</li>
+											<li class="list-group-item pt-2 pb-0"><b>Certificazioni GetM1mo:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0">Nel 2020 ho ottenuto le certificazioni in:</p>
+													<p class="m-0">- HTML</p>
+													<p class="m-0">- CSS</p>
+													<p class="m-0">- JavaScript</p>
+													<p class="m-0">- White-Hat</p>
+												</div>
+											</li>
+											<li class="list-group-item pt-2 pb-0"><b>Diploma di scuola media:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0">- nel 2015 ho ottenuto la licenza media presso il Convitto Nazionale Pietro Longone con un voto di y/x</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item pb-0">
+								<p class="d-inline-flex gap-1 mb-0"> 
+									<button id="buttonExp3" onclick="arrowController('Exp3')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseForm3" aria-expanded="false" aria-controls="targetCollapseForm1"">
+										<div class="d-flex">
+											<span id="arrowExp3" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+											<h5>Conoscenza linguaggi</h5>
+										</div>	
+									</button>
+								</p>
+								<div class="collapse" id="targetCollapseForm3">
+									<div class="card card-body mb-2 pb-0 pt-0">
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item pt-2 pb-0"><b>Diploma superiore:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0">- nel 2022 ho conseguito il diploma, indirizzo Scienze Apllicate presso l'ITIS Feltrinelli con un punteggio di 60/100</p>
+												</div>
+											</li>
+											<li class="list-group-item pt-2 pb-0"><b>Certificazioni GetM1mo:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0">Nel 2020 ho ottenuto le certificazioni in:</p>
+													<p class="m-0">- HTML</p>
+													<p class="m-0">- CSS</p>
+													<p class="m-0">- JavaScript</p>
+													<p class="m-0">- White-Hat</p>
+												</div>
+											</li>
+											<li class="list-group-item pt-2 pb-0"><b>Diploma di scuola media:</b> 
+												<div class="ps-3 mb-2">
+													<p class="m-0">- nel 2015 ho ottenuto la licenza media presso il Convitto Nazionale Pietro Longone con un voto di y/x</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
 					</div>
 				</div>
 				<div id="" class="card row align-items-start m-3" style="width: 97%;">
@@ -170,27 +272,28 @@
 			</div>
 		</div>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-		<!---integrity="sha384-yvpcryf0ty3lhb60nnkmxc5s9fdvzlesaaa55ndzoxhy9gkcidslk1en7n6jiehz"
-		crossorigin="anonymous"></script> -->
 		<script>
 		var box1 = document.getElementById("nameCard")
 		document.getElementById("contactCard").style.height = box1.offsetHeight + "px";
 
-		/*function hideBlock(x) {
-			var block = document.getElementById("sectionToToggle");
-			block.style.display = "none";
-			console.log(x);
-			showBlock(x);
+		function arrowDown(str) {
+			var arrow = document.getElementById('arrow' + str);
+			arrow.innerHTML = "⮛";
 		}
 
-		function showBlock(x) {
-			console.log("CIAOOOO!!!" , x);
-			dataX = data[x];
-			//console.log(dataX);
-			
-//			var block = document.getElementById("gitHubRepoItem");
-//			block.style.display = "block";
-		} */ 
+		function arrowUp(str) {
+			var arrow = document.getElementById('arrow' + str);
+			arrow.innerHTML = "⮚";
+		}
+		
+		function arrowController(str) {
+		//document.getElementById('button' + str).addEventListener('click', function() {
+			if (document.getElementById('arrow' + str).innerHTML === "⮚") {
+				arrowDown(str);
+			} else {
+				arrowUp(str);
+			}
+		}
 		</script>
 	</body>
 </html>
