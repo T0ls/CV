@@ -108,8 +108,8 @@ function hideBlock(x) {
 }
 
 function showBlock(x) {
-	/repos/{owner}/{repo}/contents/{path}
-	fetch('https://api.github.com/repos/T0ls/', {
+	
+	fetch('https://api.github.com/users/T0ls/repos', {
 		method: 'GET',
 		headers: {
 			'Accept': 'application/json'
@@ -121,19 +121,56 @@ function showBlock(x) {
 			}
 			return response.json();
 		})
-		.then(data => {
-			//console.log(data);
-			var block = document.getElementById("gitHubRepoItem");
-			block.style.display = "block";
-			console.log(x);
-			console.log(data[x]);
+		.then(dataProfile => {
+			console.log("data:",dataProfile[x]);
+			//console.log('https://api.github.com/repos/'+ dataProfile[x].owner.login +'/'+ dataProfile[x].name +'/contents');
+			fetch('https://api.github.com/repos/'+ dataProfile[x].owner.login +'/'+ dataProfile[x].name +'/contents', {
+				method: 'GET',
+				headers: {
+					'Accept': 'application/json'
+				}
+			})
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Error requesting GitHub API');
+					}
+					return response.json();
+				})
+				.then(data => {
+					console.log(data);
+					var block = document.getElementById("gitHubRepoItem");
+					block.style.display = "block";
+				})
+				.catch(error => {
+					console.error(error);
+			});
 		})
 		.catch(error => {
 			console.error(error);
 	});
 }
 
+
+
 /* End */
 
-
-/* GitHub Site Writer */
+/*
+fetch('https://api.github.com/users/T0ls/repos', {
+	method: 'GET',
+	headers: {
+		'Accept': 'application/json'
+	}
+})
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Error requesting GitHub API');
+		}
+		return response.json();
+	})
+	.then(data => {
+		//console.log(data);
+	})
+	.catch(error => {
+		console.error(error);
+});
+*/
