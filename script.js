@@ -1,17 +1,21 @@
 /*
 Useful resources:
-	Profile name: owner.login 
-	Avatar: ownner.avatar_url
-	Profile url: owner.html_url
-	Repo name: name
-	Descr: description
-	Url repo: html_url
-	Last update: updated_at
-	Laguage: language
-	Stars: stargazers_count
-	Watching: watchers
-	Views: watchers_count
-	Forks: forks
+	-T0ls/repos 
+		Profile name= owner.login 
+		Avatar= ownner.avatar_url
+		Profile url= owner.html_url
+		Repo name= name
+		Descr= description
+		Url repo= html_url
+		Last update= updated_at
+		Laguage= language
+		Stars= stargazers_count
+		Watching= watchers
+		Views= watchers_count
+		Forks= forks
+	-T0ls/{Repos}/contents
+		Tipo= type
+		none= path
 */
 
 
@@ -122,7 +126,6 @@ function showBlock(x) {
 			return response.json();
 		})
 		.then(dataProfile => {
-			console.log("data:",dataProfile[x]);
 			//console.log('https://api.github.com/repos/'+ dataProfile[x].owner.login +'/'+ dataProfile[x].name +'/contents');
 			fetch('https://api.github.com/repos/'+ dataProfile[x].owner.login +'/'+ dataProfile[x].name +'/contents', {
 				method: 'GET',
