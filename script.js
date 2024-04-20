@@ -49,7 +49,6 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			link.setAttribute('href', '#item-' + data[i].name);
 			link.textContent = data[i].name;
 			container1.appendChild(link);
-			//console.log(link);
 
 			// Create the scrollbar items list
 			var div1 = document.createElement('div');
@@ -69,7 +68,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			div2.setAttribute('id', 'dotDiv' + data[i].name);
 			// a
 			a.setAttribute('id', 'repoLink-' + data[i].name);
-			a.setAttribute('onclick', 'hideBlock(' + i + ')');
+			a.setAttribute('onclick', 'hideBlock(' + data[i].name + ')');
 			//a.setAttribute('href', data[i].html_url);
 			a.setAttribute('target', '_blank');
 			// h4
@@ -111,8 +110,8 @@ function hideBlock(x) {
 	showBlock(x);
 }
 
-function showBlock(x) {
-	
+function showBlock(repoN) {
+console.log(repoN);	
 	fetch('https://api.github.com/users/T0ls/repos', {
 		method: 'GET',
 		headers: {
@@ -127,7 +126,7 @@ function showBlock(x) {
 		})
 		.then(dataProfile => {
 			//console.log('https://api.github.com/repos/'+ dataProfile[x].owner.login +'/'+ dataProfile[x].name +'/contents');
-			fetch('https://api.github.com/repos/'+ dataProfile[x].owner.login +'/'+ dataProfile[x].name +'/contents', {
+			fetch('https://api.github.com/repos/'+ dataProfile[0].owner.login +'/'+ dataProfile[0].name +'/contents', {
 				method: 'GET',
 				headers: {
 					'Accept': 'application/json'
