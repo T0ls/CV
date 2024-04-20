@@ -38,6 +38,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 		var profileUrl = document.getElementById("profileUrlGitHub");
 		avatar.src = data[0].owner.avatar_url;
 		profileUrl.href = data[0].owner.html_url;
+		profileUrl.innerHTML = data[0].owner.login;
 		var container1 = document.getElementById("gitHubRepoList");
 		var container2 = document.getElementById("gitHubRepoItems");
 		for(var i=0; i<data.length; i++) {
@@ -68,7 +69,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			div2.setAttribute('id', 'dotDiv' + data[i].name);
 			// a
 			a.setAttribute('id', 'repoLink-' + data[i].name);
-			a.setAttribute('onclick', 'hideBlock(' + data[i].name + ')');
+			a.setAttribute('onclick', 'hideBlock(\'' + data[i].name + '\')');
 			//a.setAttribute('href', data[i].html_url);
 			a.setAttribute('target', '_blank');
 			// h4
@@ -112,44 +113,26 @@ function hideBlock(x) {
 
 function showBlock(repoN) {
 console.log(repoN);	
-	fetch('https://api.github.com/users/T0ls/repos', {
-		method: 'GET',
-		headers: {
-			'Accept': 'application/json'
-		}
-	})
-		.then(response => {
-			if (!response.ok) {
-				throw new Error('Error requesting GitHub API');
+		fetch('https://api.github.com/repos/'+ document.getElementById("profileUrlGitHub").innerHTML +'/'+ repoN +'/contents', {
+			method: 'GET',
+			headers: {
+				'Accept': 'application/json'
 			}
-			return response.json();
 		})
-		.then(dataProfile => {
-			//console.log('https://api.github.com/repos/'+ dataProfile[x].owner.login +'/'+ dataProfile[x].name +'/contents');
-			fetch('https://api.github.com/repos/'+ dataProfile[0].owner.login +'/'+ dataProfile[0].name +'/contents', {
-				method: 'GET',
-				headers: {
-					'Accept': 'application/json'
+			.then(response => {
+				if (!response.ok) {
+					throw new Error('Error requesting GitHub API');
 				}
+				return response.json();
 			})
-				.then(response => {
-					if (!response.ok) {
-						throw new Error('Error requesting GitHub API');
-					}
-					return response.json();
-				})
-				.then(data => {
-					console.log(data);
-					var block = document.getElementById("gitHubRepoItem");
-					block.style.display = "block";
-				})
-				.catch(error => {
-					console.error(error);
-			});
-		})
-		.catch(error => {
-			console.error(error);
-	});
+			.then(data => {
+				console.log(data);
+				var block = document.getElementById("gitHubRepoItem");
+				block.style.display = "block";
+			})
+			.catch(error => {
+				console.error(error);
+		});
 }
 
 
@@ -157,6 +140,17 @@ console.log(repoN);
 /* End */
 
 /*
+ 
+let dati = mappa
+async function f(v) {
+ if (v in dati) {
+  return dati[v]
+ }
+ let dato = await fetch(v)
+ dati[v] = dato
+ return dato
+}
+
 fetch('https://api.github.com/users/T0ls/repos', {
 	method: 'GET',
 	headers: {
