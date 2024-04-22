@@ -135,7 +135,29 @@ console.log(repoN);
 		});
 }
 
+let dati = new Map();
 
+async function fetchAPI(repo, path) {
+	let key = [repo, path];
+	if (dati.has(key)) {
+		return dati.get(key)
+	} else {
+		let response = await fetch(`https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${repo}/contents/${path}`, {
+			method: 'GET',
+			headers: { 'Accept': 'application/json' }
+		})
+		if (!response.ok) {
+			console.error('Error requesting GitHub API')
+		} 
+		let data = await response.json()
+		dati.set(key, data);
+		return data
+	}
+}
+
+function showPath(x) {
+	fetchAPI(x);
+}
 
 /* End */
 
