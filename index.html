@@ -15,7 +15,16 @@
 
 		<!-- <script src="gitHubREST.js" type="module" defer></script> -->
 		<script src="script.js"></script>
-	<style>
+		<style>
+			a, a>h4 {
+				color: inherit; /* Colore del testo ereditato */
+				text-decoration: none; /* Rimuove la sottolineatura di default */
+			}
+
+			a, a>h4:hover {
+				text-decoration: underline; /* Aggiunge la sottolineatura al passaggio del mouse */
+				color: blue; /* Cambia il colore del testo a blu */
+			}
 		</style>
 	</head>
 	<body>
@@ -419,7 +428,7 @@
 					</div>
 				</div>
 				<div id="" class="card row align-items-start m-3" style="width: 97%;">
-					<div id="gitHubProfile" class="card-body" style="display: none;">
+					<div id="gitHubProfile" class="card-body" style="display: block;">
 						<h5 class="card-title mb-3">My repositories</h5>
 						<div class="card mb-3 border-0" style="max-width: 100%;">
 							<div class="row g-0">
@@ -455,7 +464,7 @@
 										<p name="lastCommitDescr" class="text-truncate mb-0 ms-1">aggiunte immagini x file,folder + inizio implementazione rudimentale</p></div>
 										<!-- Ricorda il punto '·' +-->
 										<div class="col-2 fs-5 d-flex">
-											<a name="lastCommitHash" class="mb-0 pt-1 me-1 text-end" style="font-size: 0.70rem;">ce5c8c0</a>
+											<a name="lastCommitHash" class="mb-0 pt-1 me-1 text-end" style="font-size: 0.70rem;" href="">ce5c8c0</a>
 											<p name="lastCommitTime" class="mb-0 pt-1 text-end" style="font-size: 0.70rem;">· 2 hour ago</p>
 										</div>
 									<div class="col-2 d-flex justify-content-end">
