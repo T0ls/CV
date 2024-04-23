@@ -16,41 +16,12 @@
 		<!-- <script src="gitHubREST.js" type="module" defer></script> -->
 		<script src="script.js"></script>
 	<style>
-		.repo-language-color {
-			background-color: rgb(0, 173, 216); --darkreader-inline-bgcolor: #38848e;
-			margin-top: 8px;
-			margin-right: 5px;
-			top: 1px;
-			width: 12px;
-			height: 12px;
-			border: 1px solid var(--borderColor-muted, var(--color-primer-border-contrast));
-			border-radius: 50%;
-		}
-		.colored-image {
-			filter: grayscale(100%) brightness(100%) sepia(0%) hue-rotate(0deg) saturate(10000%) invert(87%) sepia(0%) saturate(7516%) hue-rotate(217deg) brightness(105%) contrast(101%);
-		}
-		.progress {
-			/*background-color: #bfbfbf; /* #BFC8FF; */
-			margin-top: 5px;
-		}
-		.col-4::-webkit-scrollbar {
-			display: none; /* Nasconde la scrollbar su browser basati su WebKit (come Chrome e Safari) */
-		}
-		.greenBar {
-			background-color: #BBFFBB;
-		}
-		.redBar {
-			background-color: #FFBBBB;
-		}
-		.blueBar {
-			background-color: #BFC8FF;
-		}
 		</style>
 	</head>
 	<body>
 		<div id="genContainer" class="container">
 			<div class="position-absolute top-0 start-50 translate-middle-x">
-				<div id="popupMenù" class="sti#FF5555cky-top">
+				<div id="popupMenù" class="sticky-top">
 					<div class="position-absolute top-0 start-50 translate-middle-x mt-1">
 						<button class="btn btn-primary" style="width: 155px;" onmouseover="showPopUpMenù()"></button>
 						<div id="popUpMenùToggle" class="mt-1" style="display: none; border: solid 1px red; border-radius: 10px;" onmouseout="hidePopUpMenù()">
@@ -479,10 +450,16 @@
 						<ul class="list-group pt-2 pb-2">
 							<li class="list-group-item" style="background-color: #DEE2E6">
 								<div class="row mt-1 mb-1">
-									<div class="col-8"><p class="text-truncate mb-0"><b>Last commit: </b>aggiunte immagini x file,folder + inizio implementazione rudimentale</p></div>
-									<div class="col-2 fs-5"><p class="mb-0 pt-1 text-end" style="font-size: 0.70rem;">hash 2hour ago</p></div>
+									<div class="col-8 d-flex">
+										<b>Last commit: </b>
+										<p name="lastCommitDescr" class="text-truncate mb-0 ms-1">aggiunte immagini x file,folder + inizio implementazione rudimentale</p></div>
+										<!-- Ricorda il punto '·' +-->
+										<div class="col-2 fs-5 d-flex">
+											<a name="lastCommitHash" class="mb-0 pt-1 me-1 text-end" style="font-size: 0.70rem;">ce5c8c0</a>
+											<p name="lastCommitTime" class="mb-0 pt-1 text-end" style="font-size: 0.70rem;">· 2 hour ago</p>
+										</div>
 									<div class="col-2 d-flex justify-content-end">
-										<img src="folder2x.png" style="height: 24px; width: 24px;">
+										<img src="commits2X.png" class="me-1" style="height: 24px; width: 24px;">
 										<p class="mb-0 pt-1 text-end" style="font-size: 0.70rem;">18 Commits</p>
 									</div>
 								</div>
