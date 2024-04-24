@@ -16,14 +16,28 @@
 		<!-- <script src="gitHubREST.js" type="module" defer></script> -->
 		<script src="script.js"></script>
 		<style>
-			a, a>h4 {
+			.aHide {
 				color: inherit; /* Colore del testo ereditato */
 				text-decoration: none; /* Rimuove la sottolineatura di default */
 			}
 
-			a, a>h4:hover {
+			.aHide:hover {
 				text-decoration: underline; /* Aggiunge la sottolineatura al passaggio del mouse */
 				color: blue; /* Cambia il colore del testo a blu */
+			}
+
+			.buttonHide {
+				border: none; /* Rimuove la cornice */
+				background-color: transparent; /* Rimuove lo sfondo */
+				color: inherit; /* Utilizza il colore del testo ereditato */
+				cursor: pointer; /* Cambia il cursore quando si passa sopra con il mouse */
+				transition: color 0.3s; /* Aggiunge una transizione al cambiamento di colore */
+			}
+
+			.buttonHide:hover {
+				color: blue; /* Cambia il colore del testo quando si passa sopra con il mouse */
+				border-radius: 6px;
+				background-color: #282f36;
 			}
 		</style>
 	</head>
@@ -461,15 +475,17 @@
 								<div class="row mt-1 mb-1">
 									<div class="col-8 d-flex">
 										<b>Last commit: </b>
-										<p name="lastCommitDescr" class="text-truncate mb-0 ms-1">aggiunte immagini x file,folder + inizio implementazione rudimentale</p></div>
+										<a name="lastCommitDescr" class="aHide text-truncate mb-0 ms-1" href="">aggiunte immagini x file,folder + inizio implementazione rudimentale</a></div>
 										<!-- Ricorda il punto '·' +-->
 										<div class="col-2 fs-5 d-flex">
-											<a name="lastCommitHash" class="mb-0 pt-1 me-1 text-end" style="font-size: 0.70rem;" href="">ce5c8c0</a>
+											<a name="lastCommitHash" class="aHide mb-0 pt-1 me-1 text-end" style="font-size: 0.70rem;" href="">ce5c8c0</a>
 											<p name="lastCommitTime" class="mb-0 pt-1 text-end" style="font-size: 0.70rem;">· 2 hour ago</p>
 										</div>
-									<div class="col-2 d-flex justify-content-end">
-										<img src="commits2X.png" class="me-1" style="height: 24px; width: 24px;">
-										<p class="mb-0 pt-1 text-end" style="font-size: 0.70rem;">18 Commits</p>
+									<div class="col-2 ps-5 justify-content-end">
+										<button class="d-flex buttonHide">
+											<img src="commits2X.png" class="me-1" style="height: 24px; width: 24px;">
+											<p class="mb-0 pt-1 text-end" style="font-size: 0.70rem;">18 Commits</p>
+										</button>
 									</div>
 								</div>
 							</li>
@@ -481,7 +497,7 @@
 										<p class=" ms-2 mb-0 text-truncate">repo name</p>
 									</div>
 									<div class="col-6"><p class="text-truncate mb-0">aggiunte immagini x file,folder + inizio implementazione rudimentale</p></div>
-									<div class="col-2"><p class="text-truncate mb-0 text-end">2 hours ago</p></div>
+									<div class="col-2"><p class="text-truncate mb-0 text-end">4 hours ago</p></div>
 								</div>
 							</li>
 							<li class="list-group-item">
