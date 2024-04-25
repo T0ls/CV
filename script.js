@@ -80,7 +80,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			p1.innerHTML = data[i].description;
 			p2.innerHTML = data[i].language;
 			// span
-			span.setAttribute('class','repo-language-color');
+			span.setAttribute('class','repoLanguageColor');
 
 			container2.appendChild(div1);
 
