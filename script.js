@@ -17,6 +17,23 @@ Useful resources:
 		Tipo= type
 		none= path
 */
+const fs = require('fs');
+
+// Leggi il contenuto del file JSON
+fs.readFile('api_token.json', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Errore nella lettura del file:', err);
+    return;
+  }
+  
+  // Parsa il contenuto JSON in un oggetto JavaScript
+  const config = JSON.parse(data);
+  
+  // Estrai il token
+  const token = config.github_token;
+  
+  console.log('Il token GitHub è:', token);
+});
 
 
 /* GitHub Api fetch comunication */
