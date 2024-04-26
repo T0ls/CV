@@ -17,45 +17,40 @@ Useful resources:
 		Tipo= type
 		none= path
 */
-const fs = require('fs');
 
-// Leggi il contenuto del file JSON
-fs.readFile('api_token.json', 'utf8', (err, data) => {
-  if (err) {
-    console.error('Errore nella lettura del file:', err);
-    return;
-  }
-  
-  // Parsa il contenuto JSON in un oggetto JavaScript
-  const config = JSON.parse(data);
-  
-  // Estrai il token
-  const token = config.github_token;
-  
-  console.log('Il token GitHub è:', token);
-});
+// Leggo il contenuto del file Js
+const gitHubApi_Key = gitHubToken.token
 
+/* GitHub Api fetch Profile Info */
+fetch('https://api.github.com/user', { method: 'GET', headers: { 'Authorization': 'Bearer ' + gitHubApi_Key, } })
+.then(response => { if (response.ok) { return response.json(); } else { throw new Error('Error requesting GitHub API: user '); } })
+.then(data => { 
+	var avatar = document.getElementById("avatarGitHub");
+	var profileUrl = document.getElementById("profileUrlGitHub");
+	avatar.src = data.avatar_url;
+	profileUrl.href = data.html_url;
+	profileUrl.innerHTML = data.login;
+}) 
 
-/* GitHub Api fetch comunication */
+.catch(error => { console.error('Si è verificato un errore:', error); });
+/* End */
+
+/* GitHub Api fetch Repositories List */
 fetch('https://api.github.com/users/T0ls/repos', {
 	method: 'GET',
 	headers: {
-		'Accept': 'application/json'
+		'Accept': 'application/json',
+		'Authorization': 'Bearer ' + gitHubApi_Key,
 	}
 })
 	.then(response => {
 		if (!response.ok) {
-			throw new Error('Error requesting GitHub API');
+			throw new Error('Error requesting GitHub API: repositories');
 		}
 		return response.json();
 	})
 	.then(data => {
 		//console.log(data);
-		var avatar = document.getElementById("avatarGitHub");
-		var profileUrl = document.getElementById("profileUrlGitHub");
-		avatar.src = data[0].owner.avatar_url;
-		profileUrl.href = data[0].owner.html_url;
-		profileUrl.innerHTML = data[0].owner.login;
 		var container1 = document.getElementById("gitHubRepoList");
 		var container2 = document.getElementById("gitHubRepoItems");
 		for(var i=0; i<data.length; i++) {
@@ -76,19 +71,18 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			var p2 = document.createElement('p');
 			var span = document.createElement('span');
 			var div2 = document.createElement('div');
-			// div
+			// div 1
 			if (i !== 0) {
 				div1.setAttribute('class', 'border-top pt-3');
 			}	
 			div1.setAttribute('id', 'item-' + data[i].name);
-
+			// div 2
 			div2.setAttribute('class', 'd-inline-flex');
 			div2.setAttribute('id', 'dotDiv' + data[i].name);
 			// a
 			a.setAttribute('id', 'repoLink-' + data[i].name);
 			a.setAttribute('onclick', 'hideBlock(\'' + data[i].name + '\')');
-			//a.setAttribute('href', data[i].html_url);
-			a.setAttribute('target', '_blank');
+			//a.setAttribute('href', "#gitHubPage");
 			// h4
 			//h4.setAttribute('class', 'text-primary')
 			h4.innerHTML = data[i].name;
@@ -123,29 +117,32 @@ fetch('https://api.github.com/users/T0ls/repos', {
 
 function hideBlock(x) {
 
+	console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
 	var block = document.getElementById("gitHubProfile");
 	block.style.display = "none";
 	showBlock(x);
+	console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
 }
 
 function showBlock(repoN) {
 console.log(repoN);	
 		fetch('https://api.github.com/repos/'+ document.getElementById("profileUrlGitHub").innerHTML +'/'+ repoN +'/contents', {
 			method: 'GET',
-			headers: {
-				'Accept': 'application/json'
-			}
+			headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' + gitHubApi_Key, }
 		})
 			.then(response => {
 				if (!response.ok) {
-					throw new Error('Error requesting GitHub API');
+					throw new Error('Error requesting GitHub API: repo');
 				}
 				return response.json();
 			})
 			.then(data => {
 				console.log(data);
+				console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
 				var block = document.getElementById("gitHubRepoItem");
 				block.style.display = "block";
+				console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
+				scrollTo(0, document.getElementById("gitHubPage").getClientRects()[0].y);
 			})
 			.catch(error => {
 				console.error(error);
@@ -161,7 +158,7 @@ async function fetchAPI(repo, path) {
 	} else {
 		let response = await fetch(`https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${repo}/contents/${path}`, {
 			method: 'GET',
-			headers: { 'Accept': 'application/json' }
+			headers: { 'Accept': 'application/json',  'Authorization': 'Bearer ' + gitHubApi_Key, }
 		})
 		if (!response.ok) {
 			console.error('Error requesting GitHub API')
@@ -178,18 +175,8 @@ function showPath(x) {
 
 /* End */
 
-/*
- 
-let dati = mappa
-async function f(v) {
- if (v in dati) {
-  return dati[v]
- }
- let dato = await fetch(v)
- dati[v] = dato
- return dato
-}
 
+/*
 fetch('https://api.github.com/users/T0ls/repos', {
 	method: 'GET',
 	headers: {
@@ -198,7 +185,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 })
 	.then(response => {
 		if (!response.ok) {
-			throw new Error('Error requesting GitHub API');
+			throw new Error('Error requesting GitHub API: ');
 		}
 		return response.json();
 	})
