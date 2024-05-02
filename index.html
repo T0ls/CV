@@ -18,29 +18,6 @@
 		<script src="api_token.js"></script>
 		<script src="script.js"></script>
 		<style>
-			.aHide {
-				color: inherit; /* Colore del testo ereditato */
-				text-decoration: none; /* Rimuove la sottolineatura di default */
-			}
-
-			.aHide:hover {
-				text-decoration: underline; /* Aggiunge la sottolineatura al passaggio del mouse */
-				color: blue; /* Cambia il colore del testo a blu */
-			}
-
-			.buttonHide {
-				border: none; /* Rimuove la cornice */
-				background-color: transparent; /* Rimuove lo sfondo */
-				color: inherit; /* Utilizza il colore del testo ereditato */
-				cursor: pointer; /* Cambia il cursore quando si passa sopra con il mouse */
-				transition: color 0.3s; /* Aggiunge una transizione al cambiamento di colore */
-			}
-
-			.buttonHide:hover {
-				color: blue; /* Cambia il colore del testo quando si passa sopra con il mouse */
-				border-radius: 6px;
-				background-color: #282f36;
-			}
 		</style>
 	</head>
 	<body>
@@ -60,34 +37,38 @@
 					</div>
 				</div>
 			</div>
-			<div class="container p-0"> <!-- offset-xs-3 text-center -->
+			<div class="container p-0 m-0"> <!-- offset-xs-3 text-center -->
 				<div class=""> <!-- justify-content-center-->
-					<div id="nameCard" class="card col-xs-12 col-sm-12 mt-2 mb-3 me-1 ms-1 row container">
-						<div class="col-xs-12 col-sm-12 g-0 row pt-2 pb-2">
-							<div class="col-xs-12 col-sm-6">
-								<img src="ProfileImg.png" class="img-fluid rounded" style="width: 100%;" alt="Responsive image">
-							</div>
-						<div class="col-sm-6">
-								<div class="card-body pb-0 pt-2 pe-0">
-									<h5 class="card-title">Giusteschi Giulio</h5>
-									<br>
-									<h5>Stato corrente: studente Unimi</h5>
-									<p class="card-text"><b>Nato a</b> <strong>Milano</strong> il 17 settembre 2002</p>
-									<br>
-									<p class="card-text"><small class="text-body-secondary">Last updated 10/04/24</small></p>
+					<div class="row">
+						<div id="nameCard" class="card col-xs-12 col-sm-6 mt-2 mb-3 mx-0 row container">
+							<div class="col-xs-12 col-sm-6 g-0 row pt-2 pb-2">
+								<div class="col-xs-12 col-sm-4">
+									<img src="ProfileImg.png" class="img-fluid rounded"  alt="Responsive image">
+								</div>
+							<div class="col-sm-8">
+									<div class="card-body pb-0 pt-2 pe-0">
+										<h5 class="card-title">Giusteschi Giulio</h5>
+										<br>
+										<h5>Stato corrente: studente Unimi</h5>
+										<p class="card-text mb-1"><b>Nato a</b> <strong>Milano</strong> il 17 settembre 2002</p>
+										<br>
+										<p class="card-text"><small class="text-body-secondary">Last updated 10/04/24</small></p>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div id="contactCard" class="card col pb-3" style="width: 18rem;">
-						<div class="card-body">
-							<h5 class="card-title">Contacts</h5>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
-								<li class="list-group-item"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
-								<li class="list-group-item"><b>Telegram:</b> <a href="https://t.me/T0ls_RG">@T0ls_RG</a></li>
-								<li class="list-group-item"><b>Github:</b> <a href="https://github.com/T0ls">https://github.com/T0ls</a></li>
-							</ul>
+						<div id="contactCard container" class="card col-xs-12 col-sm-6 pb-3">
+							<div class="row">
+								<div class="card-body col-xs-12 col-sm-6">
+									<h5 class="card-title">Contacts</h5>
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
+										<li class="list-group-item"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
+										<li class="list-group-item"><b>Telegram:</b> <a href="https://t.me/T0ls_RG">@T0ls_RG</a></li>
+										<li class="list-group-item"><b>Github:</b> <a href="https://github.com/T0ls">https://github.com/T0ls</a></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div id="waiCard" class="card row align-items-start m-3" style="width: 97%;">

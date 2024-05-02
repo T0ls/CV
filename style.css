@@ -35,3 +35,26 @@
   scrollbar-color: #007 #bada55;
 }
 
+.aHide {
+	color: inherit; /* Colore del testo ereditato */
+	text-decoration: none; /* Rimuove la sottolineatura di default */
+}
+
+.aHide:hover {
+	text-decoration: underline; /* Aggiunge la sottolineatura al passaggio del mouse */
+	color: blue; /* Cambia il colore del testo a blu */
+}
+
+.buttonHide {
+	border: none; /* Rimuove la cornice */
+	background-color: transparent; /* Rimuove lo sfondo */
+	color: inherit; /* Utilizza il colore del testo ereditato */
+	cursor: pointer; /* Cambia il cursore quando si passa sopra con il mouse */
+	transition: color 0.3s; /* Aggiunge una transizione al cambiamento di colore */
+}
+
+.buttonHide:hover {
+	color: blue; /* Cambia il colore del testo quando si passa sopra con il mouse */
+	border-radius: 6px;
+	background-color: #282f36;
+}
