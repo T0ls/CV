@@ -14,21 +14,39 @@
 	margin-top: 5px;
 }
 
-.col-4::-webkit-scrollbar {
+/*.col-4::-webkit-scrollbar {
 	display: none; /* Nasconde la scrollbar su browser basati su WebKit (come Chrome e Safari) */
-}
+/*}*/
 
+/*Color for Progress Bars*/
 .greenBar {
 	background-color: #BBFFBB;
+}
+.greenBar > div {
+	background-color: #28a745;
 }
 
 .redBar {
 	background-color: #FFBBBB;
 }
+.redBar > div {
+	background-color: #dc3545;
+}
 
 .blueBar {
 	background-color: #BFC8FF;
 }
+.blueBar > div {
+	background-color: #007bff;
+}
+
+.yellowBar {
+	background-color: #FFE28C;
+}
+.yellowBar > div {
+	background-color: #ffc107;
+}
+
 
 .scroller {
   overflow-y: scroll;

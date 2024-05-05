@@ -6,14 +6,13 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Giusteschi Giulio CV</title>
 		<link rel="icon" href="CvLogo.png" type="image/icon type">
-		<link rel="icon" href="style.css">
 		<!--	For Bootstrap Local	-->
 		<!-- <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
 			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 
 		<!--	For Bootstrap CDN	-->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+		<link rel="stylesheet" href="style.css">
 		<!-- <script src="gitHubREST.js" type="module" defer></script> -->
 		<script src="api_token.js"></script>
 		<script src="script.js"></script>
@@ -30,8 +29,8 @@
 							<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
 							<label class="form-check-label" for="flexSwitchCheckDefault">Enable Darkmode</label>
 							<select class="form-select" aria-label="Language" style="width: 10%; margin: 0 auto;">
-							<option selected>Ita</option>
-							<option value="1">Eng</option>
+								<option selected>Ita</option>
+								<option value="1">Eng</option>
 							</select>
 						</div>
 					</div>
@@ -39,7 +38,7 @@
 			</div>
 			<div class="container p-0 m-0"> <!-- offset-xs-3 text-center -->
 				<div class=""> <!-- justify-content-center-->
-					<div class="row">
+					<div class="">
 						<div id="nameCard" class="card col-xs-12 col-sm-6 mt-2 mb-3 mx-0 row container">
 							<div class="col-xs-12 col-sm-6 g-0 row pt-2 pb-2">
 								<div class="col-xs-12 col-sm-4">
@@ -60,7 +59,7 @@
 						<div id="contactCard container" class="card col-xs-12 col-sm-6 pb-3">
 							<div class="row">
 								<div class="card-body col-xs-12 col-sm-6">
-									<h5 class="card-title">Contacts</h5>
+									<h5 class="card-title ms-1">Contacts</h5>
 									<ul class="list-group list-group-flush">
 										<li class="list-group-item"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
 										<li class="list-group-item"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
@@ -71,449 +70,467 @@
 							</div>
 						</div>
 					</div>
-					<div id="waiCard" class="card row align-items-start m-3" style="width: 97%;">
-						<div class="card-body">
-							<h5 class="card-title">Chi sono</h5>
-							<p class="card-text">Mi chiamo Giulio Giusteschi e sono un appassionato di programmazione informatica, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.</p>
+					<div id="waiCard" class="card row align-items-start container m-0 mt-3">
+						<div class="row m-0">
+							<div class="card-body col-xs-12">
+								<h5 class="card-title">Chi sono</h5>
+								<p class="card-text">Mi chiamo Giulio Giusteschi e sono un appassionato di programmazione informatica, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.</p>
+							</div>
 						</div>
 					</div>
-					<div id="myFormatioeriences" class="card row align-items-start m-3" style="width: 97%;">
-						<div class="card-body pb-0">
-							<h5 class="card-title">Esperienze professionali</h5>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item pb-0">
-									<p class="d-inline-flex gap-1 mb-0"> 
-										<button id="buttonExp1" onclick="arrowController('Exp1')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormExp1" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-											<div class="d-flex">
-												<span id="arrowExp1" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+					<div id="myFormatioeriences" class="card row align-items-start m-0 mt-3 container">
+						<div class="row m-0 ">
+							<div class="card-body pb-0 px-0 col-sm-12">
+								<h5 class="card-title">Esperienze professionali</h5>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item pb-0">
+										<p class="d-inline-flex gap-1 mb-0"> 
+											<button id="buttonExp1" onclick="arrowController('Exp1')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormExp1" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
 												<div class="d-flex">
-													<h5>2022-2023</h5>
-												<span class="ps-2">Esperienza1</span>
+													<span id="arrowExp1" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+													<div class="d-flex">
+														<h5>2022-2023</h5>
+													<span class="ps-2">Esperienza1</span>
+													</div>	
 												</div>	
-											</div>	
-										</button>
-									</p>
-									<div class="collapse" id="targetCollapseFormExp1">
-										<div class="card card-body mb-2 pb-0 pt-1">
-											<h4 class="pe-3">Azienda X:</h4>
-											<span class="ps-3">Lavorato come <strong>Esperienza1</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
-											</p>
-										</div>
-									</div>
-								</li>
-								<li class="list-group-item pb-0">
-									<p class="d-inline-flex gap-1 mb-0"> 
-										<button id="buttonExp2" onclick="arrowController('Exp2')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormExp2" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-											<div class="d-flex">
-												<span id="arrowExp2" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-												<div class="d-flex">
-													<h5>2020-2022</h5>
-												<span class="ps-2">Esperienza2</span>
-												</div>	
-											</div>	
-										</button>
-									</p>
-									<div class="collapse" id="targetCollapseFormExp2">
-										<div class="card card-body mb-2 pb-0 pt-1">
-											<h4 class="pe-3">Azienda Y:</h4>
-											<span class="ps-3">Lavorato come <strong>Esperienza2</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
-											</p>
-										</div>
-									</div>
-								</li>
-								<li class="list-group-item pb-0">
-									<p class="d-inline-flex gap-1 mb-0"> 
-										<button id="buttonExp3" onclick="arrowController('Exp3')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormExp3" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-											<div class="d-flex">
-												<span id="arrowExp3" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-												<div class="d-flex">
-													<h5>2018-2019</h5>
-												<span class="ps-2">Esperienza3</span>
-												</div>	
-											</div>	
-										</button>
-									</p>
-									<div class="collapse" id="targetCollapseFormExp3">
-										<div class="card card-body mb-2 pb-0 pt-1">
-											<h4 class="pe-3">Manitese:</h4>
-											<span class="ps-3">Lavorato come <strong>Esperienza3</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
-											</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div id="studies" class="card row align-items-start m-3" style="width: 97%;">
-						<div class="card-body pb-0">
-							<h5 class="card-title">Formazione / Competenze</h5>
-							<ul class="list-group list-group-flush">
-								<li class="list-group-item pb-0">
-									<p class="d-inline-flex gap-1 mb-0"> 
-										<button id="buttonFormatio1" onclick="arrowController('Formatio1')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio1" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-											<div class="d-flex">
-												<span id="arrowFormatio1" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-												<h5>Self-Tought</h5>
-											</div>	
-										</button>
-									</p>
-									<div class="collapse" id="targetCollapseFormFormatio1">
-										<div class="card card-body mb-2 pb-0 pt-0">
-											<ul class="list-group list-group-flush">
-												<li class="list-group-item pt-2 pb-0"><b>Unity Engine:</b> 
-													<div class="ps-3 mb-2">
-														<p class="m-0">- mi sono cimentato per diversi mesi nello sviluppo di videogiochi (principalmente 2D ma conosco anche il mondo del 3D)</p>
-													</div>
-												</li>
-												<li class="list-group-item pt-2 pb-0"><b>C / C++:</b> 
-													<div class="ps-3 mb-2">
-														<p class="m-0">- possiedo una buona infarinatura sul C e delle ottime basi di C++</p>
-														<p class="m-0">- ho sviluppato diversi progetti in C++ tra cui il mio primo gioco in stile avventura testuale</p>
-													</div>
-												</li>
-												<li class="list-group-item pt-2 pb-0"><b>Dicord Bots:</b> 
-													<div class="ps-3 mb-2">
-														<p class="m-0">- ho creato alcuni bot discord (nulla di troppo complesso però)</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li class="list-group-item pb-0">
-									<p class="d-inline-flex gap-1 mb-0"> 
-										<button id="buttonFormatio2" onclick="arrowController('Formatio2')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio2" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-											<div class="d-flex">
-												<span id="arrowFormatio2" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-												<h5>Titoli di Studio</h5>
-											</div>	
-										</button>
-									</p>
-									<div class="collapse" id="targetCollapseFormFormatio2">
-										<div class="card card-body mb-2 pb-0 pt-0">
-											<ul class="list-group list-group-flush">
-												<li class="list-group-item pt-2 pb-0"><b>Diploma superiore:</b> 
-													<div class="ps-3 mb-2">
-														<p class="m-0">- nel 2022 ho conseguito il diploma, indirizzo Scienze Apllicate presso l'ITIS Feltrinelli</p>
-													</div>
-												</li>
-												<li class="list-group-item pt-2 pb-0"><b>Certificazioni GetMimo:</b> 
-													<div class="ps-3 mb-2">
-														<p class="m-0">Nel 2020 ho ottenuto le certificazioni in:</p>
-														<p class="m-0">- HTML</p>
-														<p class="m-0">- CSS</p>
-														<p class="m-0">- JavaScript</p>
-														<p class="m-0">- White-Hat</p>
-													</div>
-												</li>
-												<li class="list-group-item pt-2 pb-0"><b>Diploma di scuola media:</b> 
-													<div class="ps-3 mb-2">
-														<p class="m-0">- nel 2015 ho ottenuto la licenza media presso il Convitto Nazionale Pietro Longone</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li class="list-group-item pb-0">
-									<p class="d-inline-flex gap-1 mb-0"> 
-										<button id="buttonFormatio5" onclick="arrowController('Formatio5')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio5" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-											<div class="d-flex">
-												<span id="arrowFormatio5" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-												<h5>Corsi Universitari</h5>
-											</div>	
-										</button>
-									</p>
-									<div class="collapse" id="targetCollapseFormFormatio5">
-										<div class="card card-body mb-2 pb-0 pt-0">
-											<h5><b>Competenze acquisite frequentando i seguenti corsi presso l'UNIMI:</b></h5>
-											<ul class="list-group list-group-flush">
-												<li class="list-group-item pt-2 pb-0"><b>Cyber-Security:</b> 
-													<div class="ps-3 mb-2">
-														<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/sicurezza-e-privatezza">Corso: Sicurezza e Privatezza</a></p>
-														<p class="m-0">- le basi concettuali e pratiche della Sicurezza Informatica e della Privacy</p>
-													</div>
-												</li>
-												<li class="list-group-item pt-2 pb-0"><b>DataBase:</b> 
-													<div class="ps-3 mb-2">
-														<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/basi-di-dati-0">Corso: Basi di Dati</a></p>
-														<p class="m-0">- creazione e gestione di un DB</p>
-														<p class="m-0">- utilizzo di PostgreSQL</p>
-													</div>
-												</li>
-												<li class="list-group-item pt-2 pb-0"><b>Web-Development:</b> 
-													<div class="ps-3 mb-2">
-														<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/programmazione-web-e-mobile-0">Corso: Programmazione Web e Mobile</a></p>
-														<p class="m-0">- creazione e progettazione di una apllicazione Web</p>
-														<p class="m-0">- utilizzo di Bootstrap</p>
-														<p class="m-0">- utilizzo di MongoDB</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li class="list-group-item pb-0">
-									<p class="d-inline-flex gap-1 mb-0"> 
-										<button id="buttonFormatio3" onclick="arrowController('Formatio3')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio3" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-											<div class="d-flex">
-												<span id="arrowFormatio3" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-												<h5>Conoscenza linguaggi</h5>
-											</div>	
-										</button>
-									</p>
-									<div class="collapse" id="targetCollapseFormFormatio3">
-										<div class="card card-body mb-2 pb-0 pt-0">
-											<table class="table table-striped">
-												<thead>
-													<tr>
-														<th scope="col">Language</th>
-														<th scope="col">Level</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th>Assembly Intel x64</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>Assembly MIPS</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>C</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>C#</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>C++</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>Go</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>HTML</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>Java</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>JavaScript</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>Shell Scripting</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>SQL</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-												</tbody>
-											</table>
-											<div name="Legenda" class="d-inline-flex">
-												<p class="ps-3 text-danger">Uso spesso</p>
-												<p class="ps-3 text-primary">In apprendimento</p>
+											</button>
+										</p>
+										<div class="collapse" id="targetCollapseFormExp1">
+											<div class="card card-body mb-2 pb-0 pt-1">
+												<h4 class="pe-3">Azienda X:</h4>
+												<span class="ps-3">Lavorato come <strong>Esperienza1</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
+												</p>
 											</div>
 										</div>
-									</div>
-								</li>
-								<li class="list-group-item pb-0">
-									<p class="d-inline-flex gap-1 mb-0"> 
-										<button id="buttonFormatio4" onclick="arrowController('Formatio4')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio4" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-											<div class="d-flex">
-												<span id="arrowFormatio4" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-												<h5>Conoscenza Lingue</h5>
-											</div>	
-										</button>
-									</p>
-									<div class="collapse" id="targetCollapseFormFormatio4">
-										<div class="card card-body mb-2 pb-0 pt-0">
-											<table class="table table-striped">
-												<thead>
-													<tr>
-														<th scope="col">Language</th>
-														<th scope="col">Level</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th>Italiano</th>
-														<th>
-															<div class="progress redBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar bg-danger" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>Inglese</th>
-														<th>
-															<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar" style="width: 55%">55%</div>
-															</div>
-														</th>
-													</tr>
-													<tr>
-														<th>Spagnolo</th>
-														<th>
-															<div class="progress greenBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																<div class="progress-bar bg-success" style="width: 25%">25%</div>
-															</div>
-														</th>
-													</tr>
-												</tbody>
-											</table>
-											<div name="Legenda" class="d-inline-flex">
-												<p class="ps-3 text-danger">Madrelingua</p>
-												<p class="ps-3 text-primary">In apprendimento</p>
+									</li>
+									<li class="list-group-item pb-0">
+										<p class="d-inline-flex gap-1 mb-0"> 
+											<button id="buttonExp2" onclick="arrowController('Exp2')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormExp2" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
+												<div class="d-flex">
+													<span id="arrowExp2" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+													<div class="d-flex">
+														<h5>2020-2022</h5>
+													<span class="ps-2">Esperienza2</span>
+													</div>	
+												</div>	
+											</button>
+										</p>
+										<div class="collapse" id="targetCollapseFormExp2">
+											<div class="card card-body mb-2 pb-0 pt-1">
+												<h4 class="pe-3">Azienda Y:</h4>
+												<span class="ps-3">Lavorato come <strong>Esperienza2</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
+												</p>
 											</div>
 										</div>
-									</div>
-								</li>
+									</li>
+									<li class="list-group-item pb-0">
+										<p class="d-inline-flex gap-1 mb-0"> 
+											<button id="buttonExp3" onclick="arrowController('Exp3')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormExp3" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
+												<div class="d-flex">
+													<span id="arrowExp3" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+													<div class="d-flex">
+														<h5>2018-2019</h5>
+													<span class="ps-2">Esperienza3</span>
+													</div>	
+												</div>	
+											</button>
+										</p>
+										<div class="collapse" id="targetCollapseFormExp3">
+											<div class="card card-body mb-2 pb-0 pt-1">
+												<h4 class="pe-3">Manitese:</h4>
+												<span class="ps-3">Lavorato come <strong>Esperienza3</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
+												</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					<div id="gitHubPage" class="card row align-items-start m-3" style="width: 97%;">
-						<div id="gitHubProfile" class="card-body" style="display: block;">
-							<h5 class="card-title mb-3">My repositories</h5>
-							<div class="card mb-3 border-0" style="max-width: 100%;">
-								<div class="row g-0">
-									<div class="col-md-4" style="max-width: 250px;">
-										<img id="avatarGitHub" src="..." class="img-fluid rounded-circle border" alt="...">
-										<h3 class="mt-3"><b><a id="profileUrlGitHub" style="color: inherit; text-decoration: none;" href="" target="_blank"></a></b></h3>
-									</div>
-								<div class="col-md-9">
-										<div class="card-body" style="max-height: 225px;">
-											<div class="row">
-												<div class="col-4 border-end" style="overflow-y: auto; max-height: 250px; -ms-overflow-style: none; scrollbar-width: none;">
-													<nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4">
-														<nav id="gitHubRepoList" class="nav nav-pills flex-column">
-														</nav>
-													</nav>
+					<div id="studies" class="card row align-items-start m-0 mt-3">
+						<div class="row m-0">
+							<div class="card-body pb-0 col-xs-12">
+								<h5 class="card-title">Formazione / Competenze</h5>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item pb-0">
+										<p class="d-inline-flex gap-1 mb-0"> 
+											<button id="buttonFormatio1" onclick="arrowController('Formatio1')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio1" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
+												<div class="d-flex">
+													<span id="arrowFormatio1" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+													<h5>Self-Tought</h5>
+												</div>	
+											</button>
+										</p>
+										<div class="collapse" id="targetCollapseFormFormatio1">
+											<div class="card card-body mb-2 pb-0 pt-0">
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item pt-2 pb-0"><b>Unity Engine:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">- mi sono cimentato per diversi mesi nello sviluppo di videogiochi (principalmente 2D ma conosco anche il mondo del 3D)</p>
+														</div>
+													</li>
+													<li class="list-group-item pt-2 pb-0"><b>C / C++:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">- possiedo una buona infarinatura sul C e delle ottime basi di C++</p>
+															<p class="m-0">- ho sviluppato diversi progetti in C++ tra cui il mio primo gioco in stile avventura testuale</p>
+														</div>
+													</li>
+													<li class="list-group-item pt-2 pb-0"><b>Dicord Bots:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">- ho creato alcuni bot discord (nulla di troppo complesso però)</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item pb-0">
+										<p class="d-inline-flex gap-1 mb-0"> 
+											<button id="buttonFormatio2" onclick="arrowController('Formatio2')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio2" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
+												<div class="d-flex">
+													<span id="arrowFormatio2" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+													<h5>Titoli di Studio</h5>
+												</div>	
+											</button>
+										</p>
+										<div class="collapse" id="targetCollapseFormFormatio2">
+											<div class="card card-body mb-2 pb-0 pt-0">
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item pt-2 pb-0"><b>Diploma superiore:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">- nel 2022 ho conseguito il diploma, indirizzo Scienze Apllicate presso l'ITIS Feltrinelli</p>
+														</div>
+													</li>
+													<li class="list-group-item pt-2 pb-0"><b>Certificazioni GetMimo:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">Nel 2020 ho ottenuto le certificazioni in:</p>
+															<p class="m-0">- HTML</p>
+															<p class="m-0">- CSS</p>
+															<p class="m-0">- JavaScript</p>
+															<p class="m-0">- White-Hat</p>
+														</div>
+													</li>
+													<li class="list-group-item pt-2 pb-0"><b>Diploma di scuola media:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">- nel 2015 ho ottenuto la licenza media presso il Convitto Nazionale Pietro Longone</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item pb-0">
+										<p class="d-inline-flex gap-1 mb-0"> 
+											<button id="buttonFormatio5" onclick="arrowController('Formatio5')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio5" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
+												<div class="d-flex">
+													<span id="arrowFormatio5" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+													<h5>Corsi Universitari</h5>
+												</div>	
+											</button>
+										</p>
+										<div class="collapse" id="targetCollapseFormFormatio5">
+											<div class="card card-body mb-2 pb-0 pt-0">
+												<h5><b>Competenze acquisite frequentando i seguenti corsi presso l'UNIMI:</b></h5>
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item pt-2 pb-0"><b>Cyber-Security:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/sicurezza-e-privatezza">Corso: Sicurezza e Privatezza</a></p>
+															<p class="m-0">- le basi concettuali e pratiche della Sicurezza Informatica e della Privacy</p>
+														</div>
+													</li>
+													<li class="list-group-item pt-2 pb-0"><b>DataBase:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/basi-di-dati-0">Corso: Basi di Dati</a></p>
+															<p class="m-0">- creazione e gestione di un DB</p>
+															<p class="m-0">- utilizzo di PostgreSQL</p>
+														</div>
+													</li>
+													<li class="list-group-item pt-2 pb-0"><b>Web-Development:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/programmazione-web-e-mobile-0">Corso: Programmazione Web e Mobile</a></p>
+															<p class="m-0">- creazione e progettazione di una apllicazione Web</p>
+															<p class="m-0">- utilizzo di Bootstrap</p>
+															<p class="m-0">- utilizzo di MongoDB</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item pb-0">
+										<p class="d-inline-flex gap-1 mb-0"> 
+											<button id="buttonFormatio3" onclick="arrowController('Formatio3')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio3" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
+												<div class="d-flex">
+													<span id="arrowFormatio3" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+													<h5>Conoscenza linguaggi</h5>
+												</div>	
+											</button>
+										</p>
+										<div class="collapse" id="targetCollapseFormFormatio3">
+											<div class="card card-body mb-2 pb-0 pt-0">
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th scope="col">Language</th>
+															<th scope="col">Level</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th>Assembly Intel x64</th>
+															<th>
+																<div class="progress redBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>Assembly MIPS</th>
+															<th>
+																<div class="progress greenBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>C</th>
+															<th>
+																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>C#</th>
+															<th>
+																<div class="progress yellowBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>C++</th>
+															<th>
+																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>Go</th>
+															<th>
+																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>HTML</th>
+															<th>
+																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>Java</th>
+															<th>
+																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>JavaScript</th>
+															<th>
+																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>Shell Scripting</th>
+															<th>
+																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+														<tr>
+															<th>SQL</th>
+															<th>
+																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+																	<div class="progress-bar" style="width: 25%">25%</div>
+																</div>
+															</th>
+														</tr>
+													</tbody>
+												</table>
+												<div name="Legenda" class="container">
+													<div class="row">
+														<div class="col-xs-4">
+															<p class="ps-3 text-primary">Basic</p>
+														</div>
+														<div class="col-xs-4">
+															<p class="ps-3 col-xs-4 text-warning">Fluent</p>
+														</div>
+														<div class="col-xs-4">
+															<p class="ps-3 col-xs-4 text-danger">Advaced</p>
+														</div>
+														<div class="col-xs-4">
+															<p class="ps-3 col-xs-4 text-success">Learning</p>
+														</div>
+													</div>
 												</div>
-												<div class="col-8">
-													<div id="gitHubRepoItems" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="false" style="max-height: 250px; overflow-y: scroll; -ms-overflow-style: none; scrollbar-width: none;" tabindex="0">
+											</div>
+										</div>
+									</li>
+									<li class="list-group-item pb-0">
+										<p class="d-inline-flex gap-1 mb-0"> 
+											<button id="buttonFormatio4" onclick="arrowController('Formatio4')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio4" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
+												<div class="d-flex">
+													<span id="arrowFormatio4" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
+													<h5>Conoscenza Lingue</h5>
+												</div>	
+											</button>
+										</p>
+										<div class="collapse" id="targetCollapseFormFormatio4">
+											<div class="card card-body mb-2 pb-0 pt-0">
+												<table class="table table-striped">
+													<thead>
+														<tr>
+															<th scope="col">Language</th>
+															<th scope="col">Level</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th>Italiano</th>
+															<th>
+																Native language
+															</th>
+														</tr>
+														<tr>
+															<th>Inglese</th>
+															<th>
+																B2
+															</th>
+														</tr>
+														<tr>
+															<th>Spagnolo</th>
+															<th>
+																A2
+															</th>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</li>
+							</div>
+						</div>
+					</div>
+					<div id="gitHubPage" class="card row align-items-start m-0 mt-3">
+						<div class="row m-0">
+							<div class="col-sx-12">
+								<div id="gitHubProfile" class="card-body" style="display: block;">
+									<h5 class="card-title mb-3">My repositories</h5>
+									<div class="card mb-3 border-0 container">
+										<div class="row m-0">
+											<div class="col-md-4 col-xs-12">
+												<img id="avatarGitHub" src="..." class="img-fluid rounded-circle border" alt="Responsive image">
+												<h3 class="mt-3"><b><a id="profileUrlGitHub" style="color: inherit; text-decoration: none;" href="" target="_blank"></a></b></h3>
+											</div>
+										</div>
+										<div class="row m-0">
+											<div class="col-md-9 col-xs-12">
+												<div class="card-body" style="max-height: 225px;">
+													<div class="row">
+														<div class="col-4 border-end" style="overflow-y: auto; max-height: 250px; -ms-overflow-style: none; scrollbar-width: none;">
+															<nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4">
+																<nav id="gitHubRepoList" class="nav nav-pills flex-column">
+																</nav>
+															</nav>
+														</div>
+														<div class="col-8">
+															<div id="gitHubRepoItems" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="false" style="max-height: 250px; overflow-y: scroll; -ms-overflow-style: none; scrollbar-width: none;" tabindex="0">
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+								<div id="gitHubRepoItem" style="height: 90vh; display: none;">
+									<ul class="list-group pt-2 pb-2">
+										<li class="list-group-item" style="background-color: #DEE2E6">
+											<div class="row mt-1 mb-1">
+												<div class="col-8 d-flex" >
+													<b style="align-items: center; display: flex;">Last commit: </b>
+													<a name="lastCommitDescr" style="align-items: center; display: flex;" class="aHide text-truncate mb-0 ms-1" href="">aggiunte immagini x file,folder + inizio implementazione rudimentale</a></div>
+											<div class="col-2 fs-5 d-flex">
+													<a name="lastCommitHash" class="aHide mb-0 me-1 text-end" style="font-size: 10px; align-items: center; display: flex;" href="">ce5c8c0</a>
+													<p class="mb-0" style="font-size: 10px; align-items: center; display: flex;">·</p>
+													<p name="lastCommitTime" class="mb-0 ms-1 text-end" style="font-size: 10px; align-items: center; display: flex;">2 hour ago</p>
+												</div>
+												<div class="col-2 ps-5 justify-content-end">
+													<button class="d-flex buttonHide ps-2 pe-2 pt-1 pb-1" style="height: inherit;">
+														<img src="commits2X.png" class="me-1" style="height: 20px; width: 20px; align-items: center;">
+														<p class="mb-0 text-end" style="font-size: 10px; align-items: center; display: flex;">18 Commits</p>
+													</button>
+												</div>
+											</div>
+										</li>
+
+										<li class="list-group-item">
+											<div class="row mt-1 mb-1">
+												<div class="col-4 d-flex">
+													<img src="folder2x.png" style="height: 24px; width: 24px;">
+													<a class="aHide ms-2 mb-0 text-truncate">repo name</a>
+												</div>
+												<div class="col-6"><a class="aHide text-truncate mb-0">aggiunte immagini x file,folder + inizio implementazione rudimentale</a></div>
+												<div class="col-2"><p class="text-truncate mb-0 text-end">4 hours ago</p></div>
+											</div>
+										</li>
+										<li class="list-group-item">
+											test 1
+										</li>
+										<li class="list-group-item">
+											test 2
+										</li>
+										<li class="list-group-item">
+											test 3
+										</li>
+										<li class="list-group-item">
+											test 1
+										</li>
+										<li class="list-group-item">
+											test 2
+										</li>
+										<li class="list-group-item">
+											test 3
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-						<div id="gitHubRepoItem" style="display: none; height: 90vh;">
-							<ul class="list-group pt-2 pb-2">
-								<li class="list-group-item" style="background-color: #DEE2E6">
-									<div class="row mt-1 mb-1">
-										<div class="col-8 d-flex" >
-											<b style="align-items: center; display: flex;">Last commit: </b>
-											<a name="lastCommitDescr" style="align-items: center; display: flex;" class="aHide text-truncate mb-0 ms-1" href="">aggiunte immagini x file,folder + inizio implementazione rudimentale</a></div>
-										<div class="col-2 fs-5 d-flex">
-											<a name="lastCommitHash" class="aHide mb-0 me-1 text-end" style="font-size: 10px; align-items: center; display: flex;" href="">ce5c8c0</a>
-											<p class="mb-0" style="font-size: 10px; align-items: center; display: flex;">·</p>
-											<p name="lastCommitTime" class="mb-0 ms-1 text-end" style="font-size: 10px; align-items: center; display: flex;">2 hour ago</p>
-										</div>
-										<div class="col-2 ps-5 justify-content-end">
-											<button class="d-flex buttonHide ps-2 pe-2 pt-1 pb-1" style="height: inherit;">
-												<img src="commits2X.png" class="me-1" style="height: 20px; width: 20px; align-items: center;">
-												<p class="mb-0 text-end" style="font-size: 10px; align-items: center; display: flex;">18 Commits</p>
-											</button>
-										</div>
-									</div>
-								</li>
-
-								<li class="list-group-item">
-									<div class="row mt-1 mb-1">
-										<div class="col-4 d-flex">
-											<img src="folder2x.png" style="height: 24px; width: 24px;">
-											<a class="aHide ms-2 mb-0 text-truncate">repo name</a>
-										</div>
-										<div class="col-6"><a class="aHide text-truncate mb-0">aggiunte immagini x file,folder + inizio implementazione rudimentale</a></div>
-										<div class="col-2"><p class="text-truncate mb-0 text-end">4 hours ago</p></div>
-									</div>
-								</li>
-								<li class="list-group-item">
-									test 1
-								</li>
-								<li class="list-group-item">
-									test 2
-								</li>
-								<li class="list-group-item">
-									test 3
-								</li>
-								<li class="list-group-item">
-									test 1
-								</li>
-								<li class="list-group-item">
-									test 2
-								</li>
-								<li class="list-group-item">
-									test 3
-								</li>
-							</ul>
+					</div>
+					<div id="" class="card row align-items-start container m-0 mt-3">
+						<div class="row m-0">
+							<div class="card-body col-xs-12">
+								<h5 class="card-title">Interessi</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							</div>
 						</div>
 					</div>
-					<div id="" class="card row align-items-start m-3" style="width: 97%;">
-						<div class="card-body">
-							<h5 class="card-title">Interessi</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						</div>
-					</div>
-					<div id="" class="card row align-items-start m-3" style="width: 97%;">
-						<div class="card-body pt-1" style="text-align: center;">
-							<h5 class="card-title"></h5>
-							<p class="card-text">Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base art. 13 del D. Lgs. 196/2003.</p>
-							<p id="annoCorrente" class="mb-1"></p>
+					<div id="" class="card row align-items-start container m-0 mt-3">
+						<div class="row m-0">
+							<div class="card-body pt-1 col-xs-12" style="text-align: center;">
+								<h5 class="card-title"></h5>
+								<p class="card-text">Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base art. 13 del D. Lgs. 196/2003.</p>
+								<p id="annoCorrente" class="mb-1"></p>
+							</div>
 						</div>
 					</div>
 				</div>
