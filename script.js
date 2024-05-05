@@ -18,6 +18,32 @@ Useful resources:
 		none= path
 */
 
+// Changes for Window width
+let wWidth = window.innerWidth;
+let a = document.getElementsByClassName("repoCommitDate");
+			console.log(a.length)
+switch (true) {
+	case wWidth < 576: 
+			console.log("!")
+			console.log(a.length)
+		for(var j=0; j<a.length; j++) {
+			console.log("!")
+			a[j].setAttribute("class", "repoCommitDate col-8");
+			console.log(a[j].className)
+		}
+	break;
+	case wWidth >= 576 && wWidth < 768: 
+
+	break;
+	case wWidth >= 768 && wWidth < 992: 
+
+	break;
+	case wWidth >= 992: 
+
+	break;
+}
+
+
 // Leggo il contenuto del file Js
 const gitHubApi_Key = gitHubToken.token
 
