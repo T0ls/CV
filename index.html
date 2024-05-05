@@ -21,7 +21,7 @@
 	</head>
 	<body>
 		<div id="genContainer" class="container p-2">
-			<div id="popupMenù" class="sticky-top d-none">
+			<div id="popupMenù" class="sticky-top d-block">
 				<div class="position-absolute top-0 start-50 translate-middle-x mt-1">
 					<button class="btn btn-primary" style="width: 155px;" onmouseover="showPopUpMenù()"></button>
 					<div id="popUpMenùToggle" class="mt-1" style="display: none; border: solid 1px red; border-radius: 10px;" onmouseout="hidePopUpMenù()">
@@ -268,121 +268,38 @@
 										</p>
 										<div class="collapse" id="targetCollapseFormFormatio3">
 											<div class="card card-body mb-2 pb-0 pt-0">
-												<table class="table table-striped">
-													<thead>
-														<tr>
-															<th scope="col">Language</th>
-															<th scope="col">Level</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<th>Assembly Intel x64</th>
-															<th>
-																<div class="progress redBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>Assembly MIPS</th>
-															<th>
-																<div class="progress greenBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>C</th>
-															<th>
-																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>C#</th>
-															<th>
-																<div class="progress yellowBar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>C++</th>
-															<th>
-																ready to remove aria...
-																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>Go</th>
-															<th>
-																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>HTML</th>
-															<th>
-																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>Java</th>
-															<th>
-																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>JavaScript</th>
-															<th>
-																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>Shell Scripting</th>
-															<th>
-																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-														<tr>
-															<th>SQL</th>
-															<th>
-																<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-																	<div class="progress-bar" style="width: 25%">25%</div>
-																</div>
-															</th>
-														</tr>
-													</tbody>
-												</table>
-												<div name="Legenda" class="container">
-													<div class="row">
-														<div class="col-xs-4">
-															<p class="ps-3 text-primary">Basic</p>
+												<ul class="list-group list-group-flush">
+													<li class="list-group-item pt-2 pb-0"><b>Advanced:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">- Assembly Mips</p>
+															<p class="m-0">- Go</p>
+															<p class="m-0">- Html</p>
+															<p class="m-0">- Sql</p>
 														</div>
-														<div class="col-xs-4">
-															<p class="ps-3 col-xs-4 text-warning">Fluent</p>
+													</li>
+													<li class="list-group-item pt-2 pb-0"><b>Fluent:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">- C</p>
+															<p class="m-0">- C#</p>
+															<p class="m-0">- C++</p>
+															<p class="m-0">- Java</p>
+															<p class="m-0">- JavaScript</p>
+															<p class="m-0">- Css</p>
 														</div>
-														<div class="col-xs-4">
-															<p class="ps-3 col-xs-4 text-danger">Advaced</p>
+													</li>
+													<li class="list-group-item pt-2 pb-0"><b>Basic:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">- Assembly Intel x64</p>
+															<p class="m-0">- Linux Shell Scripting</p>
 														</div>
-														<div class="col-xs-4">
-															<p class="ps-3 col-xs-4 text-success">Learning</p>
+													</li>
+													<li class="list-group-item pt-2 pb-0"><b>Learning:</b> 
+														<div class="ps-3 mb-2">
+															<p class="m-0">- Python</p>
+															<p class="m-0">- Daisy</p>
 														</div>
-													</div>
-												</div>
+													</li>
+												</ul>
 											</div>
 										</div>
 									</li>
@@ -433,23 +350,27 @@
 					</div>
 					<div id="gitHubPage" class="card row align-items-start m-0 mt-3">
 						<div class="row m-0">
-							<div class="col-sx-12">
+							<div class="col-sx-12 p-0">
 								<div id="gitHubProfile" class="card-body" style="display: block;">
 									<h5 class="card-title mb-3">My repositories</h5>
-									<div class="card mb-3 border-0 container">
-										<div class="row m-0">
+									<div class="card mb-3 border-0 p-0 container">
+										<div class="row m-0 container">
 											<div class="col-md-4 col-xs-12">
-												<img id="avatarGitHub" src="..." class="img-fluid rounded-circle border" alt="Responsive image">
-												<h3 class="mt-3"><b><a id="profileUrlGitHub" style="color: inherit; text-decoration: none;" href="" target="_blank"></a></b></h3>
+												<div class="row m-0">
+													<img id="avatarGitHub" src="..." class=" col-xs-12 img-fluid rounded-circle" alt="Responsive image">
+												</div>
+												<div class="row m-0">
+													<h3 class="mt-3 col-xs-12"><b><a id="profileUrlGitHub" style="color: inherit; text-decoration: none;" href="" target="_blank"></a></b></h3>
+												</div>
 											</div>
 										</div>
 										<div class="row m-0">
 											<div class="col-md-9 col-xs-12">
-												<div class="card-body" style="max-height: 225px;">
+												<div class="card-body p-0">
 													<div class="row">
-														<div class="col-4 border-end" style="overflow-y: auto; max-height: 250px; -ms-overflow-style: none; scrollbar-width: none;">
-															<nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4">
-																<nav id="gitHubRepoList" class="nav nav-pills flex-column">
+														<div class="col-4 p-0 border-end" style=" overflow-y: auto; max-height: 250px; -ms-overflow-style: none; scrollbar-width: none;">
+															<nav id="navbar-example3" class="h-100 align-items-stretch">
+																<nav id="gitHubRepoList" class="nav nav-pills container">
 																</nav>
 															</nav>
 														</div>

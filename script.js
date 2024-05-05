@@ -57,8 +57,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			var link = document.createElement('a');
 
 			// Create the navbar objects list
-			link.setAttribute('class', 'nav-link');
-			link.setAttribute('style', 'max-width: 230px');
+			link.setAttribute('class', 'nav-link col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12');
 			link.setAttribute('href', '#item-' + data[i].name);
 			link.textContent = data[i].name;
 			container1.appendChild(link);

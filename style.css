@@ -19,7 +19,7 @@
 /*}*/
 
 /*Color for Progress Bars*/
-.greenBar {
+/*.greenBar {
 	background-color: #BBFFBB;
 }
 .greenBar > div {
@@ -45,7 +45,7 @@
 }
 .yellowBar > div {
 	background-color: #ffc107;
-}
+}*/
 
 
 .scroller {
