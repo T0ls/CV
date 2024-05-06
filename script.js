@@ -19,7 +19,7 @@ Useful resources:
 */
 
 // Changes for Window width
-let wWidth = window.innerWidth;
+/*let wWidth = window.innerWidth;
 let a = document.getElementsByClassName("repoCommitDate");
 			console.log(a.length)
 switch (true) {
@@ -41,7 +41,7 @@ switch (true) {
 	case wWidth >= 992: 
 
 	break;
-}
+}*/
 
 
 // Leggo il contenuto del file Js

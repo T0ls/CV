@@ -1,31 +1,43 @@
 
 /*Xs	*/
-@media screen and (max-width: 575px) {
+@media screen and (min-width: 0px) and (max-width: 575px) {
     .repoCommitText {
         display: none; /* Nasconde la div sui dispositivi mobili */
     }
+	#gitHubRepoItem {
+		max-height: 50vh;
+	}
 }
 
 /*Sm	*/
-@media screen and (max-width: 767px) {
-
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	#gitHubRepoItem {
+		max-height: 60vh;
+	}
 }
 
 /*Md	*/
-@media screen and (max-width: 991px) {
-
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	#gitHubRepoItem {
+		max-height: 60vh;
+	}
 }
 
 /*Lg	*/
-@media screen and (max-width: 1199px) {
-
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	#gitHubRepoItem {
+		max-height: 60vh;
+	}
 }
 
 /*Xl	*/
-.repoLanguageColor {
-@media screen and (max-width: 1399px) {
-
+@media screen and (min-width: 1200px) {
+	#gitHubRepoItem {
+		max-height: 60vh;
+	}
 }
+
+.repoLanguageColor {
 	background-color: rgb(0, 173, 216); --darkreader-inline-bgcolor: #38848e;
 	margin-top: 8px;
 	margin-right: 5px;
@@ -73,8 +85,6 @@
 	border-radius: 6px;
 	background-color: #282f36;
 }
-
-
 
 
 /*Color for Progress Bars*/
