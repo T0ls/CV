@@ -4,8 +4,13 @@
     .repoCommitText {
         display: none; /* Nasconde la div sui dispositivi mobili */
     }
+
 	#gitHubRepoItem {
 		max-height: 50vh;
+	}
+
+	#contactCard {
+		margin-top: 16px;
 	}
 }
 
@@ -14,17 +19,21 @@
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}
+
+	#contactCard {
+		margin-top: 16px;
+	}
 }
 
 /*Md	*/
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}
 }
 
 /*Lg	*/
-@media screen and (min-width: 992px) and (max-width: 1199px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}

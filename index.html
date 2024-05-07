@@ -38,40 +38,42 @@
 			</div>
 			<div class="container p-0 m-0"> <!-- offset-3 text-center -->
 				<div class=""> <!-- justify-content-center-->
-					<div class="">
-						<div id="nameCard" class="card col-12 col-sm-6 mt-2 mb-3 mx-0 row container">
-							<div class="col-12 col-sm-6 g-0 row pt-2 pb-2">
-								<div class="col-12 col-sm-4">
-									<img src="ProfileImg.png" class="img-fluid rounded"  alt="Responsive image">
-								</div>
-							<div class="col-sm-8">
-									<div class="card-body pb-0 pt-2 pe-0">
-										<h5 class="card-title">Giusteschi Giulio</h5>
-										<br>
-										<h5>Stato corrente: studente Unimi</h5>
-										<p class="card-text mb-1"><b>Nato a</b> <strong>Milano</strong> il 17 settembre 2002</p>
-										<br>
-										<p class="card-text"><small class="text-body-secondary">Last updated 10/04/24</small></p>
+					<div class="container p-0">
+						<div class="row m-0">
+							<div id="nameCard" class="card col-12 col-sm-12 col-md-6 mx-0 row container">
+								<div class="col-12 col-sm-12 g-0 row pt-2 pb-2">
+									<div class="col-12 col-sm-5">
+										<img src="ProfileImg.png" class="img-fluid rounded"  alt="Responsive image">
+									</div>
+								<div class="col-sm-7">
+										<div class="card-body pb-0 pt-2 pe-0">
+											<h5 class="card-title">Giusteschi Giulio</h5>
+											<br>
+											<h5>Stato corrente: studente Unimi</h5>
+											<p class="card-text mb-1"><b>Nato a</b> <strong>Milano</strong> il 17 settembre 2002</p>
+											<br>
+											<p class="card-text"><small class="text-body-secondary">Updated the 10/04/24</small></p>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div id="contactCard container" class="card col-12 col-sm-6 pb-3">
-							<div class="row">
-								<div class="card-body col-12 col-sm-6">
-									<h5 class="card-title ms-1">Contacts</h5>
-									<ul class="list-group list-group-flush">
-										<li class="list-group-item"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
-										<li class="list-group-item"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
-										<li class="list-group-item"><b>Telegram:</b> <a href="https://t.me/T0ls_RG">@T0ls_RG</a></li>
-										<li class="list-group-item"><b>Github:</b> <a href="https://github.com/T0ls">https://github.com/T0ls</a></li>
-									</ul>
+							<div id="contactCard" class="container p-0 card col-12 col-sm-12 col-md-6">
+								<div class="row m-0">
+									<div class="card-body col-12 col-sm-12">
+										<h5 class="card-title ms-1">Contacts</h5>
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item text-truncate"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
+											<li class="list-group-item text-truncate"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
+											<li class="list-group-item text-truncate"><b>Telegram:</b> <a href="https://t.me/T0ls_RG">@T0ls_RG</a></li>
+											<li class="list-group-item text-truncate"><b>Github:</b> <a href="https://github.com/T0ls">https://github.com/T0ls</a></li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div id="waiCard" class="card row align-items-start container m-0 mt-3">
-						<div class="row m-0">
+						<div class="row m-0 p-0">
 							<div class="card-body col-12">
 								<h5 class="card-title">Chi sono</h5>
 								<p class="card-text">Mi chiamo Giulio Giusteschi e sono un appassionato di programmazione informatica, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.</p>
@@ -468,7 +470,7 @@
 						</div>
 					</div>
 					<div id="" class="card row align-items-start container m-0 mt-3">
-						<div class="row m-0">
+						<div class="row m-0 p-0">
 							<div class="card-body col-12">
 								<h5 class="card-title">Interessi</h5>
 								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -476,7 +478,7 @@
 						</div>
 					</div>
 					<div id="" class="card row align-items-start container m-0 mt-3">
-						<div class="row m-0">
+						<div class="row m-0 p-0">
 							<div class="card-body pt-1 col-12" style="text-align: center;">
 								<h5 class="card-title"></h5>
 								<p class="card-text">Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base art. 13 del D. Lgs. 196/2003.</p>
@@ -496,6 +498,52 @@
 
 		<script>
 		// Box in alto fix altezza
+		let boolean;	
+		if(window.innerWidth>= 768) {
+			boolean = false;
+		} else {
+			boolean = true;
+		}
+
+		checkCurrentBoxState();
+		window.addEventListener('resize', function() {
+			checkCurrentBoxState();
+		});
+		
+		function checkCurrentBoxState() {
+			let nCard = document.getElementById("nameCard");
+			let cCard = document.getElementById("contactCard");
+			if(window.innerWidth>= 768) {
+				if (boolean === false) {
+					boolean = true;
+					correctBox();
+				}
+			} else {
+				boolean = false;
+				document.getElementById("nameCard").style.width = "100%";
+				cCard.style.marginLeft = 0 +"px";
+				document.getElementById("contactCard").style.width = "100%";
+			}
+			console.log(boolean)
+		}
+
+		function correctBox() {
+			let nCard = document.getElementById("nameCard");
+			let cCard = document.getElementById("contactCard");
+			//console.log(nCard.offsetWidth);
+			//console.log(cCard.offsetWidth);
+			nCard.style.width = (nCard.offsetWidth - 8) +"px";
+			cCard.style.width = (cCard.offsetWidth - 8) +"px";
+			cCard.style.marginLeft = 16 +"px";
+				/*if (nCard.offsetWidth > cCard.offsetWidth) {
+					document.getElementById("contactCard").style.width = nCard.offsetWidth + "px";
+					console.log("Updated:"+cCard.offsetWidth);
+				} else if (nCard.offsetWidth < cCard.offsetWidth) {
+					document.getElementById("nameCard").style.width = cCard.offsetWidth + "px";
+					console.log("Updated:"+nCard.offsetWith);
+				}*/
+		}
+
 		//var box1 = document.getElementById("nameCard")
 		//document.getElementById("contactCard").style.height = box1.offsetHeight + "px";
 		
