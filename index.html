@@ -39,7 +39,7 @@
 			<div class="container p-0 m-0"> <!-- offset-3 text-center -->
 				<div class=""> <!-- justify-content-center-->
 					<div class="container p-0">
-						<div class="row m-0">
+						<div class="row mx-0">
 							<div id="nameCard" class="card col-12 col-sm-12 col-md-6 mx-0 row container">
 								<div class="col-12 col-sm-12 g-0 row pt-2 pb-2">
 									<div class="col-12 col-sm-5">
@@ -353,7 +353,7 @@
 					<div id="gitHubPage" class="card row align-items-start m-0 mt-3">
 						<div class="row m-0">
 							<div class="col-sx-12 p-0">
-								<div id="gitHubProfile" class="card-body" style="display: none;">
+								<div id="gitHubProfile" class="card-body" style="display: block;">
 									<h5 class="card-title mb-3">My repositories</h5>
 									<div class="card mb-3 border-0 p-0 container">
 										<div class="row m-0 container">
@@ -386,7 +386,7 @@
 										</div>
 									</div>
 								</div>
-								<div id="gitHubRepoItem" style="display: block; overflow-y: auto; -ms-overflow-style: none; scrollbar-width: none;">
+								<div id="gitHubRepoItem" style="display: none; overflow-y: auto; -ms-overflow-style: none; scrollbar-width: none;">
 									<ul class="list-group pt-2 pb-2">
 										<li class="list-group-item container" style="background-color: #DEE2E6">
 											<div class="row mt-1 mb-1">
@@ -498,50 +498,45 @@
 
 		<script>
 		// Box in alto fix altezza
-		let boolean;	
+		let hasChanged;	
 		if(window.innerWidth>= 768) {
-			boolean = false;
+			hasChanged = true;
 		} else {
-			boolean = true;
+			hasChanged = false;
 		}
 
-		checkCurrentBoxState();
+		//checkCurrentBoxState();
 		window.addEventListener('resize', function() {
-			checkCurrentBoxState();
+			//checkCurrentBoxState();
 		});
 		
 		function checkCurrentBoxState() {
 			let nCard = document.getElementById("nameCard");
 			let cCard = document.getElementById("contactCard");
 			if(window.innerWidth>= 768) {
-				if (boolean === false) {
-					boolean = true;
-					correctBox();
+				if (hasChanged === true) {
+					hasChanged = false;
+					setTimeout(correctBox, 1500);
 				}
 			} else {
-				boolean = false;
-				document.getElementById("nameCard").style.width = "100%";
+				hasChanged = true;
+				document.getElementById("nameCard").style.width = "auto";
 				cCard.style.marginLeft = 0 +"px";
-				document.getElementById("contactCard").style.width = "100%";
+				document.getElementById("contactCard").style.width = "auto";
 			}
-			console.log(boolean)
+			console.log(hasChanged)
 		}
 
 		function correctBox() {
 			let nCard = document.getElementById("nameCard");
 			let cCard = document.getElementById("contactCard");
-			//console.log(nCard.offsetWidth);
-			//console.log(cCard.offsetWidth);
+			console.log(nCard.offsetWidth);
+			console.log(cCard.offsetWidth);
 			nCard.style.width = (nCard.offsetWidth - 8) +"px";
 			cCard.style.width = (cCard.offsetWidth - 8) +"px";
 			cCard.style.marginLeft = 16 +"px";
-				/*if (nCard.offsetWidth > cCard.offsetWidth) {
-					document.getElementById("contactCard").style.width = nCard.offsetWidth + "px";
-					console.log("Updated:"+cCard.offsetWidth);
-				} else if (nCard.offsetWidth < cCard.offsetWidth) {
-					document.getElementById("nameCard").style.width = cCard.offsetWidth + "px";
-					console.log("Updated:"+nCard.offsetWith);
-				}*/
+			console.log("Post: "+nCard.offsetWidth);
+			console.log("Post: "+cCard.offsetWidth);
 		}
 
 		//var box1 = document.getElementById("nameCard")

@@ -30,6 +30,18 @@
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}
+
+	#nameCard {
+		margin-left: 8px;
+		padding-right: 0px;
+		width: calc(50% - 8px);
+	}
+
+	#contactCard {
+		margin-right: 8px;
+		width: calc(50% - 8px);
+		margin-right: 0px;
+	}
 }
 
 /*Lg	*/
@@ -37,12 +49,36 @@
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}
+
+	#nameCard {
+		margin-left: 8px;
+		padding-right: 0px;
+		width: calc(50% - 8px);
+	}
+
+	#contactCard {
+		margin-right: 8px;
+		width: calc(50% - 8px);
+		margin-right: 0px;
+	}
 }
 
 /*Xl	*/
 @media screen and (min-width: 1200px) {
 	#gitHubRepoItem {
 		max-height: 60vh;
+	}
+
+	#nameCard {
+		margin-left: 8px;
+		padding-right: 0px;
+		width: calc(50% - 8px);
+	}
+
+	#contactCard {
+		margin-right: 8px;
+		width: calc(50% - 8px);
+		margin-right: 0px;
 	}
 }
 
