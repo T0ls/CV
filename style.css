@@ -5,6 +5,16 @@
         display: none; /* Nasconde la div sui dispositivi mobili */
     }
 
+	.navCompRepo {
+		max-height: 250px;
+	}
+
+	.repoNavList {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+	}
+
 	#gitHubRepoItem {
 		max-height: 50vh;
 	}
@@ -16,6 +26,16 @@
 
 /*Sm	*/
 @media screen and (min-width: 576px) and (max-width: 767px) {
+	.repoNavList {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+	}
+
+	.navCompRepo {
+		max-height: 250px;
+	}
+
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}
@@ -30,6 +50,22 @@
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}
+
+	.navCompRepo {
+		max-height: 270px;
+	}
+
+	#nameCard {
+		margin-left: 8px;
+		padding-right: 0px;
+		width: calc(50% - 8px);
+	}
+
+	#contactCard {
+		margin-right: 8px;
+		width: calc(50% - 8px);
+		margin-right: 0px;
+	}
 }
 
 /*Lg	*/
@@ -37,12 +73,44 @@
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}
+
+	.navCompRepo {
+		max-height: 250px;
+	}
+
+	#nameCard {
+		margin-left: 8px;
+		padding-right: 0px;
+		width: calc(50% - 8px);
+	}
+
+	#contactCard {
+		margin-right: 8px;
+		width: calc(50% - 8px);
+		margin-right: 0px;
+	}
 }
 
 /*Xl	*/
 @media screen and (min-width: 1200px) {
+	.navCompRepo {
+		max-height: 450px;
+	}
+
 	#gitHubRepoItem {
 		max-height: 60vh;
+	}
+
+	#nameCard {
+		margin-left: 8px;
+		padding-right: 0px;
+		width: calc(50% - 8px);
+	}
+
+	#contactCard {
+		margin-right: 8px;
+		width: calc(50% - 8px);
+		margin-right: 0px;
 	}
 }
 

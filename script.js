@@ -18,31 +18,6 @@ Useful resources:
 		none= path
 */
 
-// Changes for Window width
-/*let wWidth = window.innerWidth;
-let a = document.getElementsByClassName("repoCommitDate");
-			console.log(a.length)
-switch (true) {
-	case wWidth < 576: 
-			console.log("!")
-			console.log(a.length)
-		for(var j=0; j<a.length; j++) {
-			console.log("!")
-			a[j].setAttribute("class", "repoCommitDate col-8");
-			console.log(a[j].className)
-		}
-	break;
-	case wWidth >= 576 && wWidth < 768: 
-
-	break;
-	case wWidth >= 768 && wWidth < 992: 
-
-	break;
-	case wWidth >= 992: 
-
-	break;
-}*/
-
 
 // Leggo il contenuto del file Js
 const gitHubApi_Key = gitHubToken.token
@@ -83,7 +58,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			var link = document.createElement('a');
 
 			// Create the navbar objects list
-			link.setAttribute('class', 'nav-link col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12');
+			link.setAttribute('class', 'repoNavList nav-link col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12');
 			link.setAttribute('href', '#item-' + data[i].name);
 			link.textContent = data[i].name;
 			container1.appendChild(link);
@@ -98,8 +73,9 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			var div2 = document.createElement('div');
 			// div 1
 			if (i !== 0) {
-				div1.setAttribute('class', 'border-top pt-3');
+				div1.setAttribute('class', 'border-top');
 			}	
+			div1.setAttribute('class', 'pt-2');
 			div1.setAttribute('id', 'item-' + data[i].name);
 			// div 2
 			div2.setAttribute('class', 'd-inline-flex');
