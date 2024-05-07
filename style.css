@@ -5,6 +5,16 @@
         display: none; /* Nasconde la div sui dispositivi mobili */
     }
 
+	.navCompRepo {
+		max-height: 250px;
+	}
+
+	.repoNavList {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+	}
+
 	#gitHubRepoItem {
 		max-height: 50vh;
 	}
@@ -16,6 +26,16 @@
 
 /*Sm	*/
 @media screen and (min-width: 576px) and (max-width: 767px) {
+	.repoNavList {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+	}
+
+	.navCompRepo {
+		max-height: 250px;
+	}
+
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}
@@ -29,6 +49,10 @@
 @media screen and (min-width: 768px) and (max-width: 992px) {
 	#gitHubRepoItem {
 		max-height: 60vh;
+	}
+
+	.navCompRepo {
+		max-height: 270px;
 	}
 
 	#nameCard {
@@ -50,6 +74,10 @@
 		max-height: 60vh;
 	}
 
+	.navCompRepo {
+		max-height: 250px;
+	}
+
 	#nameCard {
 		margin-left: 8px;
 		padding-right: 0px;
@@ -65,6 +93,10 @@
 
 /*Xl	*/
 @media screen and (min-width: 1200px) {
+	.navCompRepo {
+		max-height: 450px;
+	}
+
 	#gitHubRepoItem {
 		max-height: 60vh;
 	}

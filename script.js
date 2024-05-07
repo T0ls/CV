@@ -58,7 +58,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			var link = document.createElement('a');
 
 			// Create the navbar objects list
-			link.setAttribute('class', 'nav-link col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12');
+			link.setAttribute('class', 'repoNavList nav-link col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12');
 			link.setAttribute('href', '#item-' + data[i].name);
 			link.textContent = data[i].name;
 			container1.appendChild(link);
@@ -73,8 +73,9 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			var div2 = document.createElement('div');
 			// div 1
 			if (i !== 0) {
-				div1.setAttribute('class', 'border-top pt-3');
+				div1.setAttribute('class', 'border-top');
 			}	
+			div1.setAttribute('class', 'pt-2');
 			div1.setAttribute('id', 'item-' + data[i].name);
 			// div 2
 			div2.setAttribute('class', 'd-inline-flex');
