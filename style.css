@@ -75,7 +75,7 @@
 	}
 
 	.navCompRepo {
-		max-height: 250px;
+		max-height: 360px;
 	}
 
 	#nameCard {
@@ -94,7 +94,7 @@
 /*Xl	*/
 @media screen and (min-width: 1200px) {
 	.navCompRepo {
-		max-height: 450px;
+		max-height: 500px;
 	}
 
 	#gitHubRepoItem {

@@ -392,10 +392,7 @@
 									<ul class="list-group pt-2 pb-2">
 										<li class="list-group-item container" style="background-color: #DEE2E6">
 											<div class="row mt-1 mb-1">
-												<div class="col-1">
-													<a href=""><img style="height: 20px; width: 20px;" src="backArrow.png"></a>
-												</div>
-												<div class="col-7 text-truncate">
+												<div class="col-8 text-truncate">
 													<a class="aHide" href="" target="_blank">Repo Name</a>
 												</div>
 												<div class="col-4 text-truncate">
@@ -422,14 +419,14 @@
 											</div>
 										</li>
 										<li class="list-group-item">
-											<div class="container p-0">
+											<div id="pathBack" class="container p-0">
 												<div class="row m-0 mt-1 mb-1">
-													<div class="col-md-4 col-sm-4 col-8 text-truncate ps-0">
-														<img src="folder2x.png" style="height: 24px; width: 24px;">
-														<a class="aHide ms-2 mb-0">repo folder item</a>
+													<div class="col-md-4 col-sm-4 col-8 ps-0">
+														<a class="aHide m-0 d-flex">
+															<img alt="..." src="folder2x.png" style="height: 24px; width: 24px;">
+															<p class="ms-1 m-0">..</p>
+														</a>
 													</div>
-													<div class="col-md-6 col-sm-6 repoCommitText text-truncate "><a class="aHide mb1">aggiunte immagini x file,folder + inizio implementazione rudimentale</a></div>
-													<div class="col-md-2 col-sm-2 col-4 repoCommitDate text-truncate pe-0"><p class="mb-0 text-end">4 hours ago</p></div>
 												</div>
 											</div>
 										</li>
@@ -437,46 +434,13 @@
 											<div class="container p-0">
 												<div class="row m-0 mt-1 mb-1">
 													<div class="col-md-4 col-sm-4 col-8 text-truncate ps-0">
-														<img src="file2x.png" style="height: 24px; width: 24px;">
-														<a class="aHide ms-2 mb-0">repo folder item</a>
+														<img alt="..." src="" style="height: 24px; width: 24px;">
+														<a class="aHide ms-2 mb-0"></a>
 													</div>
-													<div class="col-md-6 col-sm-6 repoCommitText text-truncate "><a class="aHide mb1">aggiunte immagini x file,folder + inizio implementazione rudimentale</a></div>
-													<div class="col-md-2 col-sm-2 col-4 repoCommitDate text-truncate pe-0"><p class="mb-0 text-end">4 hours ago</p></div>
+													<div class="col-md-6 col-sm-6 repoCommitText text-truncate "><a class="aHide mb1"></a></div>
+													<div class="col-md-2 col-sm-2 col-4 repoCommitDate text-truncate pe-0"><p class="mb-0 text-end"></p></div>
 												</div>
 											</div>
-										</li>
-										<li class="list-group-item">
-											test 0
-										</li>
-										<li class="list-group-item">
-											test 2
-										</li>
-										<li class="list-group-item">
-											test 3
-										</li>
-										<li class="list-group-item">
-											test 1
-										</li>
-										<li class="list-group-item">
-											test 2
-										</li>
-										<li class="list-group-item">
-											test 3
-										</li>
-										<li class="list-group-item">
-											test 2
-										</li>
-										<li class="list-group-item">
-											test 1
-										</li>
-										<li class="list-group-item">
-											test 2
-										</li>
-										<li class="list-group-item">
-											test 3
-										</li>
-										<li class="list-group-item">
-											test 2
 										</li>
 									</ul>
 								</div>
@@ -511,48 +475,10 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 		<script>
-		// Box in alto fix altezza
-		let hasChanged;	
-		if(window.innerWidth>= 768) {
-			hasChanged = true;
-		} else {
-			hasChanged = false;
-		}
 
-		//checkCurrentBoxState();
-		window.addEventListener('resize', function() {
-			//checkCurrentBoxState();
-		});
+		/*window.addEventListener('resize', function() {
+		});*/
 		
-		function checkCurrentBoxState() {
-			let nCard = document.getElementById("nameCard");
-			let cCard = document.getElementById("contactCard");
-			if(window.innerWidth>= 768) {
-				if (hasChanged === true) {
-					hasChanged = false;
-					setTimeout(correctBox, 1500);
-				}
-			} else {
-				hasChanged = true;
-				document.getElementById("nameCard").style.width = "auto";
-				cCard.style.marginLeft = 0 +"px";
-				document.getElementById("contactCard").style.width = "auto";
-			}
-			console.log(hasChanged)
-		}
-
-		function correctBox() {
-			let nCard = document.getElementById("nameCard");
-			let cCard = document.getElementById("contactCard");
-			console.log(nCard.offsetWidth);
-			console.log(cCard.offsetWidth);
-			nCard.style.width = (nCard.offsetWidth - 8) +"px";
-			cCard.style.width = (cCard.offsetWidth - 8) +"px";
-			cCard.style.marginLeft = 16 +"px";
-			console.log("Post: "+nCard.offsetWidth);
-			console.log("Post: "+cCard.offsetWidth);
-		}
-
 		//var box1 = document.getElementById("nameCard")
 		//document.getElementById("contactCard").style.height = box1.offsetHeight + "px";
 		
