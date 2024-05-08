@@ -82,7 +82,9 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			div2.setAttribute('id', 'dotDiv' + data[i].name);
 			// a
 			a.setAttribute('id', 'repoLink-' + data[i].name);
-			a.setAttribute('onclick', 'hideBlock(\'' + data[i].name + '\')');
+			//a.setAttribute('onclick', 'hideBlock(\'' + data[i].name + '\')');
+			a.setAttribute('onclick', 'hideBlock(\'' + data[i].name + "!key!" + "" + '\')');
+			//console.log(data[i] + "!key!" + "")
 			//a.setAttribute('href', "#gitHubPage");
 			// h4
 			//h4.setAttribute('class', 'text-primary')
@@ -106,7 +108,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 			container4.appendChild(span)
 			container4.appendChild(p2);
 		}
-		console.log(data)
+		//console.log(data)
 	})
 	.catch(error => {
 		console.error(error);
@@ -137,18 +139,19 @@ function showBlock(repoN) {
 
 	//showPath("assembly-MIPS","min-max/main.asm");
 	//console.log(repoN);	
-	showPath(repoN,"");
+	showPath(repoN.split("!key!")[0], repoN.split("!key!")[1]);
 }
 
 let dati = new Map();
 
 async function fetchAPI(repo, path) {
-	let key = [repo, path];
+	let key = repo + "!key!" + path;
+	//console.log(key)
 	if (dati.has(key)) {
-		console.log("Found something!");
+		//console.log("Found something!");
 		return dati.get(key)
 	} else {
-		let response = await fetch(`https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${repo}/contents/${path}`, {
+		let response = await fetch(`https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${key.split("!key!")[0]}/contents/${key.split("!key!")[1]}`, {
 			method: 'GET',
 			headers: { 'Accept': 'application/json',  'Authorization': 'Bearer ' + gitHubApi_Key, }
 		})
@@ -158,44 +161,61 @@ async function fetchAPI(repo, path) {
 		let data = await response.json()
 		dati.set(key, data);
 		//console.log(dati.set(key, data))
+		//console.log(data)
 		return data
 	}
 }
 
 function showPath(repo, path) {
-	fetchAPI(repo, path);
-	//console.log(fetchAPI(repo, path));
-	let key = [repo, path];
-	console.log(key);
-	console.log(dati.get(["assembly-MIPS",""]));
-	//console.log(dati.get(key))
-	//console.log(dati)
-    /*card = document.getElementById('itemRepoDiv');
-    container = document.getElementById('containerItemRepo');
-    container.innerHTML = "";
-    container.append(card);*/
+	fetchAPI(repo, path).then(function(repoData){
+		console.log(repoData);
+		//console.log(fetchAPI(repo, path));
+		//console.log(key);
+		//console.log(dati.get(["assembly-MIPS",""]));
+		//console.log(dati.get(key))
+		//console.log(dati)
 
-	/*for (i = 0; i < popolari.results.length; i++) {
+		//document.getElementById('containerItemRepo').onclick();
+		container = document.getElementById('containerItemRepo');
+		card = document.getElementById('itemRepoLi');
+		container.innerHTML = "";
+		container.append(card);
 
-        movie = popolari.results[i];
-        clone = card.cloneNode(true);
-        clone.id = 'card-film-' + i;
-
-        title = clone.getElementsByClassName('card-title')[0];
-        overview = clone.getElementsByClassName('card-text')[0];
-        image = clone.getElementsByClassName('card-img-top')[0];
-        button = clone.getElementsByClassName('btn-primary')[0];
-
-        title.innerHTML = movie.title;
-        overview.innerHTML = movie.overview;
-        image.src = image_base + movie.poster_path;
-        button.href = "scheda-film.html?id=" + movie.id;
-
-        clone.classList.remove('d-none')
-        card.before(clone)
-    }*/
-
-
+		if ("encoding" in repoData) {
+			console.log("1111");
+			let data = repoData;
+			clone = card.cloneNode(true);
+			clone.id = 'card-film-1'+i;
+			image = clone.getElementsByClassName('repoClassImage')[0];
+			nome = clone.getElementsByClassName('repoClassName')[0];
+			if (data.type == "file") {
+				image.src = "file2X.png";
+			} else {
+				image.src = "folder2X.png";
+			} 
+			nome.innerHTML = btoa(repoData.encoding)	
+			console.log(nome.innerHTML = btoa(repoData.content));
+			console.log("!");
+			clone.classList.remove('d-none')
+			card.before(clone)
+		}
+		for (i = 0; i < repoData.length; i++) {
+			let data = repoData[i];
+			clone = card.cloneNode(true);
+			clone.id = 'card-film-1'+i;
+			image = clone.getElementsByClassName('repoClassImage')[0];
+			nome = clone.getElementsByClassName('repoClassName')[0];
+			if (data.type == "file") {
+				image.src = "file2X.png";
+			} else {
+				image.src = "folder2X.png";
+			} 
+			nome.innerHTML = repoData[i].name; 
+			nome.setAttribute('onclick', 'hideBlock(\'' + repo + "!key!" + repoData[i].path + '\')');
+			clone.classList.remove('d-none')
+			card.before(clone)
+		}
+	});
 }
 
 /* End */
