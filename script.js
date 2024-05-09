@@ -175,45 +175,52 @@ function showPath(repo, path) {
 		//console.log(dati.get(key))
 		//console.log(dati)
 
+		//console.log(repoData.length)
 		//document.getElementById('containerItemRepo').onclick();
-		container = document.getElementById('containerItemRepo');
-		card = document.getElementById('itemRepoLi');
-		container.innerHTML = "";
-		container.append(card);
+		if (repoData.length >= 1) {
+			//document.getElementById('containerItemRepo').style.display = "block";
+			//document.getElementById('containerTextDisplayRepo').style.display = "none";
+			for (i = 0; i < repoData.length; i++) {
+				container = document.getElementById('containerItemRepo');
+				card = document.getElementById('itemRepoLi');
+				container.innerHTML = "";
+				container.append(card);
 
-		if ("encoding" in repoData) {
-			console.log("1111");
-			let data = repoData;
-			clone = card.cloneNode(true);
-			clone.id = 'card-film-1'+i;
-			image = clone.getElementsByClassName('repoClassImage')[0];
-			nome = clone.getElementsByClassName('repoClassName')[0];
-			if (data.type == "file") {
-				image.src = "file2X.png";
-			} else {
-				image.src = "folder2X.png";
-			} 
-			nome.innerHTML = btoa(repoData.encoding)	
-			console.log(nome.innerHTML = btoa(repoData.content));
-			console.log("!");
-			clone.classList.remove('d-none')
-			card.before(clone)
-		}
-		for (i = 0; i < repoData.length; i++) {
-			let data = repoData[i];
-			clone = card.cloneNode(true);
-			clone.id = 'card-film-1'+i;
-			image = clone.getElementsByClassName('repoClassImage')[0];
-			nome = clone.getElementsByClassName('repoClassName')[0];
-			if (data.type == "file") {
-				image.src = "file2X.png";
-			} else {
-				image.src = "folder2X.png";
-			} 
-			nome.innerHTML = repoData[i].name; 
-			nome.setAttribute('onclick', 'hideBlock(\'' + repo + "!key!" + repoData[i].path + '\')');
-			clone.classList.remove('d-none')
-			card.before(clone)
+				let data = repoData[i];
+				//console.log(data)
+				clone = card.cloneNode(true);
+				clone.id = 'card-film-1' + i;
+				image = clone.getElementsByClassName('repoClassImage')[0];
+				nome = clone.getElementsByClassName('repoClassName')[0];
+				if (data.type == "file") {
+					image.src = "file2X.png";
+				} else {
+					image.src = "folder2X.png";
+				} 
+				nome.innerHTML = repoData[i].name; 
+				nome.setAttribute('onclick', 'hideBlock(\'' + repo + "!key!" + repoData[i].path + '\')');
+				clone.classList.remove('d-none');
+				card.before(clone);
+			}
+		} else {
+			if ("encoding" in repoData) {
+				document.getElementById('containerItemRepo').style.display = "none";
+				
+				console.log("1111");
+				container = document.getElementById('containerTextDisplayRepo');
+				container.style.display = "block";
+				card = document.getElementById('repoClassTextList');
+				container.innerHTML = "";
+				container.append(card);
+
+				clone = card.cloneNode(true);
+				nome = clone.getElementsByClassName('repoClassText')[0];
+				nome.innerHTML = btoa(repoData.content);
+				console.log(nome.innerHTML = btoa(repoData.content));
+				console.log("!");
+				clone.classList.remove('d-none');
+				card.before(clone);
+			}
 		}
 	});
 }
