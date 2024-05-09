@@ -1,4 +1,26 @@
 /*
+fetch('https://api.github.com/users/T0ls/repos', {
+	method: 'GET',
+	headers: {
+		'Accept': 'application/json'
+	}
+})
+	.then(response => {
+		if (!response.ok) {
+			throw new Error('Error requesting GitHub API: ');
+		}
+		return response.json();
+	})
+	.then(data => {
+		//console.log(data);
+	})
+	.catch(error => {
+		console.error(error);
+});
+*/
+
+
+/*
 Useful resources:
 	-T0ls/repos 
 		Profile name= owner.login 
@@ -17,6 +39,12 @@ Useful resources:
 		Tipo= type
 		none= path
 */
+
+function formatStringWithBr(str) {
+	//console.log(str.replace(/^/gm, "<br>"))
+	console.log(str.replace(/\n/g, "<br>"))
+	return str.replace(/\n/g, "<br>");
+}
 
 
 // Leggo il contenuto del file Js
@@ -119,16 +147,10 @@ fetch('https://api.github.com/users/T0ls/repos', {
 
 /* Hide/Show Functions */
 
-function hideBlock(x) {
+function hideBlock(repoN) {
 
-	//console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
 	var block = document.getElementById("gitHubProfile");
 	block.style.display = "none";
-	showBlock(x);
-	//console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
-}
-
-function showBlock(repoN) {
 	//console.log(data);
 	//console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
 	var block = document.getElementById("gitHubRepoItem");
@@ -167,29 +189,55 @@ async function fetchAPI(repo, path) {
 }
 
 function showPath(repo, path) {
+			console.log("Path:",path)
 	fetchAPI(repo, path).then(function(repoData){
-		console.log(repoData);
-		//console.log(fetchAPI(repo, path));
-		//console.log(key);
-		//console.log(dati.get(["assembly-MIPS",""]));
-		//console.log(dati.get(key))
-		//console.log(dati)
+		
+		let app;
+		if (path.split("/")[0] !== "") {
+			if (path.split("/") !== 1 ) {
+				app = path.split("/");
+				app.pop();
+				app = app.join("/");
+			} else {
+				app = ""
+			}
+			backButton = document.getElementById('pathBackLink');
+			backButton.setAttribute('onclick', 'hideBlock(\'' + repo + "!key!" + app + '\')');
+		} else {
+			//show rep list
+		}
+		if ("encoding" in repoData) {
+			document.getElementById('containerTextDisplayRepo').style.display = "block";
+			document.getElementById('containerItemRepo').style.display = "none";
 
-		//console.log(repoData.length)
-		//document.getElementById('containerItemRepo').onclick();
-		if (repoData.length >= 1) {
-			//document.getElementById('containerItemRepo').style.display = "block";
-			//document.getElementById('containerTextDisplayRepo').style.display = "none";
+			container = document.getElementById('containerTextDisplayRepo');
+			card = document.getElementById('repoIdTextList');
+			container.innerHTML = "";
+			container.append(card);
+
+			clone = card.cloneNode(true);
+			clone.id = 'card-content';
+			nome = clone.getElementsByClassName('repoClassText')[0];
+			//console.log(formatStringWithBr(atob(repoData.content)))
+			nome.innerHTML = formatStringWithBr(atob(repoData.content));	
+			clone.classList.remove('d-none')
+			card.before(clone)
+
+			document.getElementById('repoIdTextList').style.display = "none";
+		} else {
+			document.getElementById('containerTextDisplayRepo').style.display = "none";
+			document.getElementById('containerItemRepo').style.display = "block";
+
+			container = document.getElementById('containerItemRepo');
+			card = document.getElementById('itemRepoLi');
+			container.innerHTML = "";
+			container.append(card);
 			for (i = 0; i < repoData.length; i++) {
-				container = document.getElementById('containerItemRepo');
-				card = document.getElementById('itemRepoLi');
-				container.innerHTML = "";
-				container.append(card);
+
 
 				let data = repoData[i];
-				//console.log(data)
 				clone = card.cloneNode(true);
-				clone.id = 'card-film-1' + i;
+				clone.id = 'card-film-1'+i;
 				image = clone.getElementsByClassName('repoClassImage')[0];
 				nome = clone.getElementsByClassName('repoClassName')[0];
 				if (data.type == "file") {
@@ -199,27 +247,8 @@ function showPath(repo, path) {
 				} 
 				nome.innerHTML = repoData[i].name; 
 				nome.setAttribute('onclick', 'hideBlock(\'' + repo + "!key!" + repoData[i].path + '\')');
-				clone.classList.remove('d-none');
-				card.before(clone);
-			}
-		} else {
-			if ("encoding" in repoData) {
-				document.getElementById('containerItemRepo').style.display = "none";
-				
-				console.log("1111");
-				container = document.getElementById('containerTextDisplayRepo');
-				container.style.display = "block";
-				card = document.getElementById('repoClassTextList');
-				container.innerHTML = "";
-				container.append(card);
-
-				clone = card.cloneNode(true);
-				nome = clone.getElementsByClassName('repoClassText')[0];
-				nome.innerHTML = btoa(repoData.content);
-				console.log(nome.innerHTML = btoa(repoData.content));
-				console.log("!");
-				clone.classList.remove('d-none');
-				card.before(clone);
+				clone.classList.remove('d-none')
+				card.before(clone)
 			}
 		}
 	});
@@ -228,23 +257,3 @@ function showPath(repo, path) {
 /* End */
 
 
-/*
-fetch('https://api.github.com/users/T0ls/repos', {
-	method: 'GET',
-	headers: {
-		'Accept': 'application/json'
-	}
-})
-	.then(response => {
-		if (!response.ok) {
-			throw new Error('Error requesting GitHub API: ');
-		}
-		return response.json();
-	})
-	.then(data => {
-		//console.log(data);
-	})
-	.catch(error => {
-		console.error(error);
-});
-*/
