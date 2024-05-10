@@ -371,14 +371,25 @@
 												<div class="col-md-12 col-sm-12 col-12">
 													<div class="card-body p-0">
 														<div class="row">
-															<div class="col-4 p-0 border-end" style=" overflow-y:auto; -ms-overflow-style: none; scrollbar-width: none;" tabindex="0">
-																<nav id="navbar-example3" class="h-100 align-items-stretch">
+															<div id="repoNavContainer" class="col-4 navCompRepo pop-0 border-end" style="overflow-y:auto; -ms-overflow-style: none; scrollbar-width: none;" tabindex="0">
+																<nav id="repoNavBar"  class="d-none align-items-stretch">
 																	<nav id="gitHubRepoList" class="nav nav-pills container p-0 navCompRepo">
+																		<a class="repoNavList nav-link col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" href=""></a>
 																	</nav>
 																</nav>
 															</div>
-															<div class="col-8">
-																<div id="gitHubRepoItems" class="navCompRepo" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="false" style=" overflow-y: scroll; -ms-overflow-style: none; scrollbar-width: none;" tabindex="0">
+															<div id="repoInfoContainer" class="col-8 navCompRepo" style="overflow-y:auto; -ms-overflow-style: none; scrollbar-width: none;" tabindex="0">
+																<div id="gitHubRepoItems" class="d-none" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="false" style=" overflow-y: scroll; -ms-overflow-style: none; scrollbar-width: none;" tabindex="0">
+																	<div class="repoInfoDiv pt-2" id="">
+																		<a id="" class="repoNavLink" onclick="hideBlock('')">
+																			<h4 class="repoNavTitle"></h4>
+																		</a>
+																		<p class="repoNavDescr m-1"></p>
+																		<div class="d-inline-flex" id="">
+																		<span class="repoLanguageColor"></span>
+																			<p class="repoNavLang"></p>
+																		</div>
+																	</div>
 																</div>
 															</div>
 														</div>
@@ -393,7 +404,7 @@
 										<li class="list-group-item container" style="background-color: #DEE2E6">
 											<div class="row mt-1 mb-1">
 												<div class="col-8 text-truncate">
-													<a class="aHide" href="" target="_blank">Repo Name</a>
+													<a id="orginalRepoGitHubLink" class="aHide" href="" target="_blank" title="GiHub Repo Link">Repo Name</a>
 												</div>
 												<div class="col-4 text-truncate">
 													<button class="d-flex buttonHide ps-2 pe-2 pt-1 pb-1" style="height: inherit; float: right;">
@@ -445,8 +456,8 @@
 											</li>
 										</div>
 										<div id="containerTextDisplayRepo" style="display: none;">
-											<li id="repoClassTextList" class="list-group-item col-12" style="max-width: inherit;">
-												<p id="repoClassText" class="m-0" style="white-space: nowrap; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none;"></p>	
+											<li id="repoIdTextList" class="list-group-item col-12" style="max-width: inherit;">
+												<p id="repoContentIdText" class="repoClassText m-0" style="white-space: nowrap; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none;"></p>	
 											</li>	
 										</div>
 									</ul>

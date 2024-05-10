@@ -41,7 +41,7 @@ Useful resources:
 */
 
 function formatStringWithBr(str) {
-	console.log(str.replace(/\n/g, "<br>"))
+	//console.log(str.replace(/\n/g, "<br>"))
 	return str.replace(/\n/g, "<br>");
 }
 
@@ -60,7 +60,7 @@ fetch('https://api.github.com/user', { method: 'GET', headers: { 'Authorization'
 	profileUrl.innerHTML = data.login;
 }) 
 
-.catch(error => { console.error('Si è verificato un errore:', error); });
+.catch(error => { console.error('An error occurred:', error); });
 /* End */
 
 /* GitHub Api fetch Repositories List */
@@ -97,62 +97,40 @@ function fetchMenu() {
 		.catch(error => { console.error(error);	});
 }
 
-function showGitHubMenu(data) {
-	var container1 = document.getElementById("gitHubRepoList");
-	var container2 = document.getElementById("gitHubRepoItems");
-	for(var i=0; i<data.length; i++) {
-		var link = document.createElement('a');
+function showGitHubMenu(repoData) {
+	containerNav = document.getElementById('repoNavContainer');
+	containerInfo = document.getElementById('repoInfoContainer');
+	cardNav = document.getElementById('repoNavBar');
+	cardInfo = document.getElementById('gitHubRepoItems');
+	containerNav.innerHTML = "";
+	containerInfo.innerHTML = "";
+	containerNav.append(cardNav);
+	containerInfo.append(cardInfo);
+	for (i = 0; i < repoData.length; i++) {
 
-		// Create the navbar objects list
-		link.setAttribute('class', 'repoNavList nav-link col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12');
-		link.setAttribute('href', '#item-' + data[i].name);
-		link.textContent = data[i].name;
-		container1.appendChild(link);
+		let data = repoData[i];
+		cloneNav = cardNav.cloneNode(true);
+		cloneInfo = cardInfo.cloneNode(true);
+		aNav = cloneNav.getElementsByClassName('repoNavList')[0];
+		aInfo = cloneInfo.getElementsByClassName('repoNavLink')[0];
+		h4Info = cloneInfo.getElementsByClassName('repoNavTitle')[0];
+		pInfo = cloneInfo.getElementsByClassName('repoNavDescr')[0];
+		langInfo = cloneInfo.getElementsByClassName('repoNavLang')[0];
+		if (i != 0) {
+			cloneInfo.getElementsByClassName('repoInfoDiv')[0].setAttribute('class', 'border-top');
+		}
+		aNav.setAttribute('href', '#item-' + data.name);
+		aNav.textContent = data.name;
+		aInfo.setAttribute('href', '#item-' + data.name);
+		aInfo.setAttribute('onclick', 'hideBlock(\'' + data.name + "!key!" +  "" + '\')');
+		h4Info.innerHTML = data.name;
+		pInfo.innerHTML = data.description;
+		langInfo.innerHTML = data.language;
 
-		// Create the scrollbar items list
-		var div1 = document.createElement('div');
-		var a = document.createElement('a');
-		var h4 = document.createElement('h4');
-		var p1 = document.createElement('p');
-		var p2 = document.createElement('p');
-		var span = document.createElement('span');
-		var div2 = document.createElement('div');
-		// div 1
-		if (i !== 0) {
-			div1.setAttribute('class', 'border-top');
-		}	
-		div1.setAttribute('class', 'pt-2');
-		div1.setAttribute('id', 'item-' + data[i].name);
-		// div 2
-		div2.setAttribute('class', 'd-inline-flex');
-		div2.setAttribute('id', 'dotDiv' + data[i].name);
-		// a
-		a.setAttribute('id', 'repoLink-' + data[i].name);
-		//a.setAttribute('onclick', 'hideBlock(\'' + data[i].name + '\')');
-		a.setAttribute('onclick', 'hideBlock(\'' + data[i].name + "!key!" + "" + '\')');
-		//console.log(data[i] + "!key!" + "")
-		//a.setAttribute('href', "#gitHubPage");
-		// h4
-		//h4.setAttribute('class', 'text-primary')
-		h4.innerHTML = data[i].name;
-		// p
-		p1.setAttribute('class', 'm-1')
-		p1.innerHTML = data[i].description;
-		p2.innerHTML = data[i].language;
-		// span
-		span.setAttribute('class','repoLanguageColor');
-
-		container2.appendChild(div1);
-
-		var container3 = document.getElementById("item-" + data[i].name);
-		container3.appendChild(a);
-		a.appendChild(h4);
-		container3.appendChild(p1);
-
-		container3.appendChild(div2);
-		var container4 = document.getElementById("dotDiv" + data[i].name);
-		container4.appendChild(span)
-		container4.appendChild(p2);
+		cloneNav.classList.remove('d-none')
+		cloneInfo.classList.remove('d-none')
+		cardNav.before(cloneNav)
+		cardInfo.before(cloneInfo)
 	}
 }
 
@@ -176,7 +154,7 @@ function hideBlock(repoN) {
 }
 
 let dati = new Map();
-
+// get repo infos
 async function fetchAPI(repo, path) {
 	let key = repo + "!key!" + path;
 	//console.log(key)
@@ -199,10 +177,32 @@ async function fetchAPI(repo, path) {
 	}
 }
 
+// get repo commits infos
+async function fetchCommits(repo) {
+	let response = await fetch(`https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${repo}/commits/f13a9251168852dcec6cd78328408932b6787bbd`, {
+		method: 'GET',
+		headers: { 'Accept': 'application/json',  'Authorization': 'Bearer ' + gitHubApi_Key, }
+	})
+	if (!response.ok) {
+		console.error('Error requesting GitHub API')
+	} 
+	let data = await response.json()
+	console.log(data)
+	return data
+}
+
 function showPath(repo, path) {
-			console.log("Path:",path)
-	fetchAPI(repo, path).then(function(repoData){
-		
+		fetchCommits(repo);	
+		fetchAPI(repo, path).then(function(repoData){
+		document.getElementById("orginalRepoGitHubLink").innerHTML = repo
+		let linkOriginalRepo
+		if (repoData.length === undefined) {
+			linkOriginalRepo = repoData.html_url.replace("https://github.com/", ""); 
+		} else {
+			linkOriginalRepo = repoData[0].html_url.replace("https://github.com/", ""); 
+		}
+		linkOriginalRepo =  linkOriginalRepo.split("/");
+		document.getElementById("orginalRepoGitHubLink").href = `https://github.com/${linkOriginalRepo[0]}/${linkOriginalRepo[1]}`;
 		let app;
 		if (path.split("/")[0] !== "") {
 			if (path.split("/") !== 1 ) {
@@ -228,9 +228,10 @@ function showPath(repo, path) {
 			container.append(card);
 
 			clone = card.cloneNode(true);
-			clone.id = 'card-content';
 			nome = clone.getElementsByClassName('repoClassText')[0];
 			//console.log(formatStringWithBr(atob(repoData.content)))
+			console.log(atob(repoData.content));
+			console.log(nome);
 			nome.innerHTML = formatStringWithBr(atob(repoData.content));	
 			clone.classList.remove('d-none')
 			card.before(clone)
@@ -246,10 +247,8 @@ function showPath(repo, path) {
 			container.append(card);
 			for (i = 0; i < repoData.length; i++) {
 
-
 				let data = repoData[i];
 				clone = card.cloneNode(true);
-				clone.id = 'card-film-1'+i;
 				image = clone.getElementsByClassName('repoClassImage')[0];
 				nome = clone.getElementsByClassName('repoClassName')[0];
 				if (data.type == "file") {
