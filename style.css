@@ -12,7 +12,7 @@
 	.repoNavList {
 		overflow: hidden;
 		text-overflow: ellipsis;
-		word-wrap: break-word;
+		word-wrap: break-word !important;
 	}
 
 	#gitHubRepoItem {
@@ -29,7 +29,7 @@
 	.repoNavList {
 		overflow: hidden;
 		text-overflow: ellipsis;
-		word-wrap: break-word;
+		word-wrap: break-word !important;
 	}
 
 	.navCompRepo {
@@ -47,12 +47,18 @@
 
 /*Md	*/
 @media screen and (min-width: 768px) and (max-width: 992px) {
-	#gitHubRepoItem {
-		max-height: 60vh;
+	.repoNavList {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word !important;
 	}
 
 	.navCompRepo {
 		max-height: 270px;
+	}
+
+	#gitHubRepoItem {
+		max-height: 60vh;
 	}
 
 	#nameCard {
@@ -70,12 +76,18 @@
 
 /*Lg	*/
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-	#gitHubRepoItem {
-		max-height: 60vh;
+	.repoNavList {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word !important;
 	}
 
 	.navCompRepo {
 		max-height: 360px;
+	}
+
+	#gitHubRepoItem {
+		max-height: 60vh;
 	}
 
 	#nameCard {
@@ -93,6 +105,12 @@
 
 /*Xl	*/
 @media screen and (min-width: 1200px) {
+	.repoNavList {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-wrap: break-word !important;
+	}
+
 	.navCompRepo {
 		max-height: 500px;
 	}
@@ -163,34 +181,38 @@
 	background-color: #282f36;
 }
 
+/*
+		/* Nascondi le scrollbar standard 
+		::-webkit-scrollbar {
+			display: none;
+		}
 
-/*Color for Progress Bars*/
-/*.greenBar {
-	background-color: #BBFFBB;
-}
-.greenBar > div {
-	background-color: #28a745;
-}
+		/* Stile della scrollbar personalizzata 
+		::-webkit-scrollbar {
+			width: 6px; /* Larghezza della scrollbar 
+		}
 
-.redBar {
-	background-color: #FFBBBB;
-}
-.redBar > div {
-	background-color: #dc3545;
-}
+		/* Traccia della scrollbar 
+		::-webkit-scrollbar-track {
+			background: transparent; /* Colore di sfondo della traccia 
+		}
 
-.blueBar {
-	background-color: #BFC8FF;
-}
-.blueBar > div {
-	background-color: #007bff;
-}
+		/* Maniglia della scrollbar 
+		::-webkit-scrollbar-thumb {
+			background: rgba(0, 0, 0, 0.3); /* Colore della maniglia 
+			border-radius: 10px; /* Angoli arrotondati 
+		}
 
-.yellowBar {
-	background-color: #FFE28C;
-}
-.yellowBar > div {
-	background-color: #ffc107;
-}*/
+		/* Cambia lo stile della maniglia quando ci si passa sopra con il mouse 
+		::-webkit-scrollbar-thumb:hover {
+			background: rgba(0, 0, 0, 0.5); /* Colore della maniglia al passaggio del mouse 
+		}
 
-
+		/* Media query per mantenere le dimensioni fisse della scrollbar 
+		@media (min-width: 768px) {
+			/* Dimensioni fisse della scrollbar per dispositivi con larghezza massima di 768px 
+			::-webkit-scrollbar {
+				width: 6px; /* Larghezza della scrollbar 
+			}
+		} 
+*/

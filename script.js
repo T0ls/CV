@@ -98,9 +98,9 @@ function fetchMenu() {
 }
 
 function showGitHubMenu(repoData) {
-	containerNav = document.getElementById('repoNavContainer');
+	containerNav = document.getElementById('repoNavBar');
 	containerInfo = document.getElementById('repoInfoContainer');
-	cardNav = document.getElementById('repoNavBar');
+	cardNav = document.getElementById('repoNavBarA');
 	cardInfo = document.getElementById('gitHubRepoItems');
 	containerNav.innerHTML = "";
 	containerInfo.innerHTML = "";
@@ -113,15 +113,17 @@ function showGitHubMenu(repoData) {
 		cloneInfo = cardInfo.cloneNode(true);
 		aNav = cloneNav.getElementsByClassName('repoNavList')[0];
 		aInfo = cloneInfo.getElementsByClassName('repoNavLink')[0];
+		//divBorderInfo = cloneInfo.getElementsByClassName('repoDivBorder')[0];
 		h4Info = cloneInfo.getElementsByClassName('repoNavTitle')[0];
 		pInfo = cloneInfo.getElementsByClassName('repoNavDescr')[0];
 		langInfo = cloneInfo.getElementsByClassName('repoNavLang')[0];
-		if (i != 0) {
-			cloneInfo.getElementsByClassName('repoInfoDiv')[0].setAttribute('class', 'border-top');
+		if (i === 0) {
+			cloneInfo.getElementsByClassName('repoDivBorder')[0].setAttribute('class', 'd-none');
 		}
 		aNav.setAttribute('href', '#item-' + data.name);
 		aNav.textContent = data.name;
-		aInfo.setAttribute('href', '#item-' + data.name);
+		//aInfo.setAttribute('href', '#item-' + data.name);
+		aInfo.setAttribute('id', 'item-' + data.name);
 		aInfo.setAttribute('onclick', 'hideBlock(\'' + data.name + "!key!" +  "" + '\')');
 		h4Info.innerHTML = data.name;
 		pInfo.innerHTML = data.description;
@@ -179,7 +181,7 @@ async function fetchAPI(repo, path) {
 
 // get repo commits infos
 async function fetchCommits(repo) {
-	let response = await fetch(`https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${repo}/commits/f13a9251168852dcec6cd78328408932b6787bbd`, {
+	let response = await fetch(`https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${repo}/commits`, {
 		method: 'GET',
 		headers: { 'Accept': 'application/json',  'Authorization': 'Bearer ' + gitHubApi_Key, }
 	})
