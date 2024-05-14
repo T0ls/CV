@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="api_token.js"></script>
 		<script src="script.js"></script>
-	<style>
+		<style>
 		</style>
 	</head>
 	<body>
@@ -80,15 +80,17 @@
 								<div class="row m-0">
 									<div class="card-body col-12 col-sm-12">
 										<h5 class="card-title ms-1">Contacts</h5>
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item text-truncate hvr-forward border-0"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
-											<div class="border-top"></div>
-											<li class="list-group-item text-truncate hvr-forward border-0"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
-											<div class="border-top"></div>
-											<li class="list-group-item text-truncate hvr-forward border-0"><b>Telegram:</b> <a href="https://t.me/T0ls_RG">@T0ls_RG</a></li>
-											<div class="border-top"></div>
-											<li class="list-group-item text-truncate hvr-forward border-0"><b>Github:</b> <a href="https://github.com/T0ls">https://github.com/T0ls</a></li>
-										</ul>
+										<div style="">
+											<ul class="list-group list-group-flush">
+												<li class="list-group-item text-truncate hvr-forward border-0"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
+												<div class="border-top"></div>
+												<li class="list-group-item text-truncate hvr-forward border-0"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
+												<div class="border-top"></div>
+												<li class="list-group-item text-truncate hvr-forward border-0"><b>Telegram:</b> <a href="https://t.me/T0ls_RG">@T0ls_RG</a></li>
+												<div class="border-top"></div>
+												<li class="list-group-item text-truncate hvr-forward border-0"><b>Github:</b> <a href="https://github.com/T0ls">https://github.com/T0ls</a></li>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -511,10 +513,6 @@
 			</div>
 		</div>
 
-		<!--	For i18next CDN	-->
-		<script src="https://unpkg.com/i18next/dist/umd/i18next.js"></script>
-
-
 		<!--	For Bootstrap Local	-->
 		<!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
 
@@ -526,9 +524,6 @@
 		<script>
 		/*window.addEventListener('resize', function() {
 		});*/
-		
-		//var box1 = document.getElementById("nameCard")
-		//document.getElementById("contactCard").style.height = box1.offsetHeight + "px";
 		
 		// Show Arrow Menù
 		function arrowDown(str) {
@@ -584,6 +579,7 @@
 <!--
 	To do:
 
+		- impostare max-height per tutte le card a 90vh e nel caso di superamento scroll-bars
 		- fare animazioni
 		- fix bug: nome repo non va a capo (problema di priorità)
 		- fix bug: no repo content visible on click
