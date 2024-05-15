@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Giusteschi Giulio CV</title>
+	<title>Giusteschi Giulio CV</title>
 		<link rel="icon" href="CvLogo.png" type="image/icon type">
 		<!--	For Bootstrap Local	-->
 		<!-- <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
-			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 
 		<!--	For Bootstrap CDN	-->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -22,37 +22,165 @@
 		<!-- <link rel="stylesheet" href="style.css"> -->
 		<script src="api_token.js"></script>
 		<style>
+			.badges {
+				position: absolute; /* Permette di posizionare il badge rispetto al contenitore */
+				top: 0; /* Posizionamento in alto */
+				right: 1; /* Posizionamento a destra */
+				background-color: red; /* Colore di sfondo del badge */
+				color: white; /* Colore del testo del badge */
+				border-radius: 50%; /* Forma circolare */
+				padding: 0.25em 0.5em; /* Padding del badge */
+				font-size: 0.75rem; /* Dimensione del testo del badge */
+				line-height: 1; /* Altezza della linea */
+			}
 		</style>
 	</head>
 	<body>
-		<div id="genContainer" class="container p-2">
+		<div id="genContainer" class="container p-1">
 			<div class="row m-0">
-				<div class="card container col-12 col-sm-12 m-0 py-1">
-				  <div class="card-body p-0 row m-0">
-					<div class="card container col-12 col-sm-12 m-0">
-					  <div class="card-body row m-0">
-							<div class="col-12 col-sm-12">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="#" class="btn btn-primary">Go somewhere</a>
+				<div class="card container col-12 col-sm-12 m-0 p-0">
+					<div class="card-header">
+						<h3 class="p-0 m-0">Choose your modules</h3>
+					</div>
+					<div class="card-body p-1 row m-0">
+						<div class="card container col-12 col-sm-12 m-0 d-none">
+							<div class="card-body row m-0">
+								<div class="col-12 col-sm-12">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
 							</div>
-					  </div>
+							<span class="position-absolute top-0 start-100 translate-middle badges rounded-pill bg-primary">﹡</span>
+						</div>	
+						<div class="card container col-12 col-sm-12 m-0 mt-1 p-0">
+							<div class="card-body row m-0 p-0">
+								<div class="card-header">
+									<div class="form-check form-switch m-0">
+										<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedDisabled" checked disabled>
+										<label class="form-check-label" for="flexSwitchCheckDefault">Profile</label>
+									</div>
+								</div>
+								<div class="col-12 col-sm-12 py-1 d-block">
+									<div class="mb-1">
+										<label for="formFileSm" class="form-label mb-1">Profile image:</label>
+										<input class="form-control form-control-sm" type="file" id="formFileSm">
+									</div>
+									<div class="mb-1">
+										<label for="formFileSm" class="form-label mb-1">Name:</label>
+										<input class="form-control form-control-sm" type="text" placeholder="Insert Name and Surname" aria-label=".form-control-sm example">
+									</div>
+									<div class="mb-1 container p-0">
+										<div class="row m-0">
+											<div class="col-6">
+												<label for="formFileSm" class="form-label mb-1">Born in:</label>
+												<input class="form-control form-control-sm" type="text" placeholder="City" aria-label=".form-control-sm example">
+											</div>
+											<div class="col-6">
+												<label for="formFileSm" class="form-label mb-1">The:</label>
+												<input class="form-control form-control-sm" type="date" placeholder="Insert Name and Surname" aria-label=".form-control-sm example">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card container col-12 col-sm-12 m-0 mt-1 p-0">
+							<div class="card-body row m-0 p-0">
+								<div class="card-header">
+									<div class="form-check form-switch m-0">
+										<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+										<label class="form-check-label" for="flexSwitchCheckDefault">Myself</label>
+									</div>
+								</div>
+								<div class="col-12 col-sm-12 py-1 d-block">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+						</div>
+						<div class="card container col-12 col-sm-12 m-0 mt-1 p-0">
+							<div class="card-body row m-0 p-0">
+								<div class="card-header">
+									<div class="form-check form-switch m-0">
+										<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+										<label class="form-check-label" for="flexSwitchCheckDefault">Experiences</label>
+									</div>
+								</div>
+								<div class="col-12 col-sm-12 py-1 d-none">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+						</div>
+						<div class="card container col-12 col-sm-12 m-0 mt-1">
+							<div class="card-body row m-0 p-0">
+								<div class="col-12 col-sm-12 p-0">
+									<div class="form-check form-switch" style="margin-top: 2px;">
+										<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+										<label class="form-check-label" for="flexSwitchCheckDefault">Experiences</label>
+									</div>
+									<div class="d-none">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+										<a href="#" class="btn btn-primary">Go somewhere</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card container col-12 col-sm-12 m-0 mt-1">
+							<div class="card-body row m-0">
+								<div class="col-12 col-sm-12">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+							<!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">+</span> -->
+						</div>
+						<div class="card container col-12 col-sm-12 m-0 mt-1">
+							<div class="card-body row m-0">
+								<div class="col-12 col-sm-12">
+									<h5 class="card-title">Card title</h5>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+							<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">−</span>
+						</div>
 					</div>	
-				  </div>
-				</div>	
+				</div>
 			</div>
-		</div>
 
-		<!--	For Bootstrap Local	-->
-		<!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+			<!--	For Bootstrap Local	-->
+			<!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
 
-		<!--	For Bootstrap CDN	-->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-		<!--	For Vanilla-tilt.js CDN	-->
-		<script> VanillaTilt.init(document.querySelector(".tilt-element"));</script>
+			<!--	For Bootstrap CDN	-->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+			<!--	For Vanilla-tilt.js CDN	-->
+			<script> VanillaTilt.init(document.querySelector(".tilt-element"));</script>
 
-		<script>
+			<script>
 
-		</script>
+			</script>
 	</body>
 </html>
+
+<!-- 
+
+	Ideas:
+		- finestra blocco si chiude quando selezionata un'altra differente
+		-
+		-
+		-
+	Bugs:
+		-
+		-
+		-
+		-
+
+
+
+-->
