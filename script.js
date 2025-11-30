@@ -138,25 +138,42 @@ console.log(repoN);
 			})
 			.then(data => {
 				console.log(data);
-				console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
+				// console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
 				var block = document.getElementById("gitHubRepoItem");
 				block.style.display = "block";
-				console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
-				scrollTo(0, document.getElementById("gitHubPage").getClientRects()[0].y);
+				// console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
+				
+				// Fixed: Use scrollIntoView to correctly scroll to the repository section
+				document.getElementById("gitHubPage").scrollIntoView({ behavior: 'smooth' });
+				
+				// Render the repository contents
+				renderRepoContents(data, repoN, '');
 			})
 			.catch(error => {
 				console.error(error);
 		});
 }
 
+// Added: Function to go back to the repository list
+function showRepoList() {
+	document.getElementById("gitHubRepoItem").style.display = "none";
+	document.getElementById("gitHubProfile").style.display = "block";
+}
+
 let dati = new Map();
 
 async function fetchAPI(repo, path) {
-	let key = [repo, path];
+	// Fixed: Use a string key for the Map instead of an array
+	let key = `${repo}/${path}`;
 	if (dati.has(key)) {
 		return dati.get(key)
 	} else {
-		let response = await fetch(`https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${repo}/contents/${path}`, {
+		// Fixed: Handle empty path correctly to avoid double slashes
+		let url = `https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${repo}/contents`;
+		if (path && path !== '') {
+			url += `/${path}`;
+		}
+		let response = await fetch(url, {
 			method: 'GET',
 			headers: { 'Accept': 'application/json',  'Authorization': 'Bearer ' + gitHubApi_Key, }
 		})
@@ -167,6 +184,107 @@ async function fetchAPI(repo, path) {
 		dati.set(key, data);
 		return data
 	}
+}
+
+// Added: Function to navigate to a folder
+async function navigateTo(repo, path) {
+	const data = await fetchAPI(repo, path);
+	renderRepoContents(data, repo, path);
+}
+
+// Added: Function to render repository contents
+function renderRepoContents(data, repoName, currentPath = '') {
+    const container = document.querySelector("#gitHubRepoItem ul");
+    const listItems = container.querySelectorAll("li");
+    
+    // Remove all items except the first one (header)
+    for (let i = 1; i < listItems.length; i++) {
+        listItems[i].remove();
+    }
+
+	// Added: Show ".." if inside a folder
+	if (currentPath && currentPath !== '') {
+		const li = document.createElement('li');
+		li.className = 'list-group-item';
+		li.style.cursor = 'pointer';
+		
+		// Calculate parent path
+		const parts = currentPath.split('/');
+		parts.pop();
+		const parentPath = parts.join('/');
+		
+		li.onclick = () => navigateTo(repoName, parentPath);
+
+		li.innerHTML = `
+			<div class="row mt-1 mb-1">
+				<div class="col-4 d-flex">
+					<img src="folder2x.png" style="height: 24px; width: 24px;">
+					<a class="aHide ms-2 mb-0 text-truncate">..</a>
+				</div>
+			</div>
+		`;
+		container.appendChild(li);
+	}
+
+    // Sort: folders first, then files
+    data.sort((a, b) => {
+        if (a.type === b.type) return a.name.localeCompare(b.name);
+        return a.type === 'dir' ? -1 : 1;
+    });
+
+    data.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item';
+        
+        if (item.type === 'dir') {
+            li.style.cursor = 'pointer';
+            li.onclick = () => navigateTo(repoName, item.path);
+        } else if (item.type === 'file') {
+			// Added: Click handler for files
+			li.style.cursor = 'pointer';
+			li.onclick = () => viewFile(repoName, item.path);
+		}
+
+        const iconSrc = item.type === 'dir' ? 'folder2x.png' : 'file2x.png';
+        
+        li.innerHTML = `
+            <div class="row mt-1 mb-1">
+                <div class="col-4 d-flex">
+                    <img src="${iconSrc}" style="height: 24px; width: 24px;">
+                    <a class="aHide ms-2 mb-0 text-truncate">${item.name}</a>
+                </div>
+                <div class="col-6"><a class="aHide text-truncate mb-0"></a></div>
+                <div class="col-2"><p class="text-truncate mb-0 text-end"></p></div>
+            </div>
+        `;
+        container.appendChild(li);
+    });
+}
+
+// Added: Function to view file content
+async function viewFile(repo, path) {
+	const data = await fetchAPI(repo, path);
+	
+	if (data.content && data.encoding === 'base64') {
+		// Decode base64 content
+		// Note: atob handles simple ASCII. For UTF-8 characters, we might need a better decoder, 
+		// but this works for standard code/text files.
+		const content = decodeURIComponent(escape(window.atob(data.content)));
+		
+		document.getElementById("fileNameDisplay").textContent = data.name;
+		document.getElementById("fileContentDisplay").textContent = content;
+		
+		document.getElementById("gitHubRepoItem").style.display = "none";
+		document.getElementById("gitHubFileViewer").style.display = "block";
+	} else {
+		console.error("File content not available or not base64 encoded");
+	}
+}
+
+// Added: Function to close file viewer
+function closeFileViewer() {
+	document.getElementById("gitHubFileViewer").style.display = "none";
+	document.getElementById("gitHubRepoItem").style.display = "block";
 }
 
 function showPath(x) {
