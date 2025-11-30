@@ -17,6 +17,7 @@
 
 		<!-- <script src="gitHubREST.js" type="module" defer></script> -->
 		<script src="api_token.js"></script>
+		<script src="translations.js"></script>
 		<script src="script.js"></script>
 		<style>
 			.aHide {
@@ -48,7 +49,7 @@
 				max-width: 54px; /* Icon width + padding */
 			}
 			#settings-pill:hover, #settings-pill.is-open {
-				max-width: 300px; /* Expanded width */
+				max-width: min(450px, 90vw); /* Expanded width */
 			}
 			#settings-pill .settings-content {
 				opacity: 0;
@@ -72,14 +73,14 @@
 						</div>
 						<div class="settings-content d-flex align-items-center gap-3 ms-3" style="transition: opacity 0.3s ease;">
 							<div class="vr"></div>
-							<div class="form-check form-switch mb-0 d-flex align-items-center gap-2" style="cursor: pointer;">
+							<div class="form-check form-switch mb-0 d-flex align-items-center gap-2 ps-0" style="cursor: pointer;">
 								<input class="form-check-input m-0" type="checkbox" role="switch" id="flexSwitchCheckDefault" style="cursor: pointer;">
-								<label class="form-check-label small text-nowrap mb-0" for="flexSwitchCheckDefault" style="cursor: pointer;"><i class="bi bi-moon-stars-fill"></i></label>
+								<label class="form-check-label small text-nowrap mb-0" for="flexSwitchCheckDefault" style="cursor: pointer;" data-i18n="enable_darkmode"><i class="bi bi-moon-stars-fill"></i></label>
 							</div>
 							<div class="vr"></div>
-							<select class="form-select form-select-sm border-0 py-0 ps-2" aria-label="Language" style="width: auto; background-color: transparent; cursor: pointer; box-shadow: none;">
-								<option selected>IT</option>
-								<option value="1">EN</option>
+							<select class="form-select form-select-sm border-0 py-0 ps-0" aria-label="Language" style="width: auto; background-color: transparent; cursor: pointer; box-shadow: none;">
+								<option value="IT" selected>IT</option>
+								<option value="EN">EN</option>
 							</select>
 						</div>
 					</div>
@@ -96,10 +97,10 @@
 									<div class="card-body">
 										<h5 class="card-title">Giusteschi Giulio</h5>
 										<br>
-										<h5>Stato corrente: studente Unimi</h5>
-										<p class="card-text"><b>Nato a</b> <strong>Milano</strong> il 17 settembre 2002</p>
+										<h5 data-i18n="job_status">Stato corrente: studente Unimi</h5>
+										<p class="card-text" data-i18n="born_at"><b>Nato a</b> <strong>Milano</strong> il 17 settembre 2002</p>
 										<br>
-										<p class="card-text"><small class="text-body-secondary">Last updated 10/04/24</small></p>
+										<p class="card-text"><small class="text-body-secondary" data-i18n="last_updated">Last updated 10/04/24</small></p>
 									</div>
 								</div>
 							</div>
@@ -108,7 +109,7 @@
 					<div class="col-12 col-lg-3">
 						<div id="contactCard" class="card h-100">
 							<div class="card-body">
-								<h5 class="card-title">Contacts</h5>
+								<h5 class="card-title" data-i18n="contacts_title">Contacts</h5>
 								<ul class="list-group list-group-flush">
 									<li class="list-group-item px-0 text-break"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
 									<li class="list-group-item px-0 text-break"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
@@ -121,13 +122,13 @@
 				</div>
 				<div id="waiCard" class="card mb-3">
 					<div class="card-body">
-						<h5 class="card-title">Chi sono</h5>
-						<p class="card-text">Mi chiamo Giulio Giusteschi e sono un appassionato di programmazione informatica, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.</p>
+						<h5 class="card-title" data-i18n="about_title">Chi sono</h5>
+						<p class="card-text" data-i18n="about_text">Mi chiamo Giulio Giusteschi e sono un appassionato di programmazione informatica, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.</p>
 					</div>
 				</div>
 				<div id="myFormatioeriences" class="card mb-3">
 					<div class="card-body pb-0">
-						<h5 class="card-title">Esperienze professionali</h5>
+						<h5 class="card-title" data-i18n="exp_title">Esperienze professionali</h5>
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item pb-0">
 								<p class="d-inline-flex gap-1 mb-0"> 
@@ -136,15 +137,15 @@
 											<span id="arrowExp1" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
 											<div class="d-flex">
 												<h5>2022-2023</h5>
-												<span class="ps-2">Esperienza1</span>
+												<span class="ps-2" data-i18n="exp1_role">Esperienza1</span>
 											</div>	
 										</div>	
 									</button>
 								</p>
 								<div class="collapse" id="targetCollapseFormExp1">
 									<div class="card card-body mb-2 pb-0 pt-1">
-										<h4 class="pe-3">Azienda X:</h4>
-										<span class="ps-3">Lavorato come <strong>Esperienza1</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
+										<h4 class="pe-3" data-i18n="exp1_company">Azienda X:</h4>
+										<span class="ps-3" data-i18n="exp1_desc">Lavorato come <strong>Esperienza1</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
 										</p>
 									</div>
 								</div>
@@ -156,15 +157,15 @@
 											<span id="arrowExp2" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
 											<div class="d-flex">
 												<h5>2020-2022</h5>
-												<span class="ps-2">Esperienza2</span>
+												<span class="ps-2" data-i18n="exp2_role">Esperienza2</span>
 											</div>	
 										</div>	
 									</button>
 								</p>
 								<div class="collapse" id="targetCollapseFormExp2">
 									<div class="card card-body mb-2 pb-0 pt-1">
-										<h4 class="pe-3">Azienda Y:</h4>
-										<span class="ps-3">Lavorato come <strong>Esperienza2</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
+										<h4 class="pe-3" data-i18n="exp2_company">Azienda Y:</h4>
+										<span class="ps-3" data-i18n="exp2_desc">Lavorato come <strong>Esperienza2</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
 										</p>
 									</div>
 								</div>
@@ -176,15 +177,15 @@
 											<span id="arrowExp3" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
 											<div class="d-flex">
 												<h5>2018-2019</h5>
-												<span class="ps-2">Esperienza3</span>
+												<span class="ps-2" data-i18n="exp3_role">Esperienza3</span>
 											</div>	
 										</div>	
 									</button>
 								</p>
 								<div class="collapse" id="targetCollapseFormExp3">
 									<div class="card card-body mb-2 pb-0 pt-1">
-										<h4 class="pe-3">Manitese:</h4>
-										<span class="ps-3">Lavorato come <strong>Esperienza3</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
+										<h4 class="pe-3" data-i18n="exp3_company">Manitese:</h4>
+										<span class="ps-3" data-i18n="exp3_desc">Lavorato come <strong>Esperienza3</strong> da Feltrinelli per  un associazione no profit: <a href="https://www.manitese.it/" target="_blank"><em>Manitese</em></a>.</span>
 										</p>
 									</div>
 								</div>
@@ -194,34 +195,34 @@
 				</div>
 				<div id="studies" class="card mb-3">
 					<div class="card-body pb-0">
-						<h5 class="card-title">Formazione / Competenze</h5>
+						<h5 class="card-title" data-i18n="edu_title">Formazione / Competenze</h5>
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item pb-0">
 								<p class="d-inline-flex gap-1 mb-0"> 
 									<button id="buttonFormatio1" onclick="arrowController('Formatio1')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio1" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
 										<div class="d-flex">
 											<span id="arrowFormatio1" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5>Self-Tought</h5>
+											<h5 data-i18n="edu_self_taught">Autodidatta</h5>
 										</div>	
 									</button>
 								</p>
 								<div class="collapse" id="targetCollapseFormFormatio1">
 									<div class="card card-body mb-2 pb-0 pt-0">
 										<ul class="list-group list-group-flush">
-											<li class="list-group-item pt-2 pb-0"><b>Unity Engine:</b> 
+											<li class="list-group-item pt-2 pb-0"><b data-i18n="edu_unity_title">Unity Engine:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0">- mi sono cimentato per diversi mesi nello sviluppo di videogiochi (principalmente 2D ma conosco anche il mondo del 3D)</p>
+													<p class="m-0" data-i18n="edu_unity_desc">- mi sono cimentato per diversi mesi nello sviluppo di videogiochi (principalmente 2D ma conosco anche il mondo del 3D)</p>
 												</div>
 											</li>
-											<li class="list-group-item pt-2 pb-0"><b>C / C++:</b> 
+											<li class="list-group-item pt-2 pb-0"><b data-i18n="edu_cpp_title">C / C++:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0">- possiedo una buona infarinatura sul C e delle ottime basi di C++</p>
-													<p class="m-0">- ho sviluppato diversi progetti in C++ tra cui il mio primo gioco in stile avventura testuale</p>
+													<p class="m-0" data-i18n="edu_cpp_desc1">- possiedo una buona infarinatura sul C e delle ottime basi di C++</p>
+													<p class="m-0" data-i18n="edu_cpp_desc2">- ho sviluppato diversi progetti in C++ tra cui il mio primo gioco in stile avventura testuale</p>
 												</div>
 											</li>
-											<li class="list-group-item pt-2 pb-0"><b>Dicord Bots:</b> 
+											<li class="list-group-item pt-2 pb-0"><b data-i18n="edu_discord_title">Discord Bots:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0">- ho creato alcuni bot discord (nulla di troppo complesso però)</p>
+													<p class="m-0" data-i18n="edu_discord_desc">- ho creato alcuni bot discord (nulla di troppo complesso però)</p>
 												</div>
 											</li>
 										</ul>
@@ -233,30 +234,30 @@
 									<button id="buttonFormatio2" onclick="arrowController('Formatio2')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio2" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
 										<div class="d-flex">
 											<span id="arrowFormatio2" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5>Titoli di Studio</h5>
+											<h5 data-i18n="edu_degrees">Titoli di Studio</h5>
 										</div>	
 									</button>
 								</p>
 								<div class="collapse" id="targetCollapseFormFormatio2">
 									<div class="card card-body mb-2 pb-0 pt-0">
 										<ul class="list-group list-group-flush">
-											<li class="list-group-item pt-2 pb-0"><b>Diploma superiore:</b> 
+											<li class="list-group-item pt-2 pb-0"><b data-i18n="edu_diploma_title">Diploma superiore:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0">- nel 2022 ho conseguito il diploma, indirizzo Scienze Apllicate presso l'ITIS Feltrinelli</p>
+													<p class="m-0" data-i18n="edu_diploma_desc">- nel 2022 ho conseguito il diploma, indirizzo Scienze Apllicate presso l'ITIS Feltrinelli</p>
 												</div>
 											</li>
-											<li class="list-group-item pt-2 pb-0"><b>Certificazioni GetMimo:</b> 
+											<li class="list-group-item pt-2 pb-0"><b data-i18n="edu_mimo_title">Certificazioni GetMimo:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0">Nel 2020 ho ottenuto le certificazioni in:</p>
+													<p class="m-0" data-i18n="edu_mimo_desc">Nel 2020 ho ottenuto le certificazioni in:</p>
 													<p class="m-0">- HTML</p>
 													<p class="m-0">- CSS</p>
 													<p class="m-0">- JavaScript</p>
 													<p class="m-0">- White-Hat</p>
 												</div>
 											</li>
-											<li class="list-group-item pt-2 pb-0"><b>Diploma di scuola media:</b> 
+											<li class="list-group-item pt-2 pb-0"><b data-i18n="edu_middle_school_title">Diploma di scuola media:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0">- nel 2015 ho ottenuto la licenza media presso il Convitto Nazionale Pietro Longone</p>
+													<p class="m-0" data-i18n="edu_middle_school_desc">- nel 2015 ho ottenuto la licenza media presso il Convitto Nazionale Pietro Longone</p>
 												</div>
 											</li>
 										</ul>
@@ -268,33 +269,33 @@
 									<button id="buttonFormatio5" onclick="arrowController('Formatio5')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio5" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
 										<div class="d-flex">
 											<span id="arrowFormatio5" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5>Corsi Universitari</h5>
+											<h5 data-i18n="edu_uni_courses">Corsi Universitari</h5>
 										</div>	
 									</button>
 								</p>
 								<div class="collapse" id="targetCollapseFormFormatio5">
 									<div class="card card-body mb-2 pb-0 pt-0">
-										<h5><b>Competenze acquisite frequentando i seguenti corsi presso l'UNIMI:</b></h5>
+										<h5><b data-i18n="edu_uni_subtitle">Competenze acquisite frequentando i seguenti corsi presso l'UNIMI:</b></h5>
 										<ul class="list-group list-group-flush">
-											<li class="list-group-item pt-2 pb-0"><b>Cyber-Security:</b> 
+											<li class="list-group-item pt-2 pb-0"><b data-i18n="edu_cyber_title">Cyber-Security:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/sicurezza-e-privatezza">Corso: Sicurezza e Privatezza</a></p>
-													<p class="m-0">- le basi concettuali e pratiche della Sicurezza Informatica e della Privacy</p>
+													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/sicurezza-e-privatezza" data-i18n="edu_cyber_course">Corso: Sicurezza e Privatezza</a></p>
+													<p class="m-0" data-i18n="edu_cyber_desc">- le basi concettuali e pratiche della Sicurezza Informatica e della Privacy</p>
 												</div>
 											</li>
-											<li class="list-group-item pt-2 pb-0"><b>DataBase:</b> 
+											<li class="list-group-item pt-2 pb-0"><b data-i18n="edu_db_title">DataBase:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/basi-di-dati-0">Corso: Basi di Dati</a></p>
-													<p class="m-0">- creazione e gestione di un DB</p>
-													<p class="m-0">- utilizzo di PostgreSQL</p>
+													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/basi-di-dati-0" data-i18n="edu_db_course">Corso: Basi di Dati</a></p>
+													<p class="m-0" data-i18n="edu_db_desc1">- creazione e gestione di un DB</p>
+													<p class="m-0" data-i18n="edu_db_desc2">- utilizzo di PostgreSQL</p>
 												</div>
 											</li>
-											<li class="list-group-item pt-2 pb-0"><b>Web-Development:</b> 
+											<li class="list-group-item pt-2 pb-0"><b data-i18n="edu_web_title">Web-Development:</b> 
 												<div class="ps-3 mb-2">
-													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/programmazione-web-e-mobile-0">Corso: Programmazione Web e Mobile</a></p>
-													<p class="m-0">- creazione e progettazione di una apllicazione Web</p>
-													<p class="m-0">- utilizzo di Bootstrap</p>
-													<p class="m-0">- utilizzo di MongoDB</p>
+													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/programmazione-web-e-mobile-0" data-i18n="edu_web_course">Corso: Programmazione Web e Mobile</a></p>
+													<p class="m-0" data-i18n="edu_web_desc1">- creazione e progettazione di una apllicazione Web</p>
+													<p class="m-0" data-i18n="edu_web_desc2">- utilizzo di Bootstrap</p>
+													<p class="m-0" data-i18n="edu_web_desc3">- utilizzo di MongoDB</p>
 												</div>
 											</li>
 										</ul>
@@ -306,7 +307,7 @@
 									<button id="buttonFormatio3" onclick="arrowController('Formatio3')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio3" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
 										<div class="d-flex">
 											<span id="arrowFormatio3" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5>Conoscenza linguaggi</h5>
+											<h5 data-i18n="edu_prog_languages">Conoscenza linguaggi</h5>
 										</div>	
 									</button>
 								</p>
@@ -315,8 +316,8 @@
 										<table class="table table-striped">
 											<thead>
 												<tr>
-													<th scope="col">Language</th>
-													<th scope="col">Level</th>
+													<th scope="col" data-i18n="lang_col_language">Language</th>
+													<th scope="col" data-i18n="lang_col_level">Level</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -422,7 +423,7 @@
 									<button id="buttonFormatio4" onclick="arrowController('Formatio4')" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio4" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
 										<div class="d-flex">
 											<span id="arrowFormatio4" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5>Conoscenza Lingue</h5>
+											<h5 data-i18n="edu_spoken_languages">Conoscenza Lingue</h5>
 										</div>	
 									</button>
 								</p>
@@ -431,13 +432,13 @@
 										<table class="table table-striped">
 											<thead>
 												<tr>
-													<th scope="col">Language</th>
-													<th scope="col">Level</th>
+													<th scope="col" data-i18n="spoken_col_language">Language</th>
+													<th scope="col" data-i18n="spoken_col_level">Level</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<th>Italiano</th>
+													<th data-i18n="lang_italian">Italiano</th>
 													<th>
 														<div class="progress redBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 															<div class="progress-bar bg-danger" style="width: 25%">25%</div>
@@ -445,7 +446,7 @@
 													</th>
 												</tr>
 												<tr>
-													<th>Inglese</th>
+													<th data-i18n="lang_english">Inglese</th>
 													<th>
 														<div class="progress blueBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 															<div class="progress-bar" style="width: 55%">55%</div>
@@ -453,7 +454,7 @@
 													</th>
 												</tr>
 												<tr>
-													<th>Spagnolo</th>
+													<th data-i18n="lang_spanish">Spagnolo</th>
 													<th>
 														<div class="progress greenBar" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
 														<div class="progress-bar bg-success" style="width: 25%">25%</div>
@@ -473,7 +474,7 @@
 				</div>
 				<div id="gitHubPage" class="card mb-3">
 					<div id="gitHubProfile" class="card-body" style="display: block;">
-						<h5 class="card-title mb-3">My repositories</h5>
+						<h5 class="card-title mb-3" data-i18n="repo_title">My repositories</h5>
 						<div class="card mb-3 border-0 w-100">
 							<div class="row g-0">
 								<div class="col-12 col-md-3 text-center text-md-start mb-3 mb-md-0">
@@ -504,14 +505,14 @@
 							<li class="list-group-item bg-body-secondary">
 								<div class="row mb-2">
 									<div class="col-12">
-										<button class="btn btn-sm btn-outline-secondary" onclick="showRepoList()">
+										<button class="btn btn-sm btn-outline-secondary" onclick="showRepoList()" data-i18n="back_to_repos">
 											&larr; Back to Repos
 										</button>
 									</div>
 								</div>
 								<div class="row mt-1 mb-1">
 									<div class="col-8 d-flex" >
-										<b style="align-items: center; display: flex;">Last commit: </b>
+										<b style="align-items: center; display: flex;" data-i18n="last_commit">Last commit: </b>
 										<a name="lastCommitDescr" style="align-items: center; display: flex;" class="aHide text-truncate mb-0 ms-1" href="">aggiunte immagini x file,folder + inizio implementazione rudimentale</a></div>
 										<div class="col-2 fs-5 d-flex">
 											<a name="lastCommitHash" class="aHide mb-0 me-1 text-end" style="font-size: 10px; align-items: center; display: flex;" href="">ce5c8c0</a>
@@ -521,7 +522,7 @@
 									<div class="col-2 ps-5 justify-content-end">
 										<button id="btnCommits" class="d-flex buttonHide ps-2 pe-2 pt-1 pb-1" style="height: inherit;">
 											<img src="commits2X.png" class="me-1" style="height: 20px; width: 20px; align-items: center;">
-											<p id="txtCommits" class="mb-0 text-end" style="font-size: 10px; align-items: center; display: flex;">Commits</p>
+											<p id="txtCommits" class="mb-0 text-end" style="font-size: 10px; align-items: center; display: flex;" data-i18n="commits">Commits</p>
 										</button>
 									</div>
 								</div>
@@ -561,7 +562,7 @@
 						<div class="card h-100">
 							<div class="card-header d-flex justify-content-between align-items-center">
 								<h5 class="mb-0" id="fileNameDisplay">File Name</h5>
-								<button class="btn btn-sm btn-outline-secondary" onclick="closeFileViewer()">
+								<button class="btn btn-sm btn-outline-secondary" onclick="closeFileViewer()" data-i18n="back_to_folder">
 									&larr; Back to Folder
 								</button>
 							</div>
@@ -573,14 +574,14 @@
 				</div>
 				<div class="card mb-3">
 					<div class="card-body">
-						<h5 class="card-title">Interessi</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<h5 class="card-title" data-i18n="interests_title">Interessi</h5>
+						<p class="card-text" data-i18n="interests_text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 					</div>
 				</div>
 				<div class="card mb-3 border-0 bg-transparent">
 					<div class="card-body pt-1 text-center">
 						<h5 class="card-title"></h5>
-						<p class="card-text">Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base art. 13 del D. Lgs. 196/2003.</p>
+						<p class="card-text" data-i18n="privacy_policy">Autorizzo il trattamento dei dati personali contenuti nel mio curriculum vitae in base art. 13 del D. Lgs. 196/2003.</p>
 						<p id="annoCorrente" class="mb-1"></p>
 					</div>
 				</div>
@@ -670,6 +671,34 @@
 			const theme = this.checked ? 'dark' : 'light';
 			setTheme(theme);
 		});
+
+		// Language Logic
+		const langSelect = document.querySelector('.form-select');
+		
+		function updateLanguage(lang) {
+			// 1. Update all text elements
+			document.querySelectorAll('[data-i18n]').forEach(element => {
+				const key = element.getAttribute('data-i18n');
+				if (translations[lang] && translations[lang][key]) {
+					// Use innerHTML to support bold tags like <b> or <strong>
+					element.innerHTML = translations[lang][key];
+				}
+			});
+
+			// 2. Save preference
+			localStorage.setItem('language', lang);
+		}
+
+		// Event Listener
+		langSelect.addEventListener('change', function() {
+			const selectedLang = this.value; 
+			updateLanguage(selectedLang);
+		});
+
+		// Load saved language on startup
+		const savedLang = localStorage.getItem('language') || 'IT';
+		langSelect.value = savedLang;
+		updateLanguage(savedLang);
 
 		</script>
 	</body>
