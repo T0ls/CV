@@ -30,6 +30,18 @@
 	background-color: #BFC8FF;
 }
 
+[data-bs-theme="dark"] .greenBar {
+	background-color: #1a4d1a;
+}
+
+[data-bs-theme="dark"] .redBar {
+	background-color: #4d1a1a;
+}
+
+[data-bs-theme="dark"] .blueBar {
+	background-color: #1a1a4d;
+}
+
 .scroller {
   overflow-y: scroll;
   scrollbar-color: #007 #bada55;

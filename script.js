@@ -125,33 +125,82 @@ function hideBlock(x) {
 }
 
 function showBlock(repoN) {
-console.log(repoN);	
-		fetch('https://api.github.com/repos/'+ document.getElementById("profileUrlGitHub").innerHTML +'/'+ repoN +'/contents', {
-			method: 'GET',
-			headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' + gitHubApi_Key, }
+	const owner = document.getElementById("profileUrlGitHub").innerHTML;
+	
+	// Fetch repository contents
+	fetch(`https://api.github.com/repos/${owner}/${repoN}/contents`, {
+		method: 'GET',
+		headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' + gitHubApi_Key, }
+	})
+		.then(response => {
+			if (!response.ok) {
+				throw new Error('Error requesting GitHub API: repo');
+			}
+			return response.json();
 		})
-			.then(response => {
-				if (!response.ok) {
-					throw new Error('Error requesting GitHub API: repo');
-				}
-				return response.json();
-			})
-			.then(data => {
-				console.log(data);
-				// console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
-				var block = document.getElementById("gitHubRepoItem");
-				block.style.display = "block";
-				// console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
-				
-				// Fixed: Use scrollIntoView to correctly scroll to the repository section
-				document.getElementById("gitHubPage").scrollIntoView({ behavior: 'smooth' });
-				
-				// Render the repository contents
-				renderRepoContents(data, repoN, '');
-			})
-			.catch(error => {
-				console.error(error);
-		});
+		.then(data => {
+			var block = document.getElementById("gitHubRepoItem");
+			block.style.display = "block";
+			
+			// Fixed: Use scrollIntoView to correctly scroll to the repository section
+			document.getElementById("gitHubPage").scrollIntoView({ behavior: 'smooth' });
+			
+			// Render the repository contents
+			renderRepoContents(data, repoN, '');
+		})
+		.catch(error => {
+			console.error(error);
+	});
+
+	// Added: Fetch latest commit info
+	fetch(`https://api.github.com/repos/${owner}/${repoN}/commits?per_page=1`, {
+		method: 'GET',
+		headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' + gitHubApi_Key, }
+	})
+	.then(response => response.json())
+	.then(data => {
+		if (data && data.length > 0) {
+			const commit = data[0];
+			const commitDate = new Date(commit.commit.author.date);
+			const timeAgo = getTimeAgo(commitDate);
+
+			// Update Last Commit Description
+			const descrLink = document.getElementsByName("lastCommitDescr")[0];
+			descrLink.innerHTML = commit.commit.message;
+			descrLink.href = commit.html_url;
+			descrLink.target = "_blank"; // Open in new tab
+
+			// Update Last Commit Hash
+			const hashLink = document.getElementsByName("lastCommitHash")[0];
+			hashLink.innerHTML = commit.sha.substring(0, 7);
+			hashLink.href = commit.html_url;
+			hashLink.target = "_blank";
+
+			// Update Time
+			document.getElementsByName("lastCommitTime")[0].innerHTML = timeAgo;
+
+			// Update Commits Button
+			const btnCommits = document.getElementById("btnCommits");
+			btnCommits.onclick = () => window.open(`https://github.com/${owner}/${repoN}/commits`, '_blank');
+		}
+	})
+	.catch(error => console.error('Error fetching commits:', error));
+}
+
+// Helper function to calculate "time ago"
+function getTimeAgo(date) {
+	const seconds = Math.floor((new Date() - date) / 1000);
+	let interval = seconds / 31536000;
+	if (interval > 1) return Math.floor(interval) + " years ago";
+	interval = seconds / 2592000;
+	if (interval > 1) return Math.floor(interval) + " months ago";
+	interval = seconds / 86400;
+	if (interval > 1) return Math.floor(interval) + " days ago";
+	interval = seconds / 3600;
+	if (interval > 1) return Math.floor(interval) + " hours ago";
+	interval = seconds / 60;
+	if (interval > 1) return Math.floor(interval) + " minutes ago";
+	return Math.floor(seconds) + " seconds ago";
 }
 
 // Added: Function to go back to the repository list
