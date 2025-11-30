@@ -19,10 +19,25 @@ Useful resources:
 */
 
 // Leggo il contenuto del file Js
-const gitHubApi_Key = gitHubToken.token
+let gitHubApi_Key = null;
+let apiHeaders = { 'Accept': 'application/json' };
+
+try {
+    if (typeof gitHubToken !== 'undefined' && gitHubToken.token) {
+        gitHubApi_Key = gitHubToken.token;
+        apiHeaders['Authorization'] = 'Bearer ' + gitHubApi_Key;
+    }
+} catch (e) {
+    console.log("No GitHub token found, using public API");
+}
 
 /* GitHub Api fetch Profile Info */
-fetch('https://api.github.com/user', { method: 'GET', headers: { 'Authorization': 'Bearer ' + gitHubApi_Key, } })
+const profileUrl = gitHubApi_Key ? 'https://api.github.com/user' : 'https://api.github.com/users/T0ls';
+
+fetch(profileUrl, {
+	method: 'GET',
+	headers: apiHeaders
+})
 .then(response => { if (response.ok) { return response.json(); } else { throw new Error('Error requesting GitHub API: user '); } })
 .then(data => { 
 	var avatar = document.getElementById("avatarGitHub");
@@ -36,12 +51,10 @@ fetch('https://api.github.com/user', { method: 'GET', headers: { 'Authorization'
 /* End */
 
 /* GitHub Api fetch Repositories List */
+/* GitHub Api fetch Repositories */
 fetch('https://api.github.com/users/T0ls/repos', {
 	method: 'GET',
-	headers: {
-		'Accept': 'application/json',
-		'Authorization': 'Bearer ' + gitHubApi_Key,
-	}
+	headers: apiHeaders
 })
 	.then(response => {
 		if (!response.ok) {
@@ -130,7 +143,7 @@ function showBlock(repoN) {
 	// Fetch repository contents
 	fetch(`https://api.github.com/repos/${owner}/${repoN}/contents`, {
 		method: 'GET',
-		headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' + gitHubApi_Key, }
+		headers: apiHeaders
 	})
 		.then(response => {
 			if (!response.ok) {
@@ -155,7 +168,7 @@ function showBlock(repoN) {
 	// Added: Fetch latest commit info
 	fetch(`https://api.github.com/repos/${owner}/${repoN}/commits?per_page=1`, {
 		method: 'GET',
-		headers: { 'Accept': 'application/json', 'Authorization': 'Bearer ' + gitHubApi_Key, }
+		headers: apiHeaders
 	})
 	.then(response => response.json())
 	.then(data => {
@@ -224,7 +237,7 @@ async function fetchAPI(repo, path) {
 		}
 		let response = await fetch(url, {
 			method: 'GET',
-			headers: { 'Accept': 'application/json',  'Authorization': 'Bearer ' + gitHubApi_Key, }
+			headers: apiHeaders
 		})
 		if (!response.ok) {
 			console.error('Error requesting GitHub API')
