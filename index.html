@@ -96,7 +96,7 @@
 						<div id="nameCard" class="card h-100">
 							<div class="row g-0 h-100">
 								<div class="col-md-4 d-flex align-items-center justify-content-center p-3">
-									<img src="ProfileImg.png" alt="...">
+									<img src="ProfileImg.png" alt="..." style="cursor: zoom-in;" data-bs-toggle="modal" data-bs-target="#imageModal">
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
@@ -599,6 +599,20 @@
 			</div>
 		</div>
 
+		<!-- Image Modal -->
+		<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg" style="max-width: fit-content;">
+				<div class="modal-content bg-transparent border-0">
+					<div class="modal-body p-0 text-center">
+						<div class="position-relative d-inline-block">
+							<button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1050; background-color: rgba(0,0,0,0.5); border-radius: 50%; padding: 0.5rem;"></button>
+							<img src="ProfileImg.png" class="img-fluid rounded shadow" alt="Profile Image" style="max-height: 90vh; max-width: 100vw;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!--	For Bootstrap Local	-->
 		<!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
 
@@ -668,50 +682,4 @@
 			darkModeSwitch.checked = theme === 'dark';
 		}
 
-		// Check local storage or system preference on load
-		const savedTheme = localStorage.getItem('theme');
-		const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-		
-		if (savedTheme) {
-			setTheme(savedTheme);
-		} else {
-			setTheme(systemTheme);
-		}
-
-		// Event listener for toggle
-		darkModeSwitch.addEventListener('change', function() {
-			const theme = this.checked ? 'dark' : 'light';
-			setTheme(theme);
-		});
-
-		// Language Logic
-		const langSelect = document.querySelector('.form-select');
-		
-		function updateLanguage(lang) {
-			// 1. Update all text elements
-			document.querySelectorAll('[data-i18n]').forEach(element => {
-				const key = element.getAttribute('data-i18n');
-				if (translations[lang] && translations[lang][key]) {
-					// Use innerHTML to support bold tags like <b> or <strong>
-					element.innerHTML = translations[lang][key];
-				}
-			});
-
-			// 2. Save preference
-			localStorage.setItem('language', lang);
-		}
-
-		// Event Listener
-		langSelect.addEventListener('change', function() {
-			const selectedLang = this.value; 
-			updateLanguage(selectedLang);
-		});
-
-		// Load saved language on startup
-		const savedLang = localStorage.getItem('language') || 'IT';
-		langSelect.value = savedLang;
-		updateLanguage(savedLang);
-
-		</script>
-	</body>
-</html>
+		// Check local storage or system theme
