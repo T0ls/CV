@@ -353,26 +353,38 @@ function showPath(x) {
 	fetchAPI(x);
 }
 
-/* End */
+/* Translation Logic */
+function updateLanguage(lang) {
+    if (typeof translations === 'undefined' || !translations[lang]) {
+        console.warn('Translations not available for', lang);
+        return;
+    }
+    
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            element.innerHTML = translations[lang][key];
+        }
+    });
 
+    // Save preference
+    localStorage.setItem('language', lang);
+}
 
-/*
-fetch('https://api.github.com/users/T0ls/repos', {
-	method: 'GET',
-	headers: {
-		'Accept': 'application/json'
-	}
-})
-	.then(response => {
-		if (!response.ok) {
-			throw new Error('Error requesting GitHub API: ');
-		}
-		return response.json();
-	})
-	.then(data => {
-		//console.log(data);
-	})
-	.catch(error => {
-		console.error(error);
+// Initialize language
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language') || 'IT';
+    const langSelect = document.querySelector('select[aria-label="Language"]');
+    
+    if (langSelect) {
+        langSelect.value = savedLang;
+        langSelect.addEventListener('change', (e) => {
+            updateLanguage(e.target.value);
+        });
+    }
+    
+    updateLanguage(savedLang);
 });
-*/
+
+/* End */

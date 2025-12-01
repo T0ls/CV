@@ -2,7 +2,7 @@ const translations = {
     "IT": {
         "job_status": "Stato corrente: studente Unimi",
         "born_at": "<b>Nato a</b> <strong>Milano</strong> il 17 settembre 2002",
-        "last_updated": "Ultimo aggiornamento 10/04/24",
+        "last_updated": "Ultimo aggiornamento 01/12/25",
         "contacts_title": "Contatti",
         "about_title": "Chi sono",
         "about_text": "Mi chiamo Giulio Giusteschi e sono un appassionato di programmazione informatica, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.",
@@ -68,7 +68,7 @@ const translations = {
     "EN": {
         "job_status": "Current status: Unimi student",
         "born_at": "<b>Born in</b> <strong>Milan</strong> on September 17, 2002",
-        "last_updated": "Last updated 04/10/24",
+        "last_updated": "Last updated 01/12/27",
         "contacts_title": "Contacts",
         "about_title": "About Me",
         "about_text": "My name is Giulio Giusteschi and I am passionate about computer programming, with particular interest in software development, applications, and web platforms.",
