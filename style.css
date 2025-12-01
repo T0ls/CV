@@ -62,12 +62,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Profile Section */
 #nameCard img {
-    border-radius: 50%;
+    border-radius: 8%;
     box-shadow: var(--card-shadow);
     border: 4px solid var(--card-bg);
     object-fit: cover;
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
 }
 
 /* List Groups (Experience/Education) */
