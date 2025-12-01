@@ -349,7 +349,7 @@ a:hover {
 
 .skill-progress {
     height: 6px;
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(224, 220, 220, 0.05);
     border-radius: 3px;
     overflow: hidden;
 }
@@ -383,10 +383,15 @@ a:hover {
     text-align: center;
     font-size: 0.65rem;
     padding: 2px 0;
-    color: var(--text-muted);
-    border-right: 1px solid rgba(255,255,255,0.5);
+    color: var(--text-main);
+    border-right: 1px solid rgba(0,0,0,0.1);
     position: relative;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-bs-theme="dark"] .level-segment {
+    color: var(--text-muted);
+    border-right: 1px solid rgba(255,255,255,0.1);
 }
 
 .level-segment:last-child {
