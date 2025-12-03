@@ -200,326 +200,345 @@
 				</div>
 				<div id="studies" class="card mb-3">
 					<div class="card-body pb-0">
-						<h5 class="card-title" data-i18n="edu_title"></h5>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item pb-0">
-								<p class="d-inline-flex gap-1 mb-0"> 
-									<button id="buttonFormatio1" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio1" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-										<div class="d-flex hvr-forward">
-											<span id="arrowFormatio1" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5 data-i18n="edu_self_taught"></h5>
-										</div>	
+						<h5 class="card-title mb-4" data-i18n="edu_title"></h5>
+
+						<div class="accordion accordion-flush custom-accordion" id="educationAccordion">
+
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSelfTaught" aria-expanded="false">
+										<i class="bi bi-code-square me-3 text-primary"></i>
+										<span data-i18n="edu_self_taught"></span>
 									</button>
-								</p>
-								<div class="collapse" id="targetCollapseFormFormatio1">
-									<div class="card card-body">
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item pt-2 pb-0 ps-2 ps-2"><b data-i18n="edu_unity_title"></b> 
-												<div class="ps-3 mb-2">
-													<p class="m-0" data-i18n="edu_unity_desc"></p>
+								</h2>
+								<div id="collapseSelfTaught" class="accordion-collapse collapse" data-bs-parent="#educationAccordion">
+									<div class="accordion-body">
+										<div class="d-flex flex-column gap-3">
+											<div class="tech-row">
+												<div class="tech-icon bg-dark text-white">
+													<i class="bi bi-controller"></i>
 												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_cpp_title"></b> 
-												<div class="ps-3 mb-2">
-													<p class="m-0" data-i18n="edu_cpp_desc1"></p>
-													<p class="m-0" data-i18n="edu_cpp_desc2"></p>
+												<div class="tech-content">
+													<div class="d-flex justify-content-between align-items-center mb-1">
+														<h6 class="mb-0 fw-bold" data-i18n="edu_unity_title"></h6>
+														<span class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill">Game Dev</span>
+													</div>
+													<p class="small text-muted mb-0" data-i18n="edu_unity_desc"></p>
 												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_discord_title"></b> 
-												<div class="ps-3 mb-2">
-													<p class="m-0" data-i18n="edu_discord_desc"></p>
+											</div>
+
+											<div class="tech-row">
+												<div class="tech-icon bg-primary text-white">
+													<i class="bi bi-filetype-cpp"></i>
 												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_photoshop_title"></b> 
-												<div class="ps-3 mb-2">
-													<p class="m-0" data-i18n="edu_photoshop_desc"></p>
-												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_adb_title"></b> 
-												<div class="ps-3 mb-2">
-													<p class="m-0" data-i18n="edu_adb_desc1"></p>
-													<p class="m-0" data-i18n="edu_adb_desc2"></p>
-													<p class="m-0" data-i18n="edu_adb_desc3"></p>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li class="list-group-item pb-0">
-								<p class="d-inline-flex gap-1 mb-0"> 
-									<button id="buttonFormatio2" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio2" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-										<div class="d-flex hvr-forward">
-											<span id="arrowFormatio2" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5 data-i18n="edu_degrees"></h5>
-										</div>	
-									</button>
-								</p>
-								<div class="collapse" id="targetCollapseFormFormatio2">
-									<div class="card card-body">
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_diploma_title"></b> 
-												<div class="ps-3 mb-2">
-													<p class="m-0" data-i18n="edu_diploma_desc"></p>
-												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_mimo_title"></b> 
-												<div class="ps-3 mb-2">
-													<p class="m-0" data-i18n="edu_mimo_desc"></p>
-													<p class="m-0">- HTML</p>
-													<p class="m-0">- CSS</p>
-													<p class="m-0">- JavaScript</p>
-													<p class="m-0">- White-Hat</p>
-												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_middle_school_title"></b> 
-												<div class="ps-3 mb-2">
-													<p class="m-0" data-i18n="edu_middle_school_desc"></p>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li class="list-group-item pb-0">
-								<p class="d-inline-flex gap-1 mb-0"> 
-									<button id="buttonFormatio5" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio5" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-										<div class="d-flex hvr-forward">
-											<span id="arrowFormatio5" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5 data-i18n="edu_uni_courses"></h5>
-										</div>	
-									</button>
-								</p>
-								<div class="collapse" id="targetCollapseFormFormatio5">
-									<div class="card card-body">
-										<h5><b data-i18n="edu_uni_subtitle"></b></h5>
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_cyber_title"></b> 
-												<div class="ps-3 mb-2 pe-2">
-													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/sicurezza-e-privatezza" data-i18n="edu_cyber_course"></a></p>
-													<p class="m-0" data-i18n="edu_cyber_desc1"></p>
-													<p class="m-0" data-i18n="edu_cyber_desc2"></p>
-													<p class="m-0" data-i18n="edu_cyber_desc3"></p>
-													<p class="m-0" data-i18n="edu_cyber_desc4"></p>
-												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_db_title"></b> 
-												<div class="ps-3 mb-2 pe-2">
-													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/basi-di-dati-0" data-i18n="edu_db_course"></a></p>
-													<p class="m-0" data-i18n="edu_db_desc1"></p>
-													<p class="m-0" data-i18n="edu_db_desc2"></p>
-													<p class="m-0" data-i18n="edu_db_desc3"></p>
-													<p class="m-0" data-i18n="edu_db_link"></p>
-												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_web_title"></b> 
-												<div class="ps-3 mb-2 pe-2">
-													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2025/programmazione-web-e-mobile-0" data-i18n="edu_web_course"></a></p>
-													<p class="m-0" data-i18n="edu_web_desc1"></p>
-													<p class="m-0" data-i18n="edu_web_desc2"></p>
-													<p class="m-0" data-i18n="edu_web_desc3"></p>
-													<p class="m-0" data-i18n="edu_web_desc4"></p>
-													<p class="m-0" data-i18n="edu_web_desc5"></p>
-													<p class="m-0" data-i18n="edu_web_link"></p>
-												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_dataVis_title"></b> 
-												<div class="ps-3 mb-2 pe-2">
-													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2026/visualizzazione-scientifica" data-i18n="edu_datVis_course"></a></p>
-													<p class="m-0" data-i18n="edu_dataVis_desc1"></p>
-													<p class="m-0" data-i18n="edu_dataVis_desc2"></p>
-													<p class="m-0" data-i18n="edu_dataVis_desc3"></p>
-													<p class="m-0" data-i18n="edu_dataVis_desc4"></p>
-													<p class="m-0" data-i18n="edu_dataVis_desc5"></p>
-													<p class="m-0" data-i18n="edu_dataVis_link"></p>
-												</div>
-											</li>
-											<li class="list-group-item pt-2 pb-0 ps-2"><b data-i18n="edu_ai_title"></b> 
-												<div class="ps-3 mb-2 pe-2">
-													<p class="m-0"><a target="_blank" href="https://www.unimi.it/it/corsi/insegnamenti-dei-corsi-di-laurea/2026/intelligenza-artificiale-i" data-i18n="edu_ai_course"></a></p>
-													<p class="m-0" data-i18n="edu_ai_desc1"></p>
-													<p class="m-0" data-i18n="edu_ai_desc2"></p>
-													<p class="m-0" data-i18n="edu_ai_desc3"></p>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li class="list-group-item pb-0">
-								<p class="d-inline-flex gap-1 mb-0"> 
-									<button id="buttonFormatio3" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio3" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-										<div class="d-flex hvr-forward">
-											<span id="arrowFormatio3" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5 data-i18n="edu_prog_languages"></h5>
-										</div>	
-									</button>
-								</p>
-								<div class="collapse" id="targetCollapseFormFormatio3">
-									<div class="card card-body">
-										<div class="row g-3">
-											<!-- Assembly Intel x64 -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">Assembly Intel x64</span>
-													<div class="skill-level-bar">
-														<div class="level-segment filled blue">Basic</div>
-														<div class="level-segment">Interm.</div>
-														<div class="level-segment">Adv.</div>
+												<div class="tech-content">
+													<div class="d-flex justify-content-between align-items-center mb-1">
+														<h6 class="mb-0 fw-bold" data-i18n="edu_cpp_title"></h6>
+														<span class="badge bg-primary-subtle text-primary rounded-pill">Coding</span>
+													</div>
+													<div class="small text-muted">
+														<div class="d-flex align-items-start gap-2 mb-1">
+															<i class="bi bi-check2 text-primary"></i>
+															<span data-i18n="edu_cpp_desc1"></span>
+														</div>
+														<div class="d-flex align-items-start gap-2">
+															<i class="bi bi-check2 text-primary"></i>
+															<span data-i18n="edu_cpp_desc2"></span>
+														</div>
 													</div>
 												</div>
 											</div>
-											<!-- Assembly MIPS -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">Assembly MIPS</span>
-													<div class="skill-level-bar">
-														<div class="level-segment filled blue">Basic</div>
-														<div class="level-segment">Interm.</div>
-														<div class="level-segment">Adv.</div>
+
+											<div class="tech-row">
+												<div class="tech-icon bg-info text-white">
+													<i class="bi bi-discord"></i>
+												</div>
+												<div class="tech-content">
+													<div class="d-flex justify-content-between align-items-center mb-1">
+														<h6 class="mb-0 fw-bold" data-i18n="edu_discord_title"></h6>
+														<span class="badge bg-info-subtle text-info-emphasis rounded-pill">Automation</span>
 													</div>
+													<p class="small text-muted mb-0" data-i18n="edu_discord_desc"></p>
 												</div>
 											</div>
-											<!-- C -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">C</span>
-													<div class="skill-level-bar">
-														<div class="level-segment filled blue">Basic</div>
-														<div class="level-segment">Interm.</div>
-														<div class="level-segment">Adv.</div>
+
+											<div class="tech-row">
+												<div class="tech-icon bg-danger text-white">
+													<i class="bi bi-palette"></i>
+												</div>
+												<div class="tech-content">
+													<div class="d-flex justify-content-between align-items-center mb-1">
+														<h6 class="mb-0 fw-bold" data-i18n="edu_photoshop_title"></h6>
+														<span class="badge bg-danger-subtle text-danger rounded-pill">Design</span>
 													</div>
+													<p class="small text-muted mb-0" data-i18n="edu_photoshop_desc"></p>
 												</div>
 											</div>
-											<!-- C# -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">C#</span>
-													<div class="skill-level-bar">
-														<div class="level-segment filled blue">Basic</div>
-														<div class="level-segment">Interm.</div>
-														<div class="level-segment">Adv.</div>
-													</div>
+
+											<div class="tech-row">
+												<div class="tech-icon bg-success text-white">
+													<i class="bi bi-android2"></i>
 												</div>
-											</div>
-											<!-- C++ -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">C++</span>
-													<div class="skill-level-bar">
-														<div class="level-segment">Basic</div>
-														<div class="level-segment filled blue">Interm.</div>
-														<div class="level-segment">Adv.</div>
+												<div class="tech-content">
+													<div class="d-flex justify-content-between align-items-center mb-1">
+														<h6 class="mb-0 fw-bold" data-i18n="edu_adb_title"></h6>
+														<span class="badge bg-success-subtle text-success rounded-pill">Modding</span>
 													</div>
-												</div>
-											</div>
-											<!-- Go -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">Go</span>
-													<div class="skill-level-bar">
-														<div class="level-segment">Basic</div>
-														<div class="level-segment filled blue">Interm.</div>
-														<div class="level-segment">Adv.</div>
-													</div>
-												</div>
-											</div>
-											<!-- HTML -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">HTML</span>
-													<div class="skill-level-bar">
-														<div class="level-segment">Basic</div>
-														<div class="level-segment">Interm.</div>
-														<div class="level-segment filled blue">Adv.</div>
-													</div>
-												</div>
-											</div>
-											<!-- Java -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">Java</span>
-													<div class="skill-level-bar">
-														<div class="level-segment filled blue">Basic</div>
-														<div class="level-segment">Interm.</div>
-														<div class="level-segment">Adv.</div>
-													</div>
-												</div>
-											</div>
-											<!-- JavaScript -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">JavaScript</span>
-													<div class="skill-level-bar">
-														<div class="level-segment">Basic</div>
-														<div class="level-segment">Interm.</div>
-														<div class="level-segment filled blue">Adv.</div>
-													</div>
-												</div>
-											</div>
-											<!-- Shell Scripting -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">Shell Scripting</span>
-													<div class="skill-level-bar">
-														<div class="level-segment filled blue">Basic</div>
-														<div class="level-segment">Interm.</div>
-														<div class="level-segment">Adv.</div>
-													</div>
-												</div>
-											</div>
-											<!-- SQL -->
-											<div class="col-12 col-md-6 col-lg-4">
-												<div class="skill-card">
-													<span class="skill-name">SQL</span>
-													<div class="skill-level-bar">
-														<div class="level-segment">Basic</div>
-														<div class="level-segment filled blue">Interm.</div>
-														<div class="level-segment">Adv.</div>
+													<div class="d-flex flex-wrap gap-2 mt-2">
+														<span class="tech-tag" data-i18n="edu_adb_desc1"></span>
+														<span class="tech-tag" data-i18n="edu_adb_desc2"></span>
+														<span class="tech-tag" data-i18n="edu_adb_desc3"></span>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</li>
-							<li class="list-group-item pb-0">
-								<p class="d-inline-flex gap-1 mb-0"> 
-									<button id="buttonFormatio4" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormFormatio4" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-										<div class="d-flex hvr-forward">
-											<span id="arrowFormatio4" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<h5 data-i18n="edu_spoken_languages"></h5>
-										</div>	
+							</div>
+
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDegrees" aria-expanded="false">
+										<i class="bi bi-mortarboard me-3 text-primary"></i>
+										<span data-i18n="edu_degrees"></span>
 									</button>
-								</p>
-								<div class="collapse" id="targetCollapseFormFormatio4">
-									<div class="card card-body">
-										<div class="row g-3">
-											<!-- Italiano -->
-											<div class="col-12 col-md-4">
-												<div class="skill-card d-flex justify-content-between align-items-center">
-													<span class="skill-name mb-0" data-i18n="lang_italian"></span>
-													<span class="badge bg-danger rounded-pill text-dark">Madrelingua</span>
+								</h2>
+								<div id="collapseDegrees" class="accordion-collapse collapse" data-bs-parent="#educationAccordion">
+									<div class="accordion-body">
+										<div class="d-flex flex-column gap-3">
+											<div class="degree-ticket">
+												<div class="ticket-date">2022</div>
+												<div class="ticket-content">
+													<h6 class="mb-1 fw-bold" data-i18n="edu_diploma_title"></h6>
+													<span class="text-primary small">ITIS Feltrinelli</span>
+													<p class="mb-0 small text-muted mt-1" data-i18n="edu_diploma_desc"></p>
 												</div>
 											</div>
-											<!-- Inglese -->
-											<div class="col-12 col-md-4">
-												<div class="skill-card d-flex justify-content-between align-items-center">
-													<span class="skill-name mb-0" data-i18n="lang_english"></span>
-													<span class="badge bg-primary rounded-pill text-dark">B2</span>
+											<div class="degree-ticket">
+												<div class="ticket-date">2020</div>
+												<div class="ticket-content">
+													<h6 class="mb-1 fw-bold" data-i18n="edu_mimo_title"></h6>
+													<span class="text-primary small">GetMimo Online</span>
+													<div class="d-flex gap-1 flex-wrap mt-2">
+														<span class="badge bg-body-secondary text-body-secondary border">HTML</span>
+														<span class="badge bg-body-secondary text-body-secondary border">CSS</span>
+														<span class="badge bg-body-secondary text-body-secondary border">JS</span>
+													</div>
 												</div>
 											</div>
-											<!-- Spagnolo -->
-											<div class="col-12 col-md-4">
-												<div class="skill-card d-flex justify-content-between align-items-center">
-													<span class="skill-name mb-0" data-i18n="lang_spanish"></span>
-													<span class="badge bg-success rounded-pill text-dark">A2</span>
+											<div class="degree-ticket">
+												<div class="ticket-date">2015</div>
+												<div class="ticket-content">
+													<h6 class="mb-1 fw-bold" data-i18n="edu_middle_school_title"></h6>
+													<span class="text-primary small">Convitto Naz. Pietro Longone</span>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</li>
+							</div>
+
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUni" aria-expanded="false">
+										<i class="bi bi-university me-3 text-primary"></i>
+										<span data-i18n="edu_uni_courses"></span>
+									</button>
+								</h2>
+								<div id="collapseUni" class="accordion-collapse collapse" data-bs-parent="#educationAccordion">
+									<div class="accordion-body">
+										<p class="mb-3 fst-italic text-muted" data-i18n="edu_uni_subtitle"></p>
+
+										<div class="row g-3">
+											<div class="col-12">
+												<div class="course-card border-start-danger">
+													<div class="d-flex justify-content-between">
+														<h6 class="fw-bold mb-1" data-i18n="edu_cyber_title"></h6>
+														<a href="#" class="course-link"><i class="bi bi-box-arrow-up-right"></i></a>
+													</div>
+													<span class="badge bg-danger-subtle text-danger mb-2" data-i18n="edu_cyber_course"></span>
+													<ul class="course-list">
+														<li data-i18n="edu_cyber_desc1"></li>
+														<li data-i18n="edu_cyber_desc3"></li>
+													</ul>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="course-card border-start-warning">
+													<h6 class="fw-bold mb-1" data-i18n="edu_db_title"></h6>
+													<span class="badge bg-warning-subtle text-warning-emphasis mb-2" data-i18n="edu_db_course"></span>
+													<p class="small text-muted mb-0" data-i18n="edu_db_desc1"></p>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="course-card border-start-primary">
+													<h6 class="fw-bold mb-1" data-i18n="edu_web_title"></h6>
+													<span class="badge bg-primary-subtle text-primary mb-2" data-i18n="edu_web_course"></span>
+													<p class="small text-muted mb-0">Frontend (HTML/CSS/JS) & Backend (Node.js)</p>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="course-card border-start-info">
+													<h6 class="fw-bold mb-1" data-i18n="edu_ai_title"></h6>
+													<span class="badge bg-info-subtle text-info-emphasis mb-2" data-i18n="edu_ai_course"></span>
+													<p class="small text-muted mb-0" data-i18n="edu_ai_desc2"></p>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="course-card border-start-success">
+													<h6 class="fw-bold mb-1" data-i18n="edu_dataVis_title"></h6>
+													<span class="badge bg-success-subtle text-success mb-2" data-i18n="edu_datVis_course"></span>
+													<p class="small text-muted mb-0" data-i18n="edu_dataVis_desc1"></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLangs" aria-expanded="false">
+										<i class="bi bi-terminal me-3 text-primary"></i>
+										<span data-i18n="edu_prog_languages"></span>
+									</button>
+								</h2>
+								<div id="collapseLangs" class="accordion-collapse collapse" data-bs-parent="#educationAccordion">
+									<div class="accordion-body">
+										<div class="d-flex flex-column gap-4">
+
+											<div>
+												<h6 class="text-uppercase text-primary fw-bold small mb-3 opacity-75">Advanced</h6>
+												<div class="d-flex flex-wrap gap-2">
+													<div class="skill-pill filled">
+														<i class="bi bi-filetype-html"></i> HTML
+													</div>
+													<div class="skill-pill filled">
+														<i class="bi bi-filetype-js"></i> JavaScript
+													</div>
+												</div>
+											</div>
+
+											<div>
+												<h6 class="text-uppercase text-primary fw-bold small mb-3 opacity-75">Intermediate</h6>
+												<div class="d-flex flex-wrap gap-2">
+													<div class="skill-pill">
+														<i class="bi bi-filetype-sql"></i> SQL
+													</div>
+													<div class="skill-pill">
+														<i class="bi bi-box"></i> Go
+													</div>
+													<div class="skill-pill">
+														<i class="bi bi-filetype-cpp"></i> C++
+													</div>
+												</div>
+											</div>
+
+											<div>
+												<h6 class="text-uppercase text-primary fw-bold small mb-3 opacity-75">Basic / Academic</h6>
+												<div class="d-flex flex-wrap gap-2">
+													<div class="skill-pill basic">C</div>
+													<div class="skill-pill basic">C#</div>
+													<div class="skill-pill basic">Java</div>
+													<div class="skill-pill basic">Assembly x64</div>
+													<div class="skill-pill basic">Assembly MIPS</div>
+													<div class="skill-pill basic">Shell</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<h2 class="accordion-header">
+									<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoken" aria-expanded="false">
+										<i class="bi bi-chat-left-text me-3 text-primary"></i>
+										<span data-i18n="edu_spoken_languages"></span>
+									</button>
+								</h2>
+								<div id="collapseSpoken" class="accordion-collapse collapse" data-bs-parent="#educationAccordion">
+									<div class="accordion-body">
+										<div class="row g-3">
+											<div class="col-12 col-md-4">
+												<div class="lang-card">
+													<div class="d-flex justify-content-between align-items-start mb-3">
+														<div class="d-flex align-items-center">
+															<div class="lang-avatar bg-success-subtle text-success">IT</div>
+															<div class="ms-3">
+																<h6 class="mb-0 fw-bold" data-i18n="lang_italian"></h6>
+																<small class="text-muted">Native</small>
+															</div>
+														</div>
+														<span class="badge bg-success-subtle text-success border border-success-subtle">C2+</span>
+													</div>
+													<div class="cefr-visualizer">
+														<div class="cefr-step filled bg-success"></div> <div class="cefr-step filled bg-success"></div> <div class="cefr-step filled bg-success"></div> <div class="cefr-step filled bg-success"></div> <div class="cefr-step filled bg-success"></div> <div class="cefr-step filled bg-success"></div> </div>
+													<div class="d-flex justify-content-between mt-2">
+														<small class="text-xs text-muted">Basic</small>
+														<small class="text-xs text-muted">Proficient</small>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-12 col-md-4">
+												<div class="lang-card">
+													<div class="d-flex justify-content-between align-items-start mb-3">
+														<div class="d-flex align-items-center">
+															<div class="lang-avatar bg-primary-subtle text-primary">EN</div>
+															<div class="ms-3">
+																<h6 class="mb-0 fw-bold" data-i18n="lang_english"></h6>
+																<small class="text-muted">Advanced</small>
+															</div>
+														</div>
+														<span class="badge bg-primary-subtle text-primary border border-primary-subtle">B2</span>
+													</div>
+													<div class="cefr-visualizer">
+														<div class="cefr-step filled bg-primary"></div>
+														<div class="cefr-step filled bg-primary"></div>
+														<div class="cefr-step filled bg-primary"></div>
+														<div class="cefr-step filled bg-primary"></div>
+														<div class="cefr-step"></div>
+														<div class="cefr-step"></div>
+													</div>
+													<div class="d-flex justify-content-between mt-2">
+														<small class="text-xs text-muted">Basic</small>
+														<small class="text-xs text-muted">Proficient</small>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-12 col-md-4">
+												<div class="lang-card">
+													<div class="d-flex justify-content-between align-items-start mb-3">
+														<div class="d-flex align-items-center">
+															<div class="lang-avatar bg-warning-subtle text-warning-emphasis">ES</div>
+															<div class="ms-3">
+																<h6 class="mb-0 fw-bold" data-i18n="lang_spanish"></h6>
+																<small class="text-muted">Elementary</small>
+															</div>
+														</div>
+														<span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">A2</span>
+													</div>
+													<div class="cefr-visualizer">
+														<div class="cefr-step filled bg-warning text-warning-emphasis"></div>
+														<div class="cefr-step filled bg-warning text-warning-emphasis"></div>
+														<div class="cefr-step"></div>
+														<div class="cefr-step"></div>
+														<div class="cefr-step"></div>
+														<div class="cefr-step"></div>
+													</div>
+													<div class="d-flex justify-content-between mt-2">
+														<small class="text-xs text-muted">Basic</small>
+														<small class="text-xs text-muted">Proficient</small>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
 					</div>
 				</div>
 				<div id="gitHubPage" class="card mb-3">
