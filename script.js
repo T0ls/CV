@@ -93,91 +93,11 @@ fetch('https://api.github.com/users/T0ls/repos', {
     console.error(error);
 });
 
-/* GitHub Api fetch Repositories List */
-/* GitHub Api fetch Repositories */
-fetch('https://api.github.com/users/T0ls/repos', {
-	method: 'GET',
-	headers: apiHeaders
-})
-	.then(response => {
-		if (!response.ok) {
-			throw new Error('Error requesting GitHub API: repositories');
-		}
-		return response.json();
-	})
-	.then(data => {
-		//console.log(data);
-		var container1 = document.getElementById("gitHubRepoList");
-		var container2 = document.getElementById("gitHubRepoItems");
-		for(var i=0; i<data.length; i++) {
-			var link = document.createElement('a');
-
-			// Create the navbar objects list
-			link.setAttribute('class', 'nav-link text-truncate');
-			link.setAttribute('style', 'max-width: 100%');
-			link.setAttribute('href', '#item-' + data[i].name);
-			link.textContent = data[i].name;
-			container1.appendChild(link);
-
-			// Create the scrollbar items list
-			var div1 = document.createElement('div');
-			var a = document.createElement('a');
-			var h4 = document.createElement('h4');
-			var p1 = document.createElement('p');
-			var p2 = document.createElement('p');
-			var span = document.createElement('span');
-			var div2 = document.createElement('div');
-			// div 1
-			if (i !== 0) {
-				div1.setAttribute('class', 'border-top pt-3');
-			}	
-			div1.setAttribute('id', 'item-' + data[i].name);
-			// div 2
-			div2.setAttribute('class', 'd-inline-flex');
-			div2.setAttribute('id', 'dotDiv' + data[i].name);
-			// a
-			a.setAttribute('id', 'repoLink-' + data[i].name);
-			a.setAttribute('onclick', 'hideBlock(\'' + data[i].name + '\')');
-			//a.setAttribute('href', "#gitHubPage");
-			// h4
-			//h4.setAttribute('class', 'text-primary')
-			h4.innerHTML = data[i].name;
-			// p
-			p1.setAttribute('class', 'm-1')
-			p1.innerHTML = data[i].description;
-			p2.innerHTML = data[i].language;
-			// span
-			span.setAttribute('class','repoLanguageColor');
-
-			container2.appendChild(div1);
-
-			var container3 = document.getElementById("item-" + data[i].name);
-			container3.appendChild(a);
-			a.appendChild(h4);
-			container3.appendChild(p1);
-
-			container3.appendChild(div2);
-			var container4 = document.getElementById("dotDiv" + data[i].name);
-			container4.appendChild(span)
-			container4.appendChild(p2);
-		}
-	})
-	.catch(error => {
-		console.error(error);
-});
-
-/* End */
-
-
 /* Hide/Show Functions */
-
 function hideBlock(x) {
-
-	console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
 	var block = document.getElementById("gitHubProfile");
 	block.style.display = "none";
 	showBlock(x);
-	console.log(document.getElementById("gitHubPage").getClientRects()[0].y)
 }
 
 function showBlock(repoN) {
@@ -315,6 +235,8 @@ function showRepoList() {
 
 let dati = new Map();
 
+let repoCache = new Map();
+
 async function fetchAPI(repo, path) {
 	// Fixed: Use a string key for the Map instead of an array
 	let key = `${repo}/${path}`;
@@ -340,21 +262,57 @@ async function fetchAPI(repo, path) {
 	}
 }
 
-// Added: Function to navigate to a folder
-async function navigateTo(repo, path) {
-	const data = await fetchAPI(repo, path);
-	renderRepoContents(data, repo, path);
+async function navigateTo(repoName, path) {
+    const data = await fetchAPI(repoName, path);
+    
+    // Ensure we are rendering a directory (Array)
+    if (Array.isArray(data)) {
+        renderRepoContents(data, repoName, path);
+    } else {
+        console.error("Path is not a directory or data is missing.");
+    }
 }
 
 // Added: Function to render repository contents
 function renderRepoContents(data, repoName, currentPath = '') {
-    const container = document.querySelector("#gitHubRepoItem ul");
-    const listItems = container.querySelectorAll("li");
+    const folderSvg = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 24px; width: 24px;">
+  <path d="M20 6H12L10 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6Z" fill="#8B8F99"/>
+</svg>`;
+
+    const fileSvg = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="height: 24px; width: 24px;">
+  <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" 
+        stroke="#7A7D85" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  <path d="M14 2V8H20" 
+        stroke="#7A7D85" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+</svg>`;
+
+	let container;
+
+	if (currentPath && currentPath !== '') {
+		container = document.querySelector("#githubRepoContent ul");
+	} else {
+		container = document.querySelector("#gitHubRepoItem ul");
+	}
     
-    // Remove all items except the first one (header)
-    for (let i = 1; i < listItems.length; i++) {
-        listItems[i].remove();
+    if (!container) {
+        // Fallback if the specific container isn't found (e.g. if githubRepoContent doesn't exist yet)
+        container = document.querySelector("#gitHubRepoItem ul");
     }
+    
+    if (!container) {
+        console.error("Container #gitHubRepoItem ul not found");
+        return;
+    }
+
+    // Keep the header (first element) and remove the rest
+    const header = container.firstElementChild;
+    container.replaceChildren(header);
 
 	// Added: Show ".." if inside a folder
 	if (currentPath && currentPath !== '') {
@@ -372,7 +330,7 @@ function renderRepoContents(data, repoName, currentPath = '') {
 		li.innerHTML = `
 			<div class="row mt-1 mb-1">
 				<div class="col-4 d-flex">
-					<img src="folder2x.png" style="height: 24px; width: 24px;">
+					${folderSvg}
 					<a class="aHide ms-2 mb-0 text-truncate">..</a>
 				</div>
 			</div>
@@ -381,38 +339,48 @@ function renderRepoContents(data, repoName, currentPath = '') {
 	}
 
     // Sort: folders first, then files
-    data.sort((a, b) => {
-        if (a.type === b.type) return a.name.localeCompare(b.name);
-        return a.type === 'dir' ? -1 : 1;
-    });
+    if (Array.isArray(data)) {
+        data.sort((a, b) => {
+            if (a.type === b.type) return a.name.localeCompare(b.name);
+            return a.type === 'dir' ? -1 : 1;
+        });
 
-    data.forEach(item => {
-        const li = document.createElement('li');
-        li.className = 'list-group-item';
-        
-        if (item.type === 'dir') {
-            li.style.cursor = 'pointer';
-            li.onclick = () => navigateTo(repoName, item.path);
-        } else if (item.type === 'file') {
-			// Added: Click handler for files
-			li.style.cursor = 'pointer';
-			li.onclick = () => viewFile(repoName, item.path);
-		}
+        data.forEach(item => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item';
+            
+            if (item.type === 'dir') {
+                li.style.cursor = 'pointer';
+                li.onclick = (e) => {
+                    e.stopPropagation(); // Prevent bubbling issues
+                    navigateTo(repoName, item.path);
+                };
+            } else if (item.type === 'file') {
+                // Added: Click handler for files
+                li.style.cursor = 'pointer';
+                li.onclick = (e) => {
+                    e.stopPropagation(); // Prevent bubbling issues
+                    viewFile(repoName, item.path);
+                };
+            }
 
-        const iconSrc = item.type === 'dir' ? 'folder2x.png' : 'file2x.png';
-        
-        li.innerHTML = `
-            <div class="row mt-1 mb-1">
-                <div class="col-4 d-flex">
-                    <img src="${iconSrc}" style="height: 24px; width: 24px;">
-                    <a class="aHide ms-2 mb-0 text-truncate">${item.name}</a>
+            const iconSvg = item.type === 'dir' ? folderSvg : fileSvg;
+            
+            li.innerHTML = `
+                <div class="row mt-1 mb-1">
+                    <div class="col-4 d-flex">
+                        ${iconSvg}
+                        <a class="aHide ms-2 mb-0 text-truncate">${item.name}</a>
+                    </div>
+                    <div class="col-6"><a class="aHide text-truncate mb-0"></a></div>
+                    <div class="col-2"><p class="text-truncate mb-0 text-end"></p></div>
                 </div>
-                <div class="col-6"><a class="aHide text-truncate mb-0"></a></div>
-                <div class="col-2"><p class="text-truncate mb-0 text-end"></p></div>
-            </div>
-        `;
-        container.appendChild(li);
-    });
+            `;
+            container.appendChild(li);
+        });
+    } else {
+        console.error("Data is not an array:", data);
+    }
 }
 
 // Added: Function to view file content
