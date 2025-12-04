@@ -32,23 +32,66 @@ try {
 }
 
 /* GitHub Api fetch Profile Info */
-const profileUrl = gitHubApi_Key ? 'https://api.github.com/user' : 'https://api.github.com/users/T0ls';
-
-fetch(profileUrl, {
-	method: 'GET',
-	headers: apiHeaders
+/* GitHub Api fetch Repositories */
+fetch('https://api.github.com/users/T0ls/repos', {
+    method: 'GET',
+    headers: apiHeaders
 })
-.then(response => { if (response.ok) { return response.json(); } else { throw new Error('Error requesting GitHub API: user '); } })
-.then(data => { 
-	var avatar = document.getElementById("avatarGitHub");
-	var profileUrl = document.getElementById("profileUrlGitHub");
-	avatar.src = data.avatar_url;
-	profileUrl.href = data.html_url;
-	profileUrl.innerHTML = data.login;
-}) 
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Error requesting GitHub API: repositories');
+    }
+    return response.json();
+})
+.then(data => {
+    var container = document.getElementById("repoGrid");
+    // Clear any existing content
+    container.innerHTML = '';
 
-.catch(error => { console.error('Si è verificato un errore:', error); });
-/* End */
+    // Sort by updated_at (newest first) optional
+    data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+    for(var i=0; i<data.length; i++) {
+        var col = document.createElement('div');
+        col.className = 'col-md-6 col-lg-4';
+
+        // Format description
+        var desc = data[i].description || "No description available";
+        if(desc.length > 80) desc = desc.substring(0, 80) + "...";
+
+        // Language Dot Color Logic (Basic mapping, default to gray)
+        var lang = data[i].language || 'N/A';
+        
+        col.innerHTML = `
+            <div class="repo-card h-100" onclick="hideBlock('${data[i].name}')">
+                <div class="repo-card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="repo-icon-box">
+                            <i class="bi bi-journal-bookmark-fill"></i>
+                        </div>
+                        <i class="bi bi-arrow-right text-muted arrow-icon"></i>
+                    </div>
+                    
+                    <h5 class="fw-bold mb-2 text-truncate">${data[i].name}</h5>
+                    <p class="text-muted small mb-3 flex-grow-1">${desc}</p>
+                    
+                    <div class="d-flex align-items-center mt-auto pt-3 border-top border-light-subtle">
+                        <span class="repoLanguageColor"></span>
+                        <small class="fw-medium text-secondary ms-2">${lang}</small>
+                        <div class="ms-auto d-flex gap-3 text-muted small">
+                            <span><i class="bi bi-star"></i> ${data[i].stargazers_count}</span>
+                            <span><i class="bi bi-diagram-2"></i> ${data[i].forks_count}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.appendChild(col);
+    }
+})
+.catch(error => {
+    console.error(error);
+});
 
 /* GitHub Api fetch Repositories List */
 /* GitHub Api fetch Repositories */
@@ -138,8 +181,56 @@ function hideBlock(x) {
 }
 
 function showBlock(repoN) {
-	const owner = document.getElementById("profileUrlGitHub").innerHTML;
+	// const owner = document.getElementById("profileUrlGitHub").innerHTML;
+    const owner = 'T0ls'; // Hardcoded for now as profile fetch seems missing
 	
+    // 1. Fetch Repo Details
+    fetch(`https://api.github.com/repos/${owner}/${repoN}`, { headers: apiHeaders })
+        .then(res => res.json())
+        .then(repo => {
+            document.getElementById('projectTitle').textContent = repo.name;
+            document.getElementById('projectDescription').textContent = repo.description;
+            document.getElementById('projectLink').href = repo.html_url;
+            
+            const homepageBtn = document.getElementById('projectHomepage');
+            if(repo.homepage) {
+                homepageBtn.href = repo.homepage;
+                homepageBtn.style.display = 'inline-flex';
+            } else {
+                homepageBtn.style.display = 'none';
+            }
+
+            const topicsContainer = document.getElementById('projectTopics');
+            topicsContainer.innerHTML = '';
+            if(repo.topics) {
+                repo.topics.forEach(topic => {
+                    const span = document.createElement('span');
+                    span.className = 'badge bg-secondary-subtle text-secondary-emphasis rounded-pill border';
+                    span.textContent = topic;
+                    topicsContainer.appendChild(span);
+                });
+            }
+        });
+
+    // 2. Fetch README (HTML)
+    // Create headers with specific Accept for HTML
+    const readmeHeaders = { ...apiHeaders, 'Accept': 'application/vnd.github.html' };
+    
+    fetch(`https://api.github.com/repos/${owner}/${repoN}/readme`, { headers: readmeHeaders })
+        .then(res => {
+            if(res.ok) return res.text();
+            throw new Error('No README');
+        })
+        .then(html => {
+            const container = document.getElementById('readmeContainer');
+            const content = document.getElementById('readmeContent');
+            content.innerHTML = html;
+            container.style.display = 'block';
+        })
+        .catch(() => {
+            document.getElementById('readmeContainer').style.display = 'none';
+        });
+
 	// Fetch repository contents
 	fetch(`https://api.github.com/repos/${owner}/${repoN}/contents`, {
 		method: 'GET',
@@ -231,7 +322,8 @@ async function fetchAPI(repo, path) {
 		return dati.get(key)
 	} else {
 		// Fixed: Handle empty path correctly to avoid double slashes
-		let url = `https://api.github.com/repos/${document.getElementById("profileUrlGitHub").innerHTML}/${repo}/contents`;
+        const owner = 'T0ls';
+		let url = `https://api.github.com/repos/${owner}/${repo}/contents`;
 		if (path && path !== '') {
 			url += `/${path}`;
 		}
