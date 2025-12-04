@@ -805,6 +805,43 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Search and Filter Styles */
+#repoSearch {
+    border-radius: 0 8px 8px 0;
+    box-shadow: none;
+}
+
+#repoSearch:focus {
+    border-color: var(--bs-border-color);
+    box-shadow: none;
+}
+
+.input-group-text {
+    border-radius: 8px 0 0 8px;
+}
+
+#activeFilters .badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+    transition: all 0.2s ease;
+}
+
+#activeFilters .badge:hover {
+    background-color: #dc3545 !important; /* Red on hover to indicate removal */
+}
+
+#availableFilters .badge {
+    font-weight: 400;
+    padding: 0.5em 0.8em;
+    transition: all 0.2s ease;
+}
+
+#availableFilters .badge:hover {
+    background-color: var(--bs-secondary-bg) !important;
+    color: var(--bs-body-color) !important;
+    border-color: var(--bs-secondary-border-subtle) !important;
+}
+
 /* Markdown Content */
 .markdown-body {
     font-size: 0.95rem;

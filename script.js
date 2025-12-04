@@ -33,6 +33,12 @@ try {
 
 /* GitHub Api fetch Profile Info */
 /* GitHub Api fetch Repositories */
+
+// Global variables for filtering
+let allRepos = [];
+let allLanguages = new Set();
+let selectedLanguages = new Set();
+
 fetch('https://api.github.com/users/T0ls/repos', {
     method: 'GET',
     headers: apiHeaders
@@ -44,27 +50,165 @@ fetch('https://api.github.com/users/T0ls/repos', {
     return response.json();
 })
 .then(data => {
-    var container = document.getElementById("repoGrid");
-    // Clear any existing content
-    container.innerHTML = '';
-
     // Sort by updated_at (newest first) optional
     data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+    
+    allRepos = data;
+    
+    // Initial render
+    filterAndRenderRepos();
 
-    for(var i=0; i<data.length; i++) {
+    // Initialize filters with primary languages first
+    allRepos.forEach(repo => {
+        if(repo.language) {
+            allLanguages.add(repo.language);
+        }
+        // Fetch all languages for this repo to update filters and display
+        if (repo.languages_url) {
+            fetchLanguages(repo.languages_url, repo);
+        }
+    });
+    renderFilters();
+
+    // Setup Search Listener
+    document.getElementById('repoSearch').addEventListener('input', filterAndRenderRepos);
+})
+.catch(error => {
+    console.error(error);
+});
+
+function fetchLanguages(url, repo) {
+    fetch(url, { headers: apiHeaders })
+        .then(res => res.json())
+        .then(langs => {
+            const langList = Object.keys(langs);
+            repo.allLanguages = langList; // Store for filtering
+            
+            // Update UI text
+            const langId = 'lang-' + repo.name;
+            const element = document.getElementById(langId);
+            if (element && langList.length > 0) {
+                const text = langList.join(', ');
+                element.textContent = text;
+                element.title = text;
+            }
+
+            // Update global filter list
+            let newLangFound = false;
+            langList.forEach(l => {
+                if(!allLanguages.has(l)) {
+                    allLanguages.add(l);
+                    newLangFound = true;
+                }
+            });
+            
+            if(newLangFound) {
+                renderFilters();
+            }
+        })
+        .catch(err => console.error('Error fetching languages:', err));
+}
+
+function renderFilters() {
+    const availableContainer = document.getElementById('availableFilters');
+    const activeContainer = document.getElementById('activeFilters');
+    
+    availableContainer.innerHTML = '';
+    activeContainer.innerHTML = '';
+
+    // Sort languages alphabetically
+    const sortedLangs = Array.from(allLanguages).sort();
+
+    sortedLangs.forEach(lang => {
+        if (selectedLanguages.has(lang)) {
+            // Render as active filter (with remove X)
+            const badge = document.createElement('span');
+            badge.className = 'badge bg-primary text-white d-flex align-items-center gap-2';
+            badge.style.cursor = 'pointer';
+            badge.innerHTML = `${lang} <i class="bi bi-x-lg" style="font-size: 0.7em;"></i>`;
+            badge.onclick = () => toggleFilter(lang);
+            activeContainer.appendChild(badge);
+        } else {
+            // Render as available filter
+            const badge = document.createElement('span');
+            badge.className = 'badge bg-body-secondary text-body-secondary border';
+            badge.style.cursor = 'pointer';
+            badge.textContent = lang;
+            badge.onclick = () => toggleFilter(lang);
+            availableContainer.appendChild(badge);
+        }
+    });
+}
+
+function toggleFilter(lang) {
+    if (selectedLanguages.has(lang)) {
+        selectedLanguages.delete(lang);
+    } else {
+        selectedLanguages.add(lang);
+    }
+    renderFilters();
+    filterAndRenderRepos();
+}
+
+function filterAndRenderRepos() {
+    const searchText = document.getElementById('repoSearch').value.toLowerCase();
+    
+    const filtered = allRepos.filter(repo => {
+        // Search Text Logic
+        const matchesSearch = (repo.name.toLowerCase().includes(searchText) || 
+                               (repo.description && repo.description.toLowerCase().includes(searchText)));
+        
+        // Language Filter Logic (OR)
+        let matchesLang = true;
+        if (selectedLanguages.size > 0) {
+            // Check primary language
+            let hasLang = selectedLanguages.has(repo.language);
+            
+            // Check secondary languages if fetched
+            if (!hasLang && repo.allLanguages) {
+                hasLang = repo.allLanguages.some(l => selectedLanguages.has(l));
+            }
+            
+            matchesLang = hasLang;
+        }
+        
+        return matchesSearch && matchesLang;
+    });
+    
+    renderRepos(filtered);
+}
+
+function renderRepos(repos) {
+    var container = document.getElementById("repoGrid");
+    container.innerHTML = '';
+
+    if (repos.length === 0) {
+        container.innerHTML = '<div class="col-12 text-center text-muted py-4">No repositories found matching your criteria.</div>';
+        return;
+    }
+
+    for(var i=0; i<repos.length; i++) {
         var col = document.createElement('div');
         col.className = 'col-md-6 col-lg-4';
 
         // Format description
-        var desc = data[i].description || "No description available";
+        var desc = repos[i].description || "No description available";
         if(desc.length > 80) desc = desc.substring(0, 80) + "...";
 
         // Language Dot Color Logic (Basic mapping, default to gray)
-        var lang = data[i].language || 'N/A';
-        var langId = 'lang-' + data[i].name;
+        var lang = repos[i].language || 'N/A';
+        var langId = 'lang-' + repos[i].name;
         
+        // If we already fetched all languages, use them for display immediately
+        let displayLang = lang;
+        let displayTitle = lang;
+        if (repos[i].allLanguages) {
+            displayLang = repos[i].allLanguages.join(', ');
+            displayTitle = displayLang;
+        }
+
         col.innerHTML = `
-            <div class="repo-card h-100" onclick="hideBlock('${data[i].name}')">
+            <div class="repo-card h-100" onclick="hideBlock('${repos[i].name}')">
                 <div class="repo-card-body">
                     <div class="d-flex justify-content-between align-items-start mb-3">
                         <div class="repo-icon-box">
@@ -73,46 +217,24 @@ fetch('https://api.github.com/users/T0ls/repos', {
                         <i class="bi bi-arrow-right text-muted arrow-icon"></i>
                     </div>
                     
-                    <h5 class="fw-bold mb-2 text-truncate">${data[i].name}</h5>
+                    <h5 class="fw-bold mb-2 text-truncate">${repos[i].name}</h5>
                     <p class="text-muted small mb-3 flex-grow-1">${desc}</p>
                     
                     <div class="d-flex align-items-center mt-auto pt-3 border-top border-light-subtle">
                         <span class="repoLanguageColor flex-shrink-0"></span>
                         <div class="ms-2 me-2 flex-grow-1" style="min-width: 0;">
-                            <small id="${langId}" class="fw-medium text-secondary d-block text-truncate" title="${lang}">${lang}</small>
+                            <small id="${langId}" class="fw-medium text-secondary d-block text-truncate" title="${displayTitle}">${displayLang}</small>
                         </div>
                         <div class="d-flex gap-3 text-muted small flex-shrink-0">
-                            <span><i class="bi bi-star"></i> ${data[i].stargazers_count}</span>
-                            <span><i class="bi bi-diagram-2"></i> ${data[i].forks_count}</span>
+                            <span><i class="bi bi-star"></i> ${repos[i].stargazers_count}</span>
+                            <span><i class="bi bi-diagram-2"></i> ${repos[i].forks_count}</span>
                         </div>
                     </div>
                 </div>
             </div>
         `;
         container.appendChild(col);
-        
-        // Fetch all languages for this repo
-        if (data[i].languages_url) {
-            fetchLanguages(data[i].languages_url, langId);
-        }
     }
-})
-.catch(error => {
-    console.error(error);
-});
-
-function fetchLanguages(url, elementId) {
-    fetch(url, { headers: apiHeaders })
-        .then(res => res.json())
-        .then(langs => {
-            const langList = Object.keys(langs).join(', ');
-            const element = document.getElementById(elementId);
-            if (element && langList) {
-                element.textContent = langList;
-                element.title = langList; // Tooltip for full text
-            }
-        })
-        .catch(err => console.error('Error fetching languages:', err));
 }
 
 /* Fetch Last Update Date for CV Repo */
