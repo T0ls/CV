@@ -50,7 +50,6 @@ fetch('https://api.github.com/users/T0ls/repos', {
 
     // Sort by updated_at (newest first) optional
     data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-		console.log(data)
 
     for(var i=0; i<data.length; i++) {
         var col = document.createElement('div');
@@ -62,6 +61,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 
         // Language Dot Color Logic (Basic mapping, default to gray)
         var lang = data[i].language || 'N/A';
+        var langId = 'lang-' + data[i].name;
         
         col.innerHTML = `
             <div class="repo-card h-100" onclick="hideBlock('${data[i].name}')">
@@ -77,9 +77,11 @@ fetch('https://api.github.com/users/T0ls/repos', {
                     <p class="text-muted small mb-3 flex-grow-1">${desc}</p>
                     
                     <div class="d-flex align-items-center mt-auto pt-3 border-top border-light-subtle">
-                        <span class="repoLanguageColor"></span>
-                        <small class="fw-medium text-secondary ms-2">${lang}</small>
-                        <div class="ms-auto d-flex gap-3 text-muted small">
+                        <span class="repoLanguageColor flex-shrink-0"></span>
+                        <div class="ms-2 me-2 flex-grow-1" style="min-width: 0;">
+                            <small id="${langId}" class="fw-medium text-secondary d-block text-truncate" title="${lang}">${lang}</small>
+                        </div>
+                        <div class="d-flex gap-3 text-muted small flex-shrink-0">
                             <span><i class="bi bi-star"></i> ${data[i].stargazers_count}</span>
                             <span><i class="bi bi-diagram-2"></i> ${data[i].forks_count}</span>
                         </div>
@@ -88,11 +90,30 @@ fetch('https://api.github.com/users/T0ls/repos', {
             </div>
         `;
         container.appendChild(col);
+        
+        // Fetch all languages for this repo
+        if (data[i].languages_url) {
+            fetchLanguages(data[i].languages_url, langId);
+        }
     }
 })
 .catch(error => {
     console.error(error);
 });
+
+function fetchLanguages(url, elementId) {
+    fetch(url, { headers: apiHeaders })
+        .then(res => res.json())
+        .then(langs => {
+            const langList = Object.keys(langs).join(', ');
+            const element = document.getElementById(elementId);
+            if (element && langList) {
+                element.textContent = langList;
+                element.title = langList; // Tooltip for full text
+            }
+        })
+        .catch(err => console.error('Error fetching languages:', err));
+}
 
 /* Fetch Last Update Date for CV Repo */
 fetch('https://api.github.com/repos/T0ls/CV/commits?per_page=1', {

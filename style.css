@@ -794,7 +794,7 @@ a:hover {
 
 /* Ensure the language dot from your original CSS works here */
 .repoLanguageColor {
-    background-color: #64748b; /* Default slate color */
+    background-color: #007bff ; /* Default slate color */
 }
 
 /* Tweaks for the Profile Header Avatar */
