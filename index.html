@@ -45,44 +45,87 @@
 					</div>
 				</div>
 
-				<div class="row g-3 mb-3">
-					<div class="col-12 col-lg-9">
-						<div id="nameCard" class="card h-100">
-							<div class="row g-0 h-100">
-								<div class="col-md-4 d-flex align-items-center justify-content-center p-3">
-									<img src="ProfileImg.png" alt="..." style="cursor: zoom-in;" data-bs-toggle="modal" data-bs-target="#imageModal">
+				<div id="heroProfile" class="card mb-4 overflow-hidden border-0 shadow-sm">
+					<div class="card-body p-0">
+						<div class="row g-0">
+
+							<div class="col-lg-4 bg-body-tertiary border-end border-light-subtle d-flex flex-column align-items-center text-center p-4">
+								<div class="position-relative mb-3">
+									<img src="ProfileImg.png" class="hero-avatar shadow" alt="Profile" data-bs-toggle="modal" data-bs-target="#imageModal">
+									<span class="position-absolute bottom-0 end-0 p-2 bg-success border border-light rounded-circle">
+										<span class="visually-hidden">Available</span>
+									</span>
 								</div>
-								<div class="col-md-8">
-									<div class="card-body">
-										<h5 class="card-title">Giusteschi Giulio</h5>
-										<br>
-										<h5 data-i18n="job_status"></h5>
-										<p class="card-text" data-i18n="born_at"></p>
-										<br>
-										<p class="card-text"><small class="text-body-secondary" data-i18n="last_updated"></small></p>
+
+								<h3 class="fw-bold mb-1">Giusteschi Giulio</h3>
+								<p class="text-primary fw-medium mb-2" data-i18n="job_status"></p>
+
+								<div class="d-flex flex-column gap-1 text-muted small mb-4">
+									<span data-i18n="born_at"></span>
+									<span data-i18n="last_updated"></span>
+								</div>
+
+								<div class="d-flex flex-wrap justify-content-center gap-2 w-100 mt-auto">
+									<a href="mailto:giugiust2002@gmail.com" class="btn btn-sm btn-outline-danger flex-grow-1">
+										<i class="bi bi-envelope-fill me-1"></i> Email
+									</a>
+									<a href="https://github.com/T0ls" target="_blank" class="btn btn-sm btn-dark flex-grow-1">
+										<i class="bi bi-github me-1"></i> GitHub
+									</a>
+								</div>
+								<div class="d-flex flex-wrap justify-content-center gap-2 w-100 mt-2">
+									<a href="https://t.me/T0ls_RG" target="_blank" class="btn btn-sm btn-outline-primary flex-grow-1">
+										<i class="bi bi-telegram me-1"></i> Telegram
+									</a>
+									<a href="tel:3779982023" class="btn btn-sm btn-outline-secondary flex-grow-1">
+										<i class="bi bi-telephone-fill me-1"></i> Tel
+									</a>
+								</div>
+								<div class="d-flex flex-wrap justify-content-center gap-2 w-100 mt-2">
+									<a href="https://www.linkedin.com/in/giulio-giusteschi-561270191/" target="_blank" class="btn btn-sm btn-outline-info flex-grow-1">
+										<i class="bi bi-linkedin me-1"></i> Linkedin
+									</a>
+								</div>
+							</div>
+
+							<div class="col-lg-8 p-4 d-flex flex-column justify-content-center">
+								<div class="mb-4">
+									<h5 class="text-uppercase text-primary fw-bold small mb-3 letter-spacing-1">
+										<i class="bi bi-person-lines-fill me-2"></i>
+										<span data-i18n="about_title"></span>
+									</h5>
+									<p class="lead fs-6 text-secondary lh-lg mb-0" data-i18n="about_text"></p>
+								</div>
+
+								<hr class="border-secondary-subtle opacity-25 my-4">
+
+								<div class="row g-3">
+									<div class="col-sm-6">
+										<div class="d-flex align-items-center">
+											<div class="hero-icon-box bg-primary-subtle text-primary me-3">
+												<i class="bi bi-geo-alt-fill"></i>
+											</div>
+											<div>
+												<small class="text-muted d-block text-uppercase fw-bold" style="font-size: 0.7rem;">Location</small>
+												<span class="fw-medium">Milan, Italy</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="d-flex align-items-center">
+											<div class="hero-icon-box bg-success-subtle text-success me-3">
+												<i class="bi bi-translate"></i>
+											</div>
+											<div>
+												<small class="text-muted d-block text-uppercase fw-bold" style="font-size: 0.7rem;">Languages</small>
+												<span class="fw-medium">IT, EN, ES</span>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
+
 						</div>
-					</div>
-					<div class="col-12 col-lg-3">
-						<div id="contactCard" class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title" data-i18n="contacts_title"></h5>
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item px-0 text-break"><b>Tel.:</b> <a href="tel:3779982023">377 998 20 23</a></li>
-									<li class="list-group-item px-0 text-break"><b>Email:</b> <a href="mailto:giugiust2002@gmail.com" target="_blank">giugiust2002@gmail.com</a></li>
-									<li class="list-group-item px-0 text-break"><b>Telegram:</b> <a href="https://t.me/T0ls_RG">@T0ls_RG</a></li>
-									<li class="list-group-item px-0 text-break"><b>Github:</b> <a href="https://github.com/T0ls">https://github.com/T0ls</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="waiCard" class="card mb-3">
-					<div class="card-body">
-						<h5 class="card-title" data-i18n="about_title"></h5>
-						<p class="card-text" data-i18n="about_text"></p>
 					</div>
 				</div>
 				<div id="profetionalExperiences" class="card mb-3">

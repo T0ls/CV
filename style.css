@@ -930,3 +930,49 @@ a:hover {
         bottom: 0;
     }
 }
+
+/* --- Hero Profile Card --- */
+#heroProfile {
+    border-radius: 20px;
+    background-color: var(--card-bg);
+}
+
+/* Avatar Styling */
+.hero-avatar {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%; /* Modern circular look */
+    border: 5px solid var(--card-bg);
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.hero-avatar:hover {
+    transform: scale(1.05);
+}
+
+/* Icon Boxes for the "Highlights" area */
+.hero-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Typography Tweaks */
+.letter-spacing-1 {
+    letter-spacing: 1px;
+}
+
+/* Dark Mode Adjustments for the new card */
+[data-bs-theme="dark"] .bg-body-tertiary {
+    background-color: rgba(255,255,255,0.03) !important;
+}
+
+[data-bs-theme="dark"] .border-end {
+    border-color: rgba(255,255,255,0.05) !important;
+}
