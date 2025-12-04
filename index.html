@@ -7,69 +7,22 @@
 		<title>Giusteschi Giulio CV</title>
 		<link rel="icon" href="CvLogo.png" type="image/icon type">
 		<link rel="stylesheet" href="style.css">
-		<!--	For Bootstrap Local	-->
-		<!-- <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
-			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
 
 		<!--	For Bootstrap CDN	-->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-		
+
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
-		<!-- <script src="gitHubREST.js" type="module" defer></script> -->
 		<script src="api_token.js"></script>
 		<script src="translations.js"></script>
 		<script src="script.js"></script>
-		<style>
-			.aHide {
-				color: inherit; /* Colore del testo ereditato */
-				text-decoration: none; /* Rimuove la sottolineatura di default */
-			}
-
-			.aHide:hover {
-				text-decoration: underline; /* Aggiunge la sottolineatura al passaggio del mouse */
-				color: var(--bs-primary); /* Cambia il colore del testo a blu */
-			}
-
-			.buttonHide {
-				border: none; /* Rimuove la cornice */
-				background-color: transparent; /* Rimuove lo sfondo */
-				color: inherit; /* Utilizza il colore del testo ereditato */
-				cursor: pointer; /* Cambia il cursore quando si passa sopra con il mouse */
-				transition: color 0.3s, background-color 0.3s; /* Aggiunge una transizione al cambiamento di colore */
-			}
-
-			.buttonHide:hover {
-				color: var(--bs-primary); /* Cambia il colore del testo quando si passa sopra con il mouse */
-				border-radius: 6px;
-				background-color: var(--bs-tertiary-bg);
-			}
-
-			/* Settings Pill Styles */
-			#settings-pill {
-				max-width: 54px; /* Icon width + padding */
-			}
-			#settings-pill:hover, #settings-pill.is-open {
-				max-width: min(450px, 90vw); /* Expanded width */
-			}
-			#settings-pill .settings-content {
-				opacity: 0;
-				pointer-events: none;
-			}
-			#settings-pill:hover .settings-content, #settings-pill.is-open .settings-content {
-				opacity: 1;
-				pointer-events: auto;
-				transition-delay: 0.1s;
-			}
-		</style>
 	</head>
 	<body>
 		<div id="genContainer" class="container py-3">
-			<!-- Removed absolute positioning wrapper to fix mobile layout -->
 			<div>
 				<div id="settings-container" class="sticky-top pt-3 pb-2 d-flex justify-content-center" style="z-index: 1020; pointer-events: none;">
 					<div id="settings-pill" class="bg-body-tertiary shadow rounded-pill px-3 py-2 d-flex align-items-center" style="pointer-events: auto; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden; white-space: nowrap;">
@@ -90,7 +43,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="row g-3 mb-3">
 					<div class="col-12 col-lg-9">
 						<div id="nameCard" class="card h-100">
@@ -131,71 +84,55 @@
 						<p class="card-text" data-i18n="about_text"></p>
 					</div>
 				</div>
-				<div id="myFormatioeriences" class="card mb-3">
+				<div id="profetionalExperiences" class="card mb-3">
 					<div class="card-body pb-0">
-						<h5 class="card-title" data-i18n="exp_title"></h5>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item pb-0">
-								<p class="d-inline-flex gap-1 mb-0"> 
-									<button id="buttonExp1" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormExp1" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-										<div class="d-flex hvr-forward">
-											<span id="arrowExp1" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<div class="d-flex">
-												<h5>2022-2023</h5>
-												<span class="ps-2" data-i18n="exp1_role"></span>
-											</div>	
-										</div>	
-									</button>
-								</p>
-								<div class="collapse" id="targetCollapseFormExp1">
-									<div class="card card-body">
-										<h4 class="pe-3" data-i18n="exp1_company"></h4>
-										<span class="ps-3" data-i18n="exp1_desc"></span>
-										</p>
-									</div>
+						<h5 class="card-title mb-4" data-i18n="exp_title"></h5>
+
+						<div class="experience-timeline">
+							<div class="exp-item">
+								<div class="exp-date-col">
+									<span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle">2024 - 2025</span>
 								</div>
-							</li>
-							<li class="list-group-item pb-0">
-								<p class="d-inline-flex gap-1 mb-0"> 
-									<button id="buttonExp2" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormExp2" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-										<div class="d-flex hvr-forward">
-											<span id="arrowExp2" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<div class="d-flex">
-												<h5>2020-2022</h5>
-												<span class="ps-2" data-i18n="exp2_role"></span>
-											</div>	
-										</div>	
-									</button>
-								</p>
-								<div class="collapse" id="targetCollapseFormExp2">
-									<div class="card card-body">
-										<h4 class="pe-3" data-i18n="exp2_company"></h4>
-										<span class="ps-3" data-i18n="exp2_desc"></span>
-										</p>
-									</div>
+								<div class="exp-divider">
+									<div class="exp-marker"></div>
+									<div class="exp-line"></div>
 								</div>
-							</li>
-							<li class="list-group-item pb-0">
-								<p class="d-inline-flex gap-1 mb-0"> 
-									<button id="buttonExp3" class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#targetCollapseFormExp3" aria-expanded="false" aria-controls="targetCollapseFormFormatio1"">
-										<div class="d-flex hvr-forward">
-											<span id="arrowExp3" class="ps-2" style="color: red; margin-left: -10px; padding-right: 5px;">⮚</span>
-											<div class="d-flex">
-												<h5>2018-2019</h5>
-												<span class="ps-2" data-i18n="exp3_role"></span>
-											</div>	
-										</div>	
-									</button>
-								</p>
-								<div class="collapse" id="targetCollapseFormExp3">
-									<div class="card card-body">
-										<h4 class="pe-3" data-i18n="exp3_company"></h4>
-										<span class="ps-3" data-i18n="exp3_desc"></span>
-										</p>
-									</div>
+								<div class="exp-content">
+									<h5 class="fw-bold mb-1" data-i18n="exp1_role"></h5>
+									<h6 class="text-secondary small text-uppercase mb-2" data-i18n="exp1_company"></h6>
+									<p class="text-muted mb-0" data-i18n="exp1_desc"></p>
 								</div>
-							</li>
-						</ul>
+							</div>
+
+							<div class="exp-item">
+								<div class="exp-date-col">
+									<span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle">2023 - 2025</span>
+								</div>
+								<div class="exp-divider">
+									<div class="exp-marker"></div>
+									<div class="exp-line"></div>
+								</div>
+								<div class="exp-content">
+									<h5 class="fw-bold mb-1" data-i18n="exp2_role"></h5>
+									<h6 class="text-secondary small text-uppercase mb-2" data-i18n="exp2_company"></h6>
+									<p class="text-muted mb-0" data-i18n="exp2_desc"></p>
+								</div>
+							</div>
+
+							<div class="exp-item">
+								<div class="exp-date-col">
+									<span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle">2020 - 2021</span>
+								</div>
+								<div class="exp-divider">
+									<div class="exp-marker"></div>
+								</div>
+								<div class="exp-content">
+									<h5 class="fw-bold mb-1" data-i18n="exp3_role"></h5>
+									<h6 class="text-secondary small text-uppercase mb-2" data-i18n="exp3_company"></h6>
+									<p class="text-muted mb-0" data-i18n="exp3_desc"></p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div id="studies" class="card mb-3">
@@ -262,7 +199,7 @@
 														<h6 class="mb-0 fw-bold" data-i18n="edu_adb_title"></h6>
 														<span class="badge bg-success-subtle text-success rounded-pill">Modding</span>
 													</div>
-														<p class="small text-muted mb-0" data-i18n="edu_adb_desc"></p>
+													<p class="small text-muted mb-0" data-i18n="edu_adb_desc"></p>
 												</div>
 											</div>
 										</div>
@@ -550,7 +487,7 @@
 								</a>
 							</div>
 						</div>
-						
+
 						<div id="readmeContainer" class="p-3 border-bottom" style="display: none;">
 							<h4 class="mb-3"><strong><i class="bi bi-filetype-md"></i> README</strong></h4>
 							<div id="readmeContent" class="markdown-body"></div>
@@ -564,11 +501,11 @@
 										<div class="col-8 d-flex" >
 											<b style="align-items: center; display: flex;" data-i18n="last_commit"></b>
 											<a name="lastCommitDescr" style="align-items: center; display: flex;" class="aHide text-truncate mb-0 ms-1" href=""></a></div>
-											<div class="col-2 fs-5 d-flex">
-												<a name="lastCommitHash" class="aHide mb-0 me-1 text-end" style="font-size: 10px; align-items: center; display: flex;" href=""></a>
-												<p class="mb-0" style="font-size: 10px; align-items: center; display: flex;">·</p>
-												<p name="lastCommitTime" class="mb-0 ms-1 text-end" style="font-size: 10px; align-items: center; display: flex;"></p>
-											</div>
+										<div class="col-2 fs-5 d-flex">
+											<a name="lastCommitHash" class="aHide mb-0 me-1 text-end" style="font-size: 10px; align-items: center; display: flex;" href=""></a>
+											<p class="mb-0" style="font-size: 10px; align-items: center; display: flex;">·</p>
+											<p name="lastCommitTime" class="mb-0 ms-1 text-end" style="font-size: 10px; align-items: center; display: flex;"></p>
+										</div>
 										<div class="col-2 ps-5 justify-content-end">
 											<button id="btnCommits" class="d-flex buttonHide ps-2 pe-2 pt-1 pb-1" style="height: inherit;">
 												<img src="commits2X.png" class="me-1" style="height: 20px; width: 20px; align-items: center;">
@@ -577,7 +514,7 @@
 										</div>
 									</div>
 								</li>
-									
+
 								<!-- File list will be appended here -->
 							</ul>
 						</div>
@@ -610,6 +547,7 @@
 				</div>
 			</div>
 		</div>
+		</div>
 
 		<!-- Image Modal -->
 		<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
@@ -624,66 +562,10 @@
 				</div>
 			</div>
 		</div>
-
-		<!--	For Bootstrap Local	-->
-		<!-- <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
-
 		<!--	For Bootstrap CDN	-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 		<script>
-		
-		// Show Arrow Menù
-		function arrowDown(str) {
-			var arrow = document.getElementById('arrow' + str);
-			if(arrow) arrow.innerHTML = "⮛";
-		}
-		
-		function arrowUp(str) {
-			var arrow = document.getElementById('arrow' + str);
-			if(arrow) arrow.innerHTML = "⮚";
-		}
-
-		// Initialize Bootstrap collapse events
-		document.addEventListener('DOMContentLoaded', function() {
-			const collapseElements = document.querySelectorAll('.collapse');
-			
-			collapseElements.forEach(collapseEl => {
-				// Extract the suffix from the ID (e.g., "targetCollapseFormExp1" -> "Exp1")
-				const id = collapseEl.id;
-				if (id && id.startsWith('targetCollapseForm')) {
-					const suffix = id.replace('targetCollapseForm', '');
-					const button = document.getElementById('button' + suffix);
-					
-					// Change arrow immediately and disable clicks during animation
-					collapseEl.addEventListener('show.bs.collapse', function () {
-						arrowDown(suffix);
-						if(button) button.style.pointerEvents = 'none';
-					});
-					
-					collapseEl.addEventListener('hide.bs.collapse', function () {
-						arrowUp(suffix);
-						if(button) button.style.pointerEvents = 'none';
-					});
-
-					// Re-enable clicks after animation
-					collapseEl.addEventListener('shown.bs.collapse', function () {
-						if(button) button.style.pointerEvents = 'auto';
-					});
-					
-					collapseEl.addEventListener('hidden.bs.collapse', function () {
-						if(button) button.style.pointerEvents = 'auto';
-					});
-				}
-			});
-		});
-
-		// Posizionamento colonna tabella -- lo metto in codice js per non doverlo fare a mano
-		var tablePx = document.getElementsByTagName("tr")
-		for(var i=0; i<tablePx.length; i++) {
-			var tableChild = tablePx[i].firstElementChild;
-			tableChild.style.width = "25%";
-		}
 
 		// Update current date
 		var annoCurrP = document.getElementById("annoCorrente");
@@ -693,12 +575,12 @@
 
 		// Settings Pill Logic
 		const settingsPill = document.getElementById('settings-pill');
-		
+
 		// Toggle on click (for mobile mainly)
 		settingsPill.addEventListener('click', function(e) {
 			// Don't toggle if clicking inside controls
 			if (e.target.closest('.form-check') || e.target.closest('select')) return;
-			
+
 			this.classList.toggle('is-open');
 		});
 
@@ -723,7 +605,7 @@
 		// Check local storage or system theme
 		const savedTheme = localStorage.getItem('theme');
 		const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-		
+
 		setTheme(savedTheme || systemTheme);
 
 		// Event listener for switch

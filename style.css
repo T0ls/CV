@@ -177,6 +177,47 @@ a:hover {
     text-decoration: underline;
 }
 
+.aHide {
+	color: inherit; /* Colore del testo ereditato */
+	text-decoration: none; /* Rimuove la sottolineatura di default */
+}
+
+.aHide:hover {
+	text-decoration: underline; /* Aggiunge la sottolineatura al passaggio del mouse */
+	color: var(--bs-primary); /* Cambia il colore del testo a blu */
+}
+
+.buttonHide {
+	border: none; /* Rimuove la cornice */
+	background-color: transparent; /* Rimuove lo sfondo */
+	color: inherit; /* Utilizza il colore del testo ereditato */
+	cursor: pointer; /* Cambia il cursore quando si passa sopra con il mouse */
+	transition: color 0.3s, background-color 0.3s; /* Aggiunge una transizione al cambiamento di colore */
+}
+
+.buttonHide:hover {
+	color: var(--bs-primary); /* Cambia il colore del testo quando si passa sopra con il mouse */
+	border-radius: 6px;
+	background-color: var(--bs-tertiary-bg);
+}
+
+/* Settings Pill Styles */
+#settings-pill {
+	max-width: 54px; /* Icon width + padding */
+}
+#settings-pill:hover, #settings-pill.is-open {
+	max-width: min(450px, 90vw); /* Expanded width */
+}
+#settings-pill .settings-content {
+	opacity: 0;
+	pointer-events: none;
+}
+#settings-pill:hover .settings-content, #settings-pill.is-open .settings-content {
+	opacity: 1;
+	pointer-events: auto;
+	transition-delay: 0.1s;
+}
+
 /* Settings Pill Overrides */
 #settings-pill {
     background-color: var(--card-bg) !important;
@@ -792,4 +833,100 @@ a:hover {
 
 [data-bs-theme="dark"] .markdown-body pre {
     background-color: rgba(255,255,255,0.05);
+}
+
+/* --- Professional Experience Timeline --- */
+.experience-timeline {
+    position: relative;
+    padding: 10px 0;
+}
+
+.exp-item {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.exp-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Date Column */
+.exp-date-col {
+    min-width: 100px;
+    text-align: right;
+    padding-top: 2px;
+}
+
+/* Divider Column (Line + Marker) */
+.exp-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 20px;
+}
+
+.exp-marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    border: 3px solid var(--primary-color);
+    z-index: 2;
+    margin-top: 4px; /* Align with text top */
+}
+
+.exp-line {
+    width: 2px;
+    background-color: rgba(0,0,0,0.1);
+    flex-grow: 1;
+    margin-top: 4px;
+    margin-bottom: -24px; /* Extend to next item */
+}
+
+[data-bs-theme="dark"] .exp-line {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.exp-item:last-child .exp-line {
+    display: none;
+}
+
+/* Content Column */
+.exp-content {
+    padding-bottom: 0.5rem;
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 576px) {
+    .exp-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        position: relative;
+        padding-left: 2rem; /* Make space for line */
+    }
+
+    .exp-date-col {
+        text-align: left;
+        min-width: auto;
+    }
+
+    .exp-divider {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        align-items: center;
+    }
+    
+    .exp-marker {
+        margin-top: 2.2rem; /* Adjust based on where you want the dot relative to the date */
+    }
+    
+    .exp-line {
+        width: 2px;
+        position: absolute;
+        top: 2.5rem;
+        bottom: 0;
+    }
 }
