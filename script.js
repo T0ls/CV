@@ -50,6 +50,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 
     // Sort by updated_at (newest first) optional
     data.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+		console.log(data)
 
     for(var i=0; i<data.length; i++) {
         var col = document.createElement('div');
@@ -91,6 +92,42 @@ fetch('https://api.github.com/users/T0ls/repos', {
 })
 .catch(error => {
     console.error(error);
+});
+
+/* Fetch Last Update Date for CV Repo */
+fetch('https://api.github.com/repos/T0ls/CV/commits?per_page=1', {
+    method: 'GET',
+    headers: apiHeaders
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Error requesting GitHub API: CV commits');
+    }
+    return response.json();
+})
+.then(data => {
+    if (data && data.length > 0) {
+        const lastCommitDate = new Date(data[0].commit.author.date);
+        const formattedDate = lastCommitDate.toLocaleDateString('it-IT', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+        
+        const lastUpdateElement = document.getElementById('lastUpdateDate');
+        if (lastUpdateElement) {
+            // Check current language to decide prefix
+            const currentLang = localStorage.getItem('language') || 'IT';
+            const prefix = currentLang === 'IT' ? 'Ultimo aggiornamento' : 'Last updated';
+            lastUpdateElement.innerHTML = `${prefix} ${formattedDate}`;
+            
+            // Add a data attribute so translation logic can pick it up if language changes
+            lastUpdateElement.setAttribute('data-last-date', formattedDate);
+        }
+    }
+})
+.catch(error => {
+    console.error('Error fetching CV last commit:', error);
 });
 
 /* Hide/Show Functions */
@@ -427,6 +464,14 @@ function updateLanguage(lang) {
             element.innerHTML = translations[lang][key];
         }
     });
+
+    // Update dynamic last update date if available
+    const lastUpdateElement = document.getElementById('lastUpdateDate');
+    if (lastUpdateElement && lastUpdateElement.hasAttribute('data-last-date')) {
+        const date = lastUpdateElement.getAttribute('data-last-date');
+        const prefix = lang === 'IT' ? 'Ultimo aggiornamento' : 'Last updated';
+        lastUpdateElement.innerHTML = `${prefix} ${date}`;
+    }
 
     // Save preference
     localStorage.setItem('language', lang);
