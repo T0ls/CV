@@ -137,9 +137,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Scrollbar */
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+[data-bs-theme="dark"] * {
+    scrollbar-color: #475569 transparent;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
 }
 
 ::-webkit-scrollbar-track {
@@ -147,20 +162,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
+    background-color: #cbd5e1;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+    background-color: #94a3b8;
 }
 
 [data-bs-theme="dark"] ::-webkit-scrollbar-thumb {
-    background: #475569;
+    background-color: #475569;
 }
 
 [data-bs-theme="dark"] ::-webkit-scrollbar-thumb:hover {
-    background: #64748b;
+    background-color: #64748b;
 }
 
 /* Utility */
@@ -817,7 +834,12 @@ a:hover {
 }
 
 .input-group-text {
-    border-radius: 8px 0 0 8px;
+    border-radius: 20px 0 0 20px;
+    padding-left: 15px;
+}
+
+#repoSearch {
+    border-radius: 0px 20px 20px 0;
 }
 
 #activeFilters .badge {
