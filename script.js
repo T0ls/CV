@@ -44,6 +44,23 @@ fetch('https://api.github.com/users/T0ls/repos', {
     headers: apiHeaders
 })
 .then(response => {
+    if (response.status === 403) {
+        // Rate limit exceeded
+        const container = document.getElementById("repoGrid");
+        container.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <div class="text-warning mb-3">
+                    <i class="bi bi-exclamation-triangle-fill display-4"></i>
+                </div>
+                <h5 class="fw-bold">GitHub API Rate Limit Exceeded</h5>
+                <p class="text-muted">
+                    The request limit for the GitHub API has been reached.<br>
+                    Please try again in about an hour when the limit resets.
+                </p>
+            </div>
+        `;
+        throw new Error('GitHub API Rate Limit Exceeded (403)');
+    }
     if (!response.ok) {
         throw new Error('Error requesting GitHub API: repositories');
     }
