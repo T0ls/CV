@@ -30,6 +30,8 @@ const translations = {
         "edu_self_taught": "Autodidatta",
         "edu_unity_title": "Unity Engine:",
         "edu_unity_desc": "mi sono cimentato per diversi mesi nello sviluppo di videogiochi (principalmente 2D ma conosco anche il mondo del 3D)",
+        "edu_git_title": "Git:",
+        "edu_git_desc": "So usare Git (mod)",
         "edu_discord_title": "Discord Bots:",
         "edu_discord_desc": "ho creato alcuni bot discord (nulla di troppo complesso però)",
         "edu_photoshop_title": "Photoshop:",
