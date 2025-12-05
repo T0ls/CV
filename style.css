@@ -969,7 +969,11 @@ a:hover {
 }
 
 /* --- Hero Profile Card --- */
-#heroProfile {
+#heroProfile,
+#profetionalExperiences,
+#studies,
+#gitHubPage,
+#interestsCard {
     border-radius: 20px;
     background-color: var(--card-bg);
 }
@@ -1012,4 +1016,45 @@ a:hover {
 
 [data-bs-theme="dark"] .border-end {
     border-color: rgba(255,255,255,0.05) !important;
+}
+
+/* --- Interests "Lifestyle" Card --- */
+.interest-pill {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+[data-bs-theme="dark"] .interest-pill {
+    border-color: rgba(255,255,255,0.1);
+    background-color: rgba(255,255,255,0.05);
+}
+
+.interest-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    border-color: var(--primary-color);
+}
+
+/* --- Footer Tweaks --- */
+footer {
+    transition: opacity 0.3s;
+}
+
+footer:hover {
+    opacity: 1 !important;
+}
+
+/* Adjust the separator line in dark mode */
+[data-bs-theme="dark"] .border-bottom {
+    border-color: rgba(255,255,255,0.1) !important;
 }
