@@ -39,7 +39,58 @@ let allRepos = [];
 let allLanguages = new Set();
 let selectedLanguages = new Set();
 
-fetch('https://api.github.com/users/T0ls/repos', {
+// Cache helper function
+async function fetchWithCache(url, options = {}, cacheTime = 3600000) { // Default 1 hour
+    const cacheKey = 'gh_cache_' + url;
+    const cached = localStorage.getItem(cacheKey);
+    
+    if (cached) {
+        try {
+            const { timestamp, data } = JSON.parse(cached);
+            if (Date.now() - timestamp < cacheTime) {
+                return {
+                    ok: true,
+                    status: 200,
+                    headers: new Headers({'content-type': 'application/json'}),
+                    json: async () => data,
+                    text: async () => typeof data === 'string' ? data : JSON.stringify(data),
+                    clone: function() { return this; }
+                };
+            }
+        } catch (e) {
+            console.error("Cache parse error", e);
+            localStorage.removeItem(cacheKey);
+        }
+    }
+
+    try {
+        const response = await fetch(url, options);
+        
+        if (response.ok) {
+            const clone = response.clone();
+            const contentType = response.headers.get('content-type');
+            const isJson = contentType && contentType.includes('application/json');
+            
+            // We need to await the body to store it
+            const data = isJson ? await clone.json() : await clone.text();
+            
+            try {
+                localStorage.setItem(cacheKey, JSON.stringify({
+                    timestamp: Date.now(),
+                    data: data
+                }));
+            } catch (e) {
+                console.warn('Storage quota exceeded', e);
+                // Optional: Clear older cache items here
+            }
+        }
+        return response;
+    } catch (error) {
+        throw error;
+    }
+}
+
+fetchWithCache('https://api.github.com/users/T0ls/repos', {
     method: 'GET',
     headers: apiHeaders
 })
@@ -95,7 +146,7 @@ fetch('https://api.github.com/users/T0ls/repos', {
 });
 
 function fetchLanguages(url, repo) {
-    fetch(url, { headers: apiHeaders })
+    fetchWithCache(url, { headers: apiHeaders }, 86400000)
         .then(res => res.json())
         .then(langs => {
             const langList = Object.keys(langs);
@@ -255,7 +306,7 @@ function renderRepos(repos) {
 }
 
 /* Fetch Last Update Date for CV Repo */
-fetch('https://api.github.com/repos/T0ls/CV/commits?per_page=1', {
+fetchWithCache('https://api.github.com/repos/T0ls/CV/commits?per_page=1', {
     method: 'GET',
     headers: apiHeaders
 })
@@ -302,7 +353,7 @@ function showBlock(repoN) {
     const owner = 'T0ls'; // Hardcoded for now as profile fetch seems missing
 	
     // 1. Fetch Repo Details
-    fetch(`https://api.github.com/repos/${owner}/${repoN}`, { headers: apiHeaders })
+    fetchWithCache(`https://api.github.com/repos/${owner}/${repoN}`, { headers: apiHeaders })
         .then(res => res.json())
         .then(repo => {
             document.getElementById('projectTitle').textContent = repo.name;
@@ -333,7 +384,7 @@ function showBlock(repoN) {
     // Create headers with specific Accept for HTML
     const readmeHeaders = { ...apiHeaders, 'Accept': 'application/vnd.github.html' };
     
-    fetch(`https://api.github.com/repos/${owner}/${repoN}/readme`, { headers: readmeHeaders })
+    fetchWithCache(`https://api.github.com/repos/${owner}/${repoN}/readme`, { headers: readmeHeaders })
         .then(res => {
             if(res.ok) return res.text();
             throw new Error('No README');
@@ -349,7 +400,7 @@ function showBlock(repoN) {
         });
 
 	// Fetch repository contents
-	fetch(`https://api.github.com/repos/${owner}/${repoN}/contents`, {
+	fetchWithCache(`https://api.github.com/repos/${owner}/${repoN}/contents`, {
 		method: 'GET',
 		headers: apiHeaders
 	})
@@ -374,7 +425,7 @@ function showBlock(repoN) {
 	});
 
 	// Added: Fetch latest commit info
-	fetch(`https://api.github.com/repos/${owner}/${repoN}/commits?per_page=1`, {
+	fetchWithCache(`https://api.github.com/repos/${owner}/${repoN}/commits?per_page=1`, {
 		method: 'GET',
 		headers: apiHeaders
 	})
@@ -430,33 +481,23 @@ function showRepoList() {
 	document.getElementById("gitHubProfile").style.display = "block";
 }
 
-let dati = new Map();
-
-let repoCache = new Map();
-
 async function fetchAPI(repo, path) {
-	// Fixed: Use a string key for the Map instead of an array
-	let key = `${repo}/${path}`;
-	if (dati.has(key)) {
-		return dati.get(key)
-	} else {
-		// Fixed: Handle empty path correctly to avoid double slashes
-        const owner = 'T0ls';
-		let url = `https://api.github.com/repos/${owner}/${repo}/contents`;
-		if (path && path !== '') {
-			url += `/${path}`;
-		}
-		let response = await fetch(url, {
-			method: 'GET',
-			headers: apiHeaders
-		})
-		if (!response.ok) {
-			console.error('Error requesting GitHub API')
-		} 
-		let data = await response.json()
-		dati.set(key, data);
-		return data
-	}
+    const owner = 'T0ls';
+    let url = `https://api.github.com/repos/${owner}/${repo}/contents`;
+    if (path && path !== '') {
+        url += `/${path}`;
+    }
+    
+    // Use fetchWithCache instead of local Map
+    let response = await fetchWithCache(url, {
+        method: 'GET',
+        headers: apiHeaders
+    });
+
+    if (!response.ok) {
+        console.error('Error requesting GitHub API');
+    } 
+    return await response.json();
 }
 
 async function navigateTo(repoName, path) {
