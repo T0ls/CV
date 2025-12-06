@@ -904,6 +904,7 @@ a:hover {
     display: flex;
     gap: 1.5rem;
     padding-bottom: 1rem;
+    align-items: stretch; /* Changed from flex-start to stretch */
 }
 
 .exp-item:last-child {
@@ -912,9 +913,19 @@ a:hover {
 
 /* Date Column */
 .exp-date-col {
-    min-width: 100px;
+    flex: 0 0 140px;
+    width: 140px;
     text-align: right;
-    padding-top: 2px;
+    padding-top: 0;
+}
+
+.exp-date-col .badge {
+    white-space: normal;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
 }
 
 /* Divider Column (Line + Marker) */
@@ -932,15 +943,17 @@ a:hover {
     background-color: var(--card-bg);
     border: 3px solid var(--primary-color);
     z-index: 2;
-    margin-top: 4px; /* Align with text top */
+    margin-top: 5px;
+    flex-shrink: 0;
 }
 
 .exp-line {
     width: 2px;
     background-color: rgba(0,0,0,0.1);
     flex-grow: 1;
-    margin-top: 4px;
+    margin-top: 0;
     margin-bottom: -24px; /* Extend to next item */
+    min-height: 20px; /* Ensure visibility */
 }
 
 [data-bs-theme="dark"] .exp-line {
@@ -968,6 +981,14 @@ a:hover {
     .exp-date-col {
         text-align: left;
         min-width: auto;
+        width: auto;
+        flex: none;
+    }
+
+    .exp-date-col .badge {
+        text-align: left;
+        width: auto;
+        display: inline-block;
     }
 
     .exp-divider {
