@@ -639,7 +639,18 @@ function updateLanguage(lang) {
 
 // Initialize language
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('language') || 'IT';
+    let savedLang = localStorage.getItem('language');
+    
+    // Auto-detect if no saved preference
+    if (!savedLang) {
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang && userLang.toUpperCase().startsWith('EN')) {
+            savedLang = 'EN';
+        } else {
+            savedLang = 'IT'; // Fallback
+        }
+    }
+
     const langSelect = document.querySelector('select[aria-label="Language"]');
     
     if (langSelect) {
