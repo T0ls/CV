@@ -491,11 +491,8 @@ function renderRepoContents(data, repoName, currentPath = '') {
 
 	let container;
 
-	if (currentPath && currentPath !== '') {
-		container = document.querySelector("#githubRepoContent ul");
-	} else {
-		container = document.querySelector("#gitHubRepoItem ul");
-	}
+	// Always target the list inside githubRepoContent
+	container = document.querySelector("#githubRepoContent ul");
     
     if (!container) {
         // Fallback if the specific container isn't found (e.g. if githubRepoContent doesn't exist yet)
@@ -503,7 +500,7 @@ function renderRepoContents(data, repoName, currentPath = '') {
     }
     
     if (!container) {
-        console.error("Container #gitHubRepoItem ul not found");
+        console.error("Container #githubRepoContent ul not found");
         return;
     }
 
