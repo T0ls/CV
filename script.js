@@ -639,6 +639,11 @@ async function viewFile(repo, path) {
 		document.getElementById("gitHubFileViewer").style.display = "block";
 	} else {
 		console.error("File content not available or not base64 encoded");
+        const currentLang = localStorage.getItem('language') || 'IT';
+        const msg = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang]["file_not_available"]) 
+                    ? translations[currentLang]["file_not_available"] 
+                    : "File content not available.";
+        alert(msg);
 	}
 }
 
