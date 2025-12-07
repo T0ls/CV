@@ -1,9 +1,9 @@
 # Interactive CV — Giulio Giusteschi
 
 [![Live demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge)](https://T0ls.github.io/CV/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-0a66ff?style=for-the-badge)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-0a66ff?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Made with Bootstrap 5](https://img.shields.io/badge/made%20with-Bootstrap%205-7952b3?style=for-the-badge)](https://getbootstrap.com/)
-[![GitHub API](https://img.shields.io/badge/powered%20by-GitHub%20API-181717?style=for-the-badge)](#)
+[![GitHub API](https://img.shields.io/badge/powered%20by-GitHub%20API-181717?style=for-the-badge)](https://docs.github.com/en/rest?apiVersion=2022-11-28)
 
 A **dynamic, api-driven portfolio website**: it automatically fetches your repositories, displays your code activity, and presents your professional profile in a responsive, bilingual interface. The project is designed to be **offline-ready** (with caching) and highly customizable via simple JSON configuration files.
 
@@ -72,3 +72,11 @@ The visual identity is controlled via CSS variables in `style.css`. You can easi
     --font-heading: 'Poppins', sans-serif;
     /* ... */
 }
+
+---
+
+## License
+
+The source code for this project is licensed under the [MIT License](LICENSE).
+
+The content (text, images, and personal data) is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
