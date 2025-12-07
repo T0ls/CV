@@ -365,8 +365,8 @@ function showBlock(repoN) {
             document.getElementById('projectLink').href = repo.html_url;
             
             const homepageBtn = document.getElementById('projectHomepage');
-            if(repo.homepage) {
-                homepageBtn.href = repo.homepage;
+            if(repo.has_pages) {
+                homepageBtn.href = `https://${owner}.github.io/${repo.name}/`;
                 homepageBtn.style.display = 'inline-flex';
             } else {
                 homepageBtn.style.display = 'none';
