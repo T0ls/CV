@@ -621,16 +621,16 @@
 							<h4 class="mb-3"><strong><i class="bi bi-github"></i> Source Code</h4>
 							<ul class="list-group">
 								<li class="list-group-item bg-body-secondary">
-									<div id="githubTopNav" class="row mt-1 mb-1">
-										<div class="col-8 d-flex" >
+									<div id="githubTopNav" class="row mt-1 mb-1 align-items-center">
+										<div class="col-12 col-md-8 d-flex mb-2 mb-md-0" >
 											<b style="align-items: center; display: flex;" data-i18n="last_commit"></b>
 											<a name="lastCommitDescr" style="align-items: center; display: flex;" class="aHide text-truncate mb-0 ms-1" href=""></a></div>
-										<div class="col-2 fs-5 d-flex">
+										<div class="col-6 col-md-2 fs-5 d-flex align-items-center">
 											<a name="lastCommitHash" class="aHide mb-0 me-1 text-end" style="font-size: 10px; align-items: center; display: flex;" href=""></a>
 											<p class="mb-0" style="font-size: 10px; align-items: center; display: flex;">·</p>
 											<p name="lastCommitTime" class="mb-0 ms-1 text-end" style="font-size: 10px; align-items: center; display: flex;"></p>
 										</div>
-										<div class="col-2 ps-5 justify-content-end">
+										<div class="col-6 col-md-2 ps-0 ps-md-5 d-flex justify-content-end align-items-center">
 											<button id="btnCommits" class="d-flex buttonHide ps-2 pe-2 pt-1 pb-1" style="height: inherit;">
 												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-1" style="height: 20px; width: 20px; align-items: center;">
 													<path d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C14.7614 3 17.2614 4.11929 19.0711 5.92893L21 8M21 3V8H16" stroke="#8B8F99" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -647,10 +647,10 @@
 					</div>
 					<div id="gitHubFileViewer" style="display: none; height: 97vh;">
 						<div class="card h-100">
-							<div class="card-header d-flex justify-content-between align-items-center">
-								<h5 class="mb-0" id="fileNameDisplay">File Name</h5>
+							<div class="card-header d-flex justify-content-between align-items-center flex-row-reverse flex-md-row">
 								<button class="btn btn-sm btn-outline-secondary" onclick="closeFileViewer()" data-i18n="back_to_folder">
 								</button>
+								<h5 class="mb-0" id="fileNameDisplay">File Name</h5>
 							</div>
 							<div class="card-body p-0" style="overflow: auto;">
 								<pre class="m-0 p-3"><code id="fileContentDisplay"></code></pre>
