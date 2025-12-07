@@ -90,11 +90,12 @@ async function fetchWithCache(url, options = {}, cacheTime = 3600000) { // Defau
     }
 }
 
-fetchWithCache('https://api.github.com/users/T0ls/repos', {
-    method: 'GET',
-    headers: apiHeaders
-})
-.then(response => {
+document.addEventListener('DOMContentLoaded', () => {
+    fetchWithCache('https://api.github.com/users/T0ls/repos', {
+        method: 'GET',
+        headers: apiHeaders
+    })
+    .then(response => {
     if (response.status === 403) {
         // Rate limit exceeded
         const container = document.getElementById("repoGrid");
@@ -143,6 +144,7 @@ fetchWithCache('https://api.github.com/users/T0ls/repos', {
 })
 .catch(error => {
     console.error(error);
+});
 });
 
 function fetchLanguages(url, repo) {
@@ -306,6 +308,7 @@ function renderRepos(repos) {
 }
 
 /* Fetch Last Update Date for CV Repo */
+document.addEventListener('DOMContentLoaded', () => {
 fetchWithCache('https://api.github.com/repos/T0ls/CV/commits?per_page=1', {
     method: 'GET',
     headers: apiHeaders
@@ -339,6 +342,7 @@ fetchWithCache('https://api.github.com/repos/T0ls/CV/commits?per_page=1', {
 })
 .catch(error => {
     console.error('Error fetching CV last commit:', error);
+});
 });
 
 /* Hide/Show Functions */
