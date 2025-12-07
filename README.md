@@ -1,4 +1,4 @@
-# Interactive CV — Giulio Giusteschi
+# Personal CV — Giulio Giusteschi
 
 [![Live demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge)](https://T0ls.github.io/CV/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-0a66ff?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -22,7 +22,7 @@ I wanted a CV that **updates itself**. Instead of manually adding every new proj
 - **GitHub API Integration**: Automatically fetches repository lists, descriptions, star counts, and language statistics.
 - **Smart Caching**: Implements `localStorage` caching logic (1-hour TTL) to prevent API rate-limiting and ensure instant loading on repeat visits.
 - **Integrated Code Viewer**: Browse repository files and view code syntax directly within the portfolio modal without leaving the page.
-- **Bilingual Engine**: Instant switching between **Italian** and **English** via `translations.js`, persisting user preference.
+- **Bilingual Engine**: Instant switching between **Italian** and **English** via `translations.js`, persisting user preference, with the possibility to add easly new languages.
 - **Dark Mode**: System-aware theme switching with persistent state.
 - **Dynamic Filtering**: Filter projects by programming language or search by name/description in real-time.
 - **Responsive Design**: Built on **Bootstrap 5**, optimized for mobile, tablet, and desktop.
