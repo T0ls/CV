@@ -72,6 +72,7 @@ The visual identity is controlled via CSS variables in `style.css`. You can easi
     --font-heading: 'Poppins', sans-serif;
     /* ... */
 }
+```
 
 ---
 
