@@ -1,279 +1,220 @@
-<svg width="800" height="1132" viewBox="0 0 800 1132" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="800" height="1132" viewBox="0 0 800 1132" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&amp;family=Courier+New&amp;display=swap');
-      .bg { fill: #0d1117; }
-      .text-primary { fill: #c9d1d9; font-family: 'Segoe UI', sans-serif; }
-      .text-secondary { fill: #8b949e; font-family: 'Segoe UI', sans-serif; }
-      .text-link { fill: #58a6ff; font-family: 'Segoe UI', sans-serif;}
-      .text-code { fill: #c9d1d9; font-family: 'Courier New', monospace; }
-      .border { stroke: #30363d; stroke-width: 1; fill: none; }
-      .card-bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; rx: 6; }
-      .btn { fill: #238636; rx: 6; }
-      .btn-text { fill: #ffffff; font-family: 'Segoe UI', sans-serif; font-weight: 600; text-anchor: middle; }
-      .badge { fill: #161b22; stroke: #30363d; stroke-width: 1; rx: 10; }
-      .badge-text { fill: #79c0ff; font-family: 'Segoe UI', sans-serif; font-size: 10px; }
-      .repo-icon { fill: #8b949e; }
-      .timeline-line { stroke: #30363d; stroke-width: 2; }
-      .green-sq { fill: #238636; rx: 2; }
-      .light-green-sq { fill: #0e4429; rx: 2; }
-      .cat-title { fill: #8b949e; font-family: 'Segoe UI', sans-serif; font-size: 11px; font-weight: 600; }
+      @import url(https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&amp;family=Courier+New&amp;display=swap);.text-link,.text-primary,.text-secondary{font-family:&quot;Segoe UI&quot;,sans-serif}.text-primary,.text-secondary{fill:#c9d1d9}.text-secondary{fill:#8b949e}.text-link{fill:#58a6ff}.badge,.card-bg{stroke:#30363d;stroke-width:1}.card-bg{fill:#0d1117;rx:6}.badge{fill:#161b22;rx:10}.badge-text{fill:#79c0ff;font-family:&quot;Segoe UI&quot;,sans-serif;font-size:10px}.timeline-line{stroke:#30363d;stroke-width:2}.green-sq{fill:#238636;rx:2}.cat-title{fill:#8b949e;font-family:&quot;Segoe UI&quot;,sans-serif;font-size:11px;font-weight:600}
     </style>
   </defs>
-
-  <rect width="100%" height="100%" class="bg" />
-
-  <rect x="0" y="0" width="800" height="60" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect width="100%" height="100%" style="fill:#0d1117"/>
+  <path fill="#161b22" stroke="#30363d" d="M0 0h800v60H0z"/>
   <circle cx="225" cy="190" r="13" fill="#43a25a" opacity="100"/>
   <text x="330" y="35" class="text-primary" font-weight="bold" font-size="16">Giulio Giusteschi CV</text>
-  
-  <g transform="translate(625, 90)">
-    <rect x="0" y="0" width="10" height="10" class="green-sq" opacity="0.4"/>
-    <rect x="14" y="0" width="10" height="10" class="green-sq" opacity="0.8"/>
-    <rect x="28" y="0" width="10" height="10" class="green-sq" opacity="0.2"/>
-    <rect x="42" y="0" width="10" height="10" class="green-sq" opacity="1"/>
-    <rect x="56" y="0" width="10" height="10" class="green-sq" opacity="0.6"/>
-    <text x="80" y="9" class="text-secondary" font-size="10">Contribution</text>
-  </g>
-
-  <g transform="translate(40, 100)">
+  <path class="green-sq" opacity=".4" d="M0 0h10v10H0z" transform="translate(625 90)"/>
+  <path class="green-sq" opacity=".8" d="M14 0h10v10H14z" transform="translate(625 90)"/>
+  <path class="green-sq" opacity=".2" d="M28 0h10v10H28z" transform="translate(625 90)"/>
+  <path class="green-sq" d="M42 0h10v10H42z" transform="translate(625 90)"/>
+  <path class="green-sq" opacity=".6" d="M56 0h10v10H56z" transform="translate(625 90)"/>
+  <text x="80" y="9" class="text-secondary" font-size="10" transform="translate(625 90)">Contribution</text>
+  <g transform="translate(40 100)">
     <circle cx="100" cy="10" r="100" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-    
-    <text x="0" y="140" class="text-primary" font-size="26" font-weight="bold">Giulio Giusteschi</text>
-    <text x="0" y="170" class="text-secondary" font-size="18">Studente Unimi - Informatica</text>
-    
-    <rect x="0" y="185" width="200" height="32" class="btn" />
-    <text x="100" y="206" class="btn-text" font-size="14">Contatti</text>
-
-    <g transform="translate(0, 245)">
-       <text x="0" y="50" class="text-secondary" font-size="14">📞 +39 3779982023</text>
-      <text x="0" y="0" class="text-secondary" font-size="14">📍 Milano, Italia</text>
-      <text x="0" y="25" class="text-secondary" font-size="14">📧 giugiust2002@gmail.com</text>
-      
-      <svg x="0" y="62" width="16" height="16" viewBox="0 0 20 20" version="1.1" fill="#c9d1d9">
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
-            <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#c9d1d9"> 
-                <g id="icons" transform="translate(56.000000, 160.000000)"> 
-                    <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> 
-                </g> 
-            </g> 
-        </g> 
+    <text y="140" class="text-primary" font-size="26" font-weight="bold">Giulio Giusteschi</text>
+    <text y="170" class="text-secondary" font-size="18">Studente Unimi - Informatica</text>
+    <path style="fill:#238636;rx:6" d="M0 185h200v32H0z"/>
+    <text x="100" y="206" font-size="14" style="fill:#fff;font-family:&quot;Segoe UI&quot;,sans-serif;font-weight:600;text-anchor:middle">Contatti</text>
+    <g transform="translate(0 245)">
+      <text x="4" class="text-secondary" font-size="14">📍</text>
+      <text x="22" class="text-secondary" font-size="14">Milano, Italia</text>
+      <text y="25" class="text-secondary" font-size="14">📧 giugiust2002@gmail.com</text>
+      <text y="50" class="text-secondary" font-size="14">📞 +39 3779982023</text>
+      <svg y="62" width="16" height="16" viewBox="0 0 20 20" fill="#c9d1d9">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Dribbble-Light-Preview" transform="translate(-140 -7559)" fill="#c9d1d9">
+            <g id="icons" transform="translate(56 160)">
+              <path d="M94 7399c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051a9.4 9.4 0 0 0-2.505-.345 9.4 9.4 0 0 0-2.503.345c-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493-3.974-1.355-6.839-5.199-6.839-9.729 0-5.663 4.478-10.253 10-10.253" id="github-[#142]"/>
+            </g>
+          </g>
+        </g>
       </svg>
+      <a href="https://github.com/T0ls" target="_blank">
       <text x="25" y="75" class="text-link" font-size="14">github.com/T0ls</text>
-      
-      <svg x="0" y="87" width="16" height="16" viewBox="0 0 382 382" xml:space="preserve">
-        <path style="fill:#0077B7;" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"></path> 
+        </a>
+      <svg y="87" width="16" height="16" viewBox="0 0 382 382" xml:space="preserve">
+        <path style="fill:#0077b7" d="M347.445 0H34.555C15.471 0 0 15.471 0 34.555v312.889C0 366.529 15.471 382 34.555 382h312.889C366.529 382 382 366.529 382 347.444V34.555C382 15.471 366.529 0 347.445 0M118.207 329.844c0 5.554-4.502 10.056-10.056 10.056H65.345c-5.554 0-10.056-4.502-10.056-10.056V150.403c0-5.554 4.502-10.056 10.056-10.056h42.806c5.554 0 10.056 4.502 10.056 10.056zM86.748 123.432c-22.459 0-40.666-18.207-40.666-40.666S64.289 42.1 86.748 42.1s40.666 18.207 40.666 40.666-18.206 40.666-40.666 40.666M341.91 330.654a9.247 9.247 0 0 1-9.246 9.246H286.73a9.247 9.247 0 0 1-9.246-9.246v-84.168c0-12.556 3.683-55.021-32.813-55.021-28.309 0-34.051 29.066-35.204 42.11v97.079a9.246 9.246 0 0 1-9.246 9.246h-44.426a9.247 9.247 0 0 1-9.246-9.246V149.593a9.247 9.247 0 0 1 9.246-9.246h44.426a9.247 9.247 0 0 1 9.246 9.246v15.655c10.497-15.753 26.097-27.912 59.312-27.912 73.552 0 73.131 68.716 73.131 106.472z"/>
       </svg>
-      <text x="25" y="100" class="text-link"  font-size="14">Linkedin</text>
+      <a href="https://www.linkedin.com/in/giulio-giusteschi-561270191/" target="_blank">
+      <text x="25" y="100" class="text-link" font-size="14">Linkedin</text>
+        </a>
     </g>
-
-    <g transform="translate(0, 375)">
-      <text x="0" y="0" class="text-primary" font-weight="bold" font-size="16">Competenze</text>
-      <line x1="0" y1="10" x2="200" y2="10" stroke="#30363d" stroke-width="1"/>
-      
-      <g transform="translate(0, 25)">
-        <text x="0" y="0" class="cat-title">Avanzato</text>
-        <g transform="translate(0, 8)">
-             <rect x="0" y="0" width="50" height="20" class="badge" />
-             <text x="25" y="14" class="badge-text" text-anchor="middle">HTML</text>
-             <rect x="55" y="0" width="75" height="20" class="badge" />
-             <text x="92" y="14" class="badge-text" text-anchor="middle">JavaScript</text>
-        </g>
-      </g>
-
-      <g transform="translate(0, 70)">
-        <text x="0" y="0" class="cat-title">Intermedio</text>
-        <g transform="translate(0, 8)">
-            <rect x="0" y="0" width="40" height="20" class="badge" />
-             <text x="20" y="14" class="badge-text" text-anchor="middle">SQL</text>
-             <rect x="45" y="0" width="35" height="20" class="badge" />
-             <text x="62" y="14" class="badge-text" text-anchor="middle">Go</text>
-             <rect x="85" y="0" width="45" height="20" class="badge" />
-             <text x="107" y="14" class="badge-text" text-anchor="middle">C++</text>
-             <rect x="0" y="25" width="75" height="20" class="badge" />
-             <text x="37" y="39" class="badge-text" text-anchor="middle">TypeScript</text>
-        </g>
-      </g>
-
-      <g transform="translate(0, 140)">
-        <text x="0" y="0" class="cat-title">Basico</text>
-        <g transform="translate(0, 8)">
-             <rect x="0" y="0" width="30" height="20" class="badge" />
-             <text x="15" y="14" class="badge-text" text-anchor="middle">C</text>
-             <rect x="35" y="0" width="35" height="20" class="badge" />
-             <text x="52" y="14" class="badge-text" text-anchor="middle">C#</text>
-             <rect x="75" y="0" width="45" height="20" class="badge" />
-             <text x="97" y="14" class="badge-text" text-anchor="middle">Java</text>
-             <rect x="0" y="25" width="90" height="20" class="badge" />
-             <text x="45" y="39" class="badge-text" text-anchor="middle">Asm x64/MIPS</text>
-             <rect x="0" y="50" width="95" height="20" class="badge" />
-             <text x="47" y="64" class="badge-text" text-anchor="middle">Shell Scripting</text>
-        </g>
-      </g>
-
-      <g transform="translate(0, 235)">
-        <text x="0" y="0" class="cat-title">Tools</text>
-        <g transform="translate(0, 8)">
-             <rect x="0" y="0" width="80" height="20" class="badge" />
-             <text x="40" y="14" class="badge-text" text-anchor="middle">Adobe PS</text>      
-             <rect x="85" y="0" width="40" height="20" class="badge" />
-             <text x="105" y="14" class="badge-text" text-anchor="middle">Git</text>
-        </g>
-      </g>
+    <text class="text-primary" font-weight="bold" font-size="16" transform="translate(0 375)">Competenze</text>
+    <path stroke="#30363d" d="M0 10h200" transform="translate(0 375)"/>
+    <text class="cat-title" transform="translate(0 375) translate(0 25)">Avanzato</text>
+    <path class="badge" d="M0 0h50v20H0z" transform="translate(0 375) translate(0 33)"/>
+    <text x="25" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 33)">HTML</text>
+    <path class="badge" d="M55 0h75v20H55z" transform="translate(0 375) translate(0 33)"/>
+    <text x="92" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 33)">JavaScript</text>
+    <text class="cat-title" transform="translate(0 375) translate(0 70)">Intermedio</text>
+    <path class="badge" d="M0 0h40v20H0z" transform="translate(0 375) translate(0 78)"/>
+    <text x="20" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 78)">SQL</text>
+    <path class="badge" d="M45 0h35v20H45z" transform="translate(0 375) translate(0 78)"/>
+    <text x="62" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 78)">Go</text>
+    <path class="badge" d="M85 0h45v20H85z" transform="translate(0 375) translate(0 78)"/>
+    <text x="107" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 78)">C++</text>
+    <path class="badge" d="M0 25h75v20H0z" transform="translate(0 375) translate(0 78)"/>
+    <text x="37" y="39" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 78)">TypeScript</text>
+    <text class="cat-title" transform="translate(0 375) translate(0 140)">Basico</text>
+    <path class="badge" d="M0 0h30v20H0z" transform="translate(0 375) translate(0 148)"/>
+    <text x="15" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">C</text>
+    <path class="badge" d="M35 0h35v20H35z" transform="translate(0 375) translate(0 148)"/>
+    <text x="52" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">C#</text>
+    <path class="badge" d="M75 0h45v20H75z" transform="translate(0 375) translate(0 148)"/>
+    <text x="97" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">Java</text>
+    <path class="badge" d="M0 25h90v20H0z" transform="translate(0 375) translate(0 148)"/>
+    <text x="45" y="39" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">Asm x64/MIPS</text>
+    <path class="badge" d="M0 50h95v20H0z" transform="translate(0 375) translate(0 148)"/>
+    <text x="47" y="64" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">Shell Scripting</text>
+    <text class="cat-title" transform="translate(0 375) translate(0 235)">Tools</text>
+    <path class="badge" d="M0 0h80v20H0z" transform="translate(0 375) translate(0 243)"/>
+    <text x="40" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 243)">Adobe PS</text>
+    <path class="badge" d="M85 0h40v20H85z" transform="translate(0 375) translate(0 243)"/>
+    <text x="105" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 243)">Git</text>
+    <g transform="translate(0 665)">
+      <text class="text-primary" font-weight="bold" font-size="16">Lingue</text>
+      <path stroke="#30363d" d="M0 10h200"/>
+      <text y="30" class="text-secondary" font-size="14">Italiano (Madrelingua)</text>
+      <rect y="40" width="200" height="4" fill="#30363d" rx="2"/>
+      <rect y="40" width="200" height="4" fill="#238636" rx="2"/>
+      <text y="70" class="text-secondary" font-size="14">Inglese (B2)</text>
+      <rect y="80" width="200" height="4" fill="#30363d" rx="2"/>
+      <rect y="80" width="140" height="4" fill="#238636" rx="2"/>
+      <text y="110" class="text-secondary" font-size="14">Spagnolo (A2)</text>
+      <rect y="120" width="200" height="4" fill="#30363d" rx="2"/>
+      <rect y="120" width="60" height="4" fill="#238636" rx="2"/>
     </g>
-
-    <g transform="translate(0, 665)">
-      <text x="0" y="0" class="text-primary" font-weight="bold" font-size="16">Lingue</text>
-      <line x1="0" y1="10" x2="200" y2="10" stroke="#30363d" stroke-width="1"/>
-      
-      <text x="0" y="30" class="text-secondary" font-size="14">Italiano (Madrelingua)</text>
-      <rect x="0" y="40" width="200" height="4" fill="#30363d" rx="2"/>
-      <rect x="0" y="40" width="200" height="4" fill="#238636" rx="2"/>
-
-      <text x="0" y="70" class="text-secondary" font-size="14">Inglese (B2)</text>
-      <rect x="0" y="80" width="200" height="4" fill="#30363d" rx="2"/>
-      <rect x="0" y="80" width="140" height="4" fill="#238636" rx="2"/>
-
-      <text x="0" y="110" class="text-secondary" font-size="14">Spagnolo (A2)</text>
-      <rect x="0" y="120" width="200" height="4" fill="#30363d" rx="2"/>
-      <rect x="0" y="120" width="60" height="4" fill="#238636" rx="2"/>
-    </g>
-
-    <g transform="translate(0, 820)">
-      <text x="0" y="0" class="text-primary" font-weight="bold" font-size="16">Interessi</text>
-      <line x1="0" y1="10" x2="200" y2="10" stroke="#30363d" stroke-width="1"/>
-      
-      <g transform="translate(0, 15)">
-        <foreignObject x="0" y="0" width="210" height="190">
-        <div xmlns="http://www.w3.org/1999/xhtml" style="color: #8b949e; font-family: Segoe UI, sans-serif; font-size: 12px; line-height: 1.4; text-align: Left;">
-          Appassionato di scienza e innovazione, dedico il mio tempo libero alla crescita culturale tra cinema e mostre d'arte. Sono una persona attenta al sociale e donatore di sangue abituale.
+    <text class="text-primary" font-weight="bold" font-size="16" transform="translate(0 820)">Interessi</text>
+    <path stroke="#30363d" d="M0 10h200" transform="translate(0 820)"/>
+    <g transform="translate(0 820) translate(0 15)">
+      <foreignObject x="0" y="0" width="210" height="190">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="color:#8b949e;font-family:Segoe UI,sans-serif;font-size:12px;line-height:1.4;text-align:Left">
+          Appassionato di biologia e mondo Tech, dedico il mio tempo libero alla crescita culturale tra cinema e mostre d&apos;arte. Sono una persona attenta al sociale e donatore di sangue abituale.
         </div>
       </foreignObject>
-        <g transform="translate(0, 105)">
-          <text x="0" y="0" class="text-secondary" font-size="14">💻 Tech</text>
-          <text x="100" y="0" class="text-secondary" font-size="14">🧬 Biologia</text>
-          <text x="0" y="25" class="text-secondary" font-size="14">🎬 Cinema</text>
-          <text x="100" y="25" class="text-secondary" font-size="14">🏛️ Cultura</text>
-          <text x="0" y="50" class="text-secondary" font-size="14">🩸 Donatore Sanguigno</text>
-          </g>
-      </g>
+      <text class="text-secondary" font-size="14" transform="translate(0 105)">💻 Tech</text>
+      <text x="100" class="text-secondary" font-size="14" transform="translate(0 105)">🧬 Biologia</text>
+      <text y="25" class="text-secondary" font-size="14" transform="translate(0 105)">🎬 Cinema</text>
+      <text x="100" y="25" class="text-secondary" font-size="14" transform="translate(0 105)">🏛️ Cultura</text>
+      <text y="50" class="text-secondary" font-size="14" transform="translate(0 105)">🩸 Donatore Sanguigno</text>
     </g>
   </g>
-
-  <g transform="translate(280, 100)">
-    
-    <g>
-      <text x="0" y="0" class="text-secondary" font-size="12">Giulio / README.md</text>
-      <rect x="0" y="10" width="480" height="130" class="card-bg" fill="#0d1117" />
-      <line x1="0" y1="40" x2="480" y2="40" stroke="#30363d" stroke-width="1"/>
-      <text x="15" y="30" class="text-primary" font-weight="bold" font-size="14">👋 Hi, I'm a Computer Science Student @ UNIMI</text>
-      
-      <foreignObject x="15" y="42" width="450" height="90">
-        <div xmlns="http://www.w3.org/1999/xhtml" style="color: #8b949e; font-family: Segoe UI, sans-serif; font-size: 13px; line-height: 1.4;">
-          Studente di informatica, appassionato di programmazione, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.  Cerco un'opportunità come Junior Developer per contribuire attivamente allo sviluppo di soluzioni innovative e consolidare la mia crescita professionale all'interno di un team strutturato.
-        </div>
-      </foreignObject>
-    </g>
-
-    <g transform="translate(0, 170)">
-      <text x="0" y="0" class="text-primary" font-size="16" font-weight="600">Public Github projects:</text>
-      <text x="480" y="0" class="text-secondary" font-size="12" text-anchor="end">4/15 Repo</text>
-
-      <g transform="translate(0, 20)">
-        <rect width="230" height="110" class="card-bg" />
-        <text x="15" y="25" class="text-link" font-weight="600" font-size="14">💼 CV</text>
-        <foreignObject x="15" y="35" width="200" height="45">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 11px; color: #8b949e; text-align: left">My personal Curriculum Vitae site.</div>
-</foreignObject>
-        <circle cx="20" cy="90" r="5" fill="#e34c26"/> <text x="32" y="94" class="text-secondary" font-size="11">HTML</text>
-      </g>
-
-      <g transform="translate(250, 20)">
-        <rect width="230" height="110" class="card-bg" />
-        <text x="15" y="25" class="text-link" font-weight="600" font-size="14">>_  typerScene---Cinematic</text>
-        <foreignObject x="15" y="35" width="200" height="45">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 11px; color: #8b949e; text-align: left">A cinematic hackertyper-style code simulator for film sets or fun.
-    </div>
-</foreignObject>
-        <circle cx="20" cy="90" r="5" fill="#e34c26"/> <text x="32" y="94" class="text-secondary" font-size="11">HTML</text>
-      </g>
-
-      <g transform="translate(0, 140)">
-        <rect width="230" height="110" class="card-bg" />
-        <text x="15" y="25" class="text-link" font-weight="600" font-size="14">🎰 Gambling-CAPTCHA</text>
-        <foreignObject x="15" y="35" width="200" height="45">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 11px; color: #8b949e; text-align: left">Just an idea for a new type of CAPTCHA!</div>
-</foreignObject>
-        <circle cx="20" cy="90" r="5" fill="#e34c26"/> <text x="32" y="94" class="text-secondary" font-size="11">HTML</text>
-      </g>
-
-      <g transform="translate(250, 140)">
-        <rect width="230" height="110" class="card-bg" />
-        <text x="15" y="25" class="text-link" font-weight="600" font-size="14">🖥️ archlike-landingpage</text>
-        <foreignObject x="15" y="35" width="200" height="45">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 11px; color: #8b949e; text-align: left">Just hyperland Arch terminal-style landing page.</div>
-</foreignObject>
-        <circle cx="20" cy="90" r="5" fill="#e34c26"/> <text x="32" y="94" class="text-secondary" font-size="11">HTML</text>
-      </g>
-    </g>
-
-    <g transform="translate(0, 440)">
-      <text x="0" y="0" class="text-primary" font-size="16" font-weight="600">Esperienze professionali</text>
-      
-      <line x1="20" y1="20" x2="20" y2="215" class="timeline-line"/>
-
-      <g transform="translate(0, 30)">
-         <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/> 
-         <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Consulente IT / Ass. di produzione</text>
-         <text x="40" y="28" class="text-secondary" font-size="12">Faber Films • apr 2023 - In corso</text>
-        <foreignObject x="40" y="35" width="400" height="45">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 11px; color: #8b949e; text-align: left">Lavorato alla produzione di diversi cortometraggi indipendenti nel ruolo di assistente alla produzione incaricato di gestire gli elementi organizzativi e logistici.</div>
-</foreignObject>
-      </g>
-
-      <g transform="translate(0, 110)">
-         <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/>
-         <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Tutor scolastico</text>
-         <text x="40" y="28" class="text-secondary" font-size="12">Privato • mag 2023 - sett 2025</text>
-        <foreignObject x="40" y="35" width="400" height="45">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 11px; color: #8b949e; text-align: left">Ho impartito ripetizioni di informatica ad una ragazza delle scuole superiori.</div>
-</foreignObject>
-      </g>
-
-      <g transform="translate(0, 180)">
-         <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/> 
-         <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Alternanza scuola lavoro</text>
-         <text x="40" y="28" class="text-secondary" font-size="12">Manitese • sett 2020 - giu 2020</text>
-        <foreignObject x="40" y="35" width="400" height="45">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="font-size: 11px; color: #8b949e; text-align: left">Ho lavorato come volontario presso Feltrinelli e NaturaSì per conto di Manitese, associazione no profit con missione umanitaria, realizzando pacchetti regalo ai clienti del negozio e chiedendo una donazione volontaria a supporto delle missioni dell'associazione.</div>
-</foreignObject>
-      </g>
-    </g>
-
-    <g transform="translate(0, 730)">
-        <text x="0" y="0" class="text-primary" font-size="16" font-weight="600">Titoli di studio &amp; Certificazioni</text>
-        
-        <line x1="20" y1="20" x2="20" y2="130" class="timeline-line"/>
-
-        <g transform="translate(0, 30)">
-            <circle cx="20" cy="10" r="5" fill="#238636" stroke="#0d1117" stroke-width="2"/> 
-            <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Diploma Superiore - Scienze Applicate</text>
-            <text x="40" y="28" class="text-secondary" font-size="12">ITIS Feltrinelli • 2022</text>
-        </g>
-
-        <g transform="translate(0, 100)">
-            <circle cx="20" cy="10" r="5" fill="#238636" stroke="#0d1117" stroke-width="2"/>
-            <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Mimo Web Development Certificate</text>
-            <text x="40" y="28" class="text-secondary" font-size="12">Mimo Online • 2020</text>
-            <text x="40" y="45" class="text-secondary" font-size="12">HTML, CSS, JavaScript</text>
-        </g>
-    </g>
-    
-    <g transform="translate(-130, 1014)">
-        <text x="0" y="0" class="text-secondary" font-size="10" fill-opacity="0.6">
+  <g transform="translate(280 100)">
+    <text class="text-secondary" font-size="12">Giulio / README.md</text>
+    <path class="card-bg" fill="#0d1117" d="M0 10h480v130H0z"/>
+    <path stroke="#30363d" d="M0 40h480"/>
+    <text x="15" y="30" class="text-primary" font-weight="bold" font-size="14">👋 Hi, I&apos;m a Computer Science Student @ UNIMI</text>
+    <foreignObject x="25" y="43" width="450" height="90">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="color:#8b949e;font-family:Segoe UI,sans-serif;font-size:13px;line-height:1.4; text-align:left;">
+        Studente di informatica, appassionato di programmazione, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.  Cerco un&apos;opportunità come Junior Developer per contribuire attivamente allo sviluppo di soluzioni innovative e consolidare la mia crescita professionale all&apos;interno di un team strutturato.
+      </div>
+    </foreignObject>
+  </g>
+  <text class="text-primary" font-size="16" font-weight="600" transform="translate(280 270)">Public Github projects:</text>
+  <text x="480" class="text-secondary" font-size="12" text-anchor="end" transform="translate(280 270)">4/15 Repo</text>
+  <g transform="translate(280 290)">
+    <path class="card-bg" d="M0 0h230v110H0z"/>
+    <a href="https://t0ls.github.io/CV/" target="_blank">
+        <text x="15" y="25" class="text-link" font-weight="600" font-size="14">💼 CV site</text>
+          </a>
+    <foreignObject x="15" y="35" width="200" height="45">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
+        My personal Curriculum Vitae site.
+      </div>
+    </foreignObject>
+    <circle cx="20" cy="90" r="5" fill="#e34c26"/>
+    <text x="32" y="94" class="text-secondary" font-size="11">HTML</text>
+  </g>
+  <g transform="translate(530 290)">
+    <path class="card-bg" d="M0 0h230v110H0z"/>
+    <a href="https://t0ls.github.io/typerScene---Cinematic/" target="_blank">
+    <text x="15" y="25" class="text-link" font-weight="600" font-size="14">&gt;_  typerScene---Cinematic</text>
+      </a>
+    <foreignObject x="15" y="35" width="200" height="45">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
+        A cinematic hackertyper-style code simulator for film sets or fun.
+      </div>
+    </foreignObject>
+    <circle cx="20" cy="90" r="5" fill="#e34c26"/>
+    <text x="32" y="94" class="text-secondary" font-size="11">HTML</text>
+  </g>
+  <g transform="translate(280 410)">
+    <path class="card-bg" d="M0 0h230v110H0z"/>
+    <a href="https://t0ls.github.io/Gambling-CAPTCHA/" target="_blank">
+    <text x="15" y="25" class="text-link" font-weight="600" font-size="14">🎰 Gambling-CAPTCHA</text>
+      </a>
+    <foreignObject x="15" y="35" width="200" height="45">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
+        An (almost) ironic idea for a new type of CAPTCHA!
+      </div>
+    </foreignObject>
+    <circle cx="20" cy="90" r="5" fill="#e34c26"/>
+    <text x="32" y="94" class="text-secondary" font-size="11">HTML</text>
+  </g>
+  <g transform="translate(530 410)">
+    <path class="card-bg" d="M0 0h230v110H0z"/>
+    <a href="https://t0ls.github.io/archlike-landingpage/" target="_blank">
+    <text x="15" y="25" class="text-link" font-weight="600" font-size="14">🖥️ archlike-landingpage</text>
+      </a>
+    <foreignObject x="15" y="35" width="200" height="45">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
+        An hyperland Arch terminal-style landing page.
+      </div>
+    </foreignObject>
+    <circle cx="20" cy="90" r="5" fill="#e34c26"/>
+    <text x="32" y="94" class="text-secondary" font-size="11">HTML</text>
+  </g>
+  <text class="text-primary" font-size="16" font-weight="600" transform="translate(280 555)">Esperienze professionali</text>
+  <path class="timeline-line" d="M20 20v190" transform="translate(280 555)"/>
+  <g transform="translate(280 555) translate(0 30)">
+    <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/>
+    <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Consulente IT / Ass. di produzione</text>
+    <text x="40" y="28" class="text-secondary" font-size="12">Faber Films • apr 2023 - nov 2025</text>
+    <foreignObject x="40" y="35" width="400" height="45">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
+        Lavorato alla produzione di diversi cortometraggi indipendenti nel ruolo di assistente alla produzione incaricato di gestire gli elementi organizzativi e logistici.
+      </div>
+    </foreignObject>
+  </g>
+  <g transform="translate(280 555) translate(0 110)">
+    <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/>
+    <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Tutor scolastico</text>
+    <text x="40" y="28" class="text-secondary" font-size="12">Privato • mag 2023 - sett 2025</text>
+    <foreignObject x="40" y="35" width="400" height="45">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
+        Ho impartito ripetizioni di informatica ad una ragazza delle scuole superiori.
+      </div>
+    </foreignObject>
+  </g>
+  <g transform="translate(280 555) translate(0 180)">
+    <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/>
+    <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Alternanza scuola lavoro</text>
+    <text x="40" y="28" class="text-secondary" font-size="12">Manitese • sett 2020 - giu 2021</text>
+    <foreignObject x="40" y="35" width="400" height="45">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
+        Ho lavorato come volontario presso Feltrinelli e NaturaSì per conto di Manitese, associazione no profit con missione umanitaria, realizzando pacchetti regalo ai clienti del negozio e chiedendo una donazione volontaria a supporto delle missioni dell&apos;associazione.
+      </div>
+    </foreignObject>
+  </g>
+  <text class="text-primary" font-size="16" font-weight="600" transform="translate(280 845)">Titoli di studio &amp; Certificazioni</text>
+  <path class="timeline-line" d="M20 20v110" transform="translate(280 845)"/>
+  <g transform="translate(280 845) translate(0 30)">
+    <circle cx="20" cy="10" r="5" fill="#238636" stroke="#0d1117" stroke-width="2"/>
+    <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Diploma Superiore - Scienze Applicate</text>
+    <text x="40" y="28" class="text-secondary" font-size="12">ITIS Feltrinelli • 2022</text>
+  </g>
+  <g transform="translate(280 845) translate(0 100)">
+    <circle cx="20" cy="10" r="5" fill="#238636" stroke="#0d1117" stroke-width="2"/>
+    <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Mimo Web Development Certificate</text>
+    <text x="40" y="28" class="text-secondary" font-size="12">Mimo Online • 2020</text>
+    <text x="40" y="45" class="text-secondary" font-size="12">HTML, CSS, JavaScript</text>
+  </g>
+  <text class="text-secondary" font-size="10" fill-opacity=".6" transform="translate(150 1114)">
           Autorizzo il trattamento dei dati personali ai sensi del Dlgs 196 del 30 giugno 2003 e dell’art. 13 GDPR
         </text>
-    </g>
-
-  </g>
 </svg>
