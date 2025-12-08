@@ -38,6 +38,9 @@ try {
 let allRepos = [];
 let allLanguages = new Set();
 let selectedLanguages = new Set();
+// Repos to pin 
+let pinnedRepos = ["CV", "typerScene---Cinematic", "nvim-config", "archlike-landingpage", "Gambling-CAPTCHA", "faberFreelance"];
+let pinnedFilterActive = false;
 
 // Cache helper function
 async function fetchWithCache(url, options = {}, cacheTime = 3600000) { // Default 1 hour
@@ -186,6 +189,23 @@ function renderFilters() {
     availableContainer.innerHTML = '';
     activeContainer.innerHTML = '';
 
+    // Pinned Filter
+    if (pinnedFilterActive) {
+        const badge = document.createElement('span');
+        badge.className = 'badge bg-primary text-white d-flex align-items-center gap-2';
+        badge.style.cursor = 'pointer';
+        badge.innerHTML = `<i class="bi bi-pin-angle-fill"></i> Pinned <i class="bi bi-x-lg" style="font-size: 0.7em;"></i>`;
+        badge.onclick = () => togglePinnedFilter();
+        activeContainer.appendChild(badge);
+    } else {
+        const badge = document.createElement('span');
+        badge.className = 'badge bg-body-secondary text-body-secondary border';
+        badge.style.cursor = 'pointer';
+        badge.innerHTML = `<i class="bi bi-pin-angle"></i> Pinned`;
+        badge.onclick = () => togglePinnedFilter();
+        availableContainer.appendChild(badge);
+    }
+
     // Sort languages alphabetically
     const sortedLangs = Array.from(allLanguages).sort();
 
@@ -220,35 +240,73 @@ function toggleFilter(lang) {
     filterAndRenderRepos();
 }
 
+function togglePinnedFilter() {
+    pinnedFilterActive = !pinnedFilterActive;
+    renderFilters();
+    filterAndRenderRepos();
+}
+
 function filterAndRenderRepos() {
     const searchText = document.getElementById('repoSearch').value.toLowerCase();
     
-    const filtered = allRepos.filter(repo => {
-        // Search Text Logic
-        const matchesSearch = (repo.name.toLowerCase().includes(searchText) || 
-                               (repo.description && repo.description.toLowerCase().includes(searchText)));
+    // Check if we are in "Default View" mode (No filters, no search)
+    const isDefaultView = searchText === '' && selectedLanguages.size === 0 && !pinnedFilterActive;
+
+    let reposToRender = [];
+
+    if (isDefaultView) {
+        // Default View: Pinned first, then others
+        const pinned = [];
+        const others = [];
         
-        // Language Filter Logic (OR)
-        let matchesLang = true;
-        if (selectedLanguages.size > 0) {
-            // Check primary language
-            let hasLang = selectedLanguages.has(repo.language);
+        allRepos.forEach(repo => {
+            if (pinnedRepos.includes(repo.name)) {
+                pinned.push(repo);
+            } else {
+                others.push(repo);
+            }
+        });
+
+        // Sort pinned by defined order
+        pinned.sort((a, b) => pinnedRepos.indexOf(a.name) - pinnedRepos.indexOf(b.name));
+        
+        // Others are already sorted by date from initial fetch
+        
+        reposToRender = [...pinned, ...others];
+    } else {
+        reposToRender = allRepos.filter(repo => {
+            // Search Text Logic
+            const matchesSearch = (repo.name.toLowerCase().includes(searchText) || 
+                                   (repo.description && repo.description.toLowerCase().includes(searchText)));
             
-            // Check secondary languages if fetched
-            if (!hasLang && repo.allLanguages) {
-                hasLang = repo.allLanguages.some(l => selectedLanguages.has(l));
+            // Language Filter Logic (OR)
+            let matchesLang = true;
+            if (selectedLanguages.size > 0) {
+                // Check primary language
+                let hasLang = selectedLanguages.has(repo.language);
+                
+                // Check secondary languages if fetched
+                if (!hasLang && repo.allLanguages) {
+                    hasLang = repo.allLanguages.some(l => selectedLanguages.has(l));
+                }
+                
+                matchesLang = hasLang;
+            }
+
+            // Pinned Filter Logic
+            let matchesPinned = true;
+            if (pinnedFilterActive) {
+                matchesPinned = pinnedRepos.includes(repo.name);
             }
             
-            matchesLang = hasLang;
-        }
-        
-        return matchesSearch && matchesLang;
-    });
+            return matchesSearch && matchesLang && matchesPinned;
+        });
+    }
     
-    renderRepos(filtered);
+    renderRepos(reposToRender, isDefaultView);
 }
 
-function renderRepos(repos) {
+function renderRepos(repos, showPins = false) {
     var container = document.getElementById("repoGrid");
     container.innerHTML = '';
 
@@ -277,14 +335,20 @@ function renderRepos(repos) {
             displayTitle = displayLang;
         }
 
+        const isPinned = showPins && pinnedRepos.includes(repos[i].name);
+        const cardClass = isPinned ? 'repo-card h-100 border-primary shadow-sm' : 'repo-card h-100';
+        const iconHtml = isPinned 
+            ? '<div class="text-primary"><i class="bi bi-pin-angle-fill fs-5"></i></div>' 
+            : '<i class="bi bi-arrow-right text-muted arrow-icon"></i>';
+
         col.innerHTML = `
-            <div class="repo-card h-100" onclick="hideBlock('${repos[i].name}')">
+            <div class="${cardClass}" onclick="hideBlock('${repos[i].name}')">
                 <div class="repo-card-body">
                     <div class="d-flex justify-content-between align-items-start mb-3">
                         <div class="repo-icon-box">
                             <i class="bi bi-journal-bookmark-fill"></i>
                         </div>
-                        <i class="bi bi-arrow-right text-muted arrow-icon"></i>
+                        ${iconHtml}
                     </div>
                     
                     <h5 class="fw-bold mb-2 text-truncate">${repos[i].name}</h5>
