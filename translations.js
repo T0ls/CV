@@ -1,7 +1,7 @@
 const translations = {
 	"IT": {
-		"job_status": "Stato corrente: studente Unimi",
-		"born_at": "<b>Nato a</b> <strong>Milano</strong> il 17 settembre 2002",
+		"job_status": "Stato corrente: studente Informatica Unimi",
+		"born_at": "<b>Nato a</b> <strong>Milano</strong> nel 2002",
 		"tel": " Telefono",
 		"download_cv_text": "Scarica il CV",
 		"contacts_title": "Contatti",
@@ -122,8 +122,8 @@ const translations = {
 		"int_badge_culture": "Cultura"
 	},
 	"EN": {
-		"job_status": "Current status: Unimi student",
-		"born_at": "<b>Born in</b> <strong>Milan</strong> on September 17, 2002",
+		"job_status": "Current status: Unimi Computer science student",
+		"born_at": "<b>Born in</b> <strong>Milan</strong> on 2002",
 		"tel": " Phone",
 		"download_cv_text": "Download CV",
 		"contacts_title": "Contacts",

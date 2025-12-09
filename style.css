@@ -1101,3 +1101,7 @@ footer:hover {
 [data-bs-theme="dark"] .border-bottom {
     border-color: rgba(255,255,255,0.1) !important;
 }
+
+[data-bs-theme="dark"] .btn-outline-dark {
+	color: #fff !important;
+}
