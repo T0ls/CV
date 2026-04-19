@@ -1,26 +1,24 @@
 <svg width="800" height="1132" viewBox="0 0 800 1132" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url(https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&amp;family=Courier+New&amp;display=swap);.text-link,.text-primary,.text-secondary{font-family:&quot;Segoe UI&quot;,sans-serif}.text-primary,.text-secondary{fill:#c9d1d9}.text-secondary{fill:#8b949e}.text-link{fill:#58a6ff}.badge,.card-bg{stroke:#30363d;stroke-width:1}.card-bg{fill:#0d1117;rx:6}.badge{fill:#161b22;rx:10}.badge-text{fill:#79c0ff;font-family:&quot;Segoe UI&quot;,sans-serif;font-size:10px}.timeline-line{stroke:#30363d;stroke-width:2}.green-sq{fill:#238636;rx:2}.cat-title{fill:#8b949e;font-family:&quot;Segoe UI&quot;,sans-serif;font-size:11px;font-weight:600}
+      @import url(https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&amp;family=Courier+New&amp;display=swap);.text-link,.text-primary,.text-secondary{font-family:&quot;Segoe UI&quot;,sans-serif}.text-primary{fill:#c9d1d9}.text-secondary{fill:#8b949e}.text-link{fill:#58a6ff}.badge,.card-bg{stroke:#30363d;stroke-width:1}.card-bg{fill:#0d1117;rx:6}.badge{fill:#161b22;rx:10}.badge-text{fill:#79c0ff;font-family:&quot;Segoe UI&quot;,sans-serif;font-size:10px}.timeline-line{stroke:#30363d;stroke-width:2}.green-sq{fill:#238636;rx:2}.cat-title{fill:#8b949e;font-family:&quot;Segoe UI&quot;,sans-serif;font-size:11px;font-weight:600}
     </style>
   </defs>
   <rect width="100%" height="100%" style="fill:#0d1117"/>
   <path fill="#161b22" stroke="#30363d" d="M0 0h800v60H0z"/>
   <circle cx="225" cy="190" r="13" fill="#43a25a" opacity="100"/>
   <text x="330" y="35" class="text-primary" font-weight="bold" font-size="16">Giulio Giusteschi CV</text>
-  <path class="green-sq" opacity=".4" d="M0 0h10v10H0z" transform="translate(625 90)"/>
-  <path class="green-sq" opacity=".8" d="M14 0h10v10H14z" transform="translate(625 90)"/>
-  <path class="green-sq" opacity=".2" d="M28 0h10v10H28z" transform="translate(625 90)"/>
-  <path class="green-sq" d="M42 0h10v10H42z" transform="translate(625 90)"/>
-  <path class="green-sq" opacity=".6" d="M56 0h10v10H56z" transform="translate(625 90)"/>
-  <text x="80" y="9" class="text-secondary" font-size="10" transform="translate(625 90)">Contribution</text>
+  <g transform="translate(-90 0)">
+    <path class="green-sq" opacity=".4" d="M625 90h10v10h-10z"/>
+    <path class="green-sq" opacity=".8" d="M639 90h10v10h-10z"/>
+    <path class="green-sq" opacity=".2" d="M653 90h10v10h-10z"/>
+    <path class="green-sq" d="M667 90h10v10h-10z"/>
+    <path class="green-sq" opacity=".6" d="M681 90h10v10h-10z"/>
+    <text x="80" y="9" class="text-secondary" font-size="10" transform="translate(625 90)">Ultimo aggiornamento: 19/04/26</text>
+  </g>
   <g transform="translate(40 100)">
     <circle cx="100" cy="10" r="100" fill="#161b22" stroke="#30363d" stroke-width="2"/>
-    <g>
-    <image x="0" y="-90" width="200" height="200"
-      href="data:image/png;base64," 
-  />
-  </g>
+    <image y="-90" width="200" height="200" href="data:image/png;base64,"/>
     <text y="140" class="text-primary" font-size="26" font-weight="bold">Giulio Giusteschi</text>
     <text y="170" class="text-secondary" font-size="18">Studente Unimi - Informatica</text>
     <path style="fill:#238636;rx:6" d="M0 185h200v32H0z"/>
@@ -39,48 +37,48 @@
           </g>
         </g>
       </svg>
-      <a href="https://github.com/T0ls" target="_blank">
+      <a target="_blank">
       <text x="25" y="75" class="text-link" font-size="14">github.com/T0ls</text>
         </a>
       <svg y="87" width="16" height="16" viewBox="0 0 382 382" xml:space="preserve">
         <path style="fill:#0077b7" d="M347.445 0H34.555C15.471 0 0 15.471 0 34.555v312.889C0 366.529 15.471 382 34.555 382h312.889C366.529 382 382 366.529 382 347.444V34.555C382 15.471 366.529 0 347.445 0M118.207 329.844c0 5.554-4.502 10.056-10.056 10.056H65.345c-5.554 0-10.056-4.502-10.056-10.056V150.403c0-5.554 4.502-10.056 10.056-10.056h42.806c5.554 0 10.056 4.502 10.056 10.056zM86.748 123.432c-22.459 0-40.666-18.207-40.666-40.666S64.289 42.1 86.748 42.1s40.666 18.207 40.666 40.666-18.206 40.666-40.666 40.666M341.91 330.654a9.247 9.247 0 0 1-9.246 9.246H286.73a9.247 9.247 0 0 1-9.246-9.246v-84.168c0-12.556 3.683-55.021-32.813-55.021-28.309 0-34.051 29.066-35.204 42.11v97.079a9.246 9.246 0 0 1-9.246 9.246h-44.426a9.247 9.247 0 0 1-9.246-9.246V149.593a9.247 9.247 0 0 1 9.246-9.246h44.426a9.247 9.247 0 0 1 9.246 9.246v15.655c10.497-15.753 26.097-27.912 59.312-27.912 73.552 0 73.131 68.716 73.131 106.472z"/>
       </svg>
-      <a href="https://www.linkedin.com/in/giulio-giusteschi-561270191/" target="_blank">
+      <a target="_blank">
       <text x="25" y="100" class="text-link" font-size="14">Linkedin</text>
         </a>
     </g>
     <text class="text-primary" font-weight="bold" font-size="16" transform="translate(0 375)">Competenze</text>
-    <path stroke="#30363d" d="M0 10h200" transform="translate(0 375)"/>
-    <text class="cat-title" transform="translate(0 375) translate(0 25)">Avanzato</text>
-    <path class="badge" d="M0 0h50v20H0z" transform="translate(0 375) translate(0 33)"/>
-    <text x="25" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 33)">HTML</text>
-    <path class="badge" d="M55 0h75v20H55z" transform="translate(0 375) translate(0 33)"/>
-    <text x="92" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 33)">JavaScript</text>
-    <text class="cat-title" transform="translate(0 375) translate(0 70)">Intermedio</text>
-    <path class="badge" d="M0 0h40v20H0z" transform="translate(0 375) translate(0 78)"/>
-    <text x="20" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 78)">SQL</text>
-    <path class="badge" d="M45 0h35v20H45z" transform="translate(0 375) translate(0 78)"/>
-    <text x="62" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 78)">Go</text>
-    <path class="badge" d="M85 0h45v20H85z" transform="translate(0 375) translate(0 78)"/>
-    <text x="107" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 78)">C++</text>
-    <path class="badge" d="M0 25h75v20H0z" transform="translate(0 375) translate(0 78)"/>
-    <text x="37" y="39" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 78)">TypeScript</text>
-    <text class="cat-title" transform="translate(0 375) translate(0 140)">Basico</text>
-    <path class="badge" d="M0 0h30v20H0z" transform="translate(0 375) translate(0 148)"/>
-    <text x="15" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">C</text>
-    <path class="badge" d="M35 0h35v20H35z" transform="translate(0 375) translate(0 148)"/>
-    <text x="52" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">C#</text>
-    <path class="badge" d="M75 0h45v20H75z" transform="translate(0 375) translate(0 148)"/>
-    <text x="97" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">Java</text>
-    <path class="badge" d="M0 25h90v20H0z" transform="translate(0 375) translate(0 148)"/>
-    <text x="45" y="39" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">Asm x64/MIPS</text>
-    <path class="badge" d="M0 50h95v20H0z" transform="translate(0 375) translate(0 148)"/>
-    <text x="47" y="64" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 148)">Shell Scripting</text>
-    <text class="cat-title" transform="translate(0 375) translate(0 235)">Tools</text>
-    <path class="badge" d="M0 0h80v20H0z" transform="translate(0 375) translate(0 243)"/>
-    <text x="40" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 243)">Adobe PS</text>
-    <path class="badge" d="M85 0h40v20H85z" transform="translate(0 375) translate(0 243)"/>
-    <text x="105" y="14" class="badge-text" text-anchor="middle" transform="translate(0 375) translate(0 243)">Git</text>
+    <path stroke="#30363d" d="M0 385h200"/>
+    <text class="cat-title" transform="translate(0 400)">Avanzato</text>
+    <path class="badge" d="M0 408h50v20H0z"/>
+    <text x="25" y="14" class="badge-text" text-anchor="middle" transform="translate(0 408)">HTML</text>
+    <path class="badge" d="M55 408h75v20H55z"/>
+    <text x="92" y="14" class="badge-text" text-anchor="middle" transform="translate(0 408)">JavaScript</text>
+    <text class="cat-title" transform="translate(0 445)">Intermedio</text>
+    <path class="badge" d="M0 453h40v20H0z"/>
+    <text x="20" y="14" class="badge-text" text-anchor="middle" transform="translate(0 453)">SQL</text>
+    <path class="badge" d="M45 453h35v20H45z"/>
+    <text x="62" y="14" class="badge-text" text-anchor="middle" transform="translate(0 453)">Go</text>
+    <path class="badge" d="M85 453h45v20H85z"/>
+    <text x="107" y="14" class="badge-text" text-anchor="middle" transform="translate(0 453)">C++</text>
+    <path class="badge" d="M0 478h75v20H0z"/>
+    <text x="37" y="39" class="badge-text" text-anchor="middle" transform="translate(0 453)">TypeScript</text>
+    <path class="badge" d="M80 478h45v20H80z"/>
+    <text x="97" y="39" class="badge-text" text-anchor="middle" transform="translate(5 453)">Java</text>
+    <text class="cat-title" transform="translate(0 515)">Basico</text>
+    <path class="badge" d="M0 523h30v20H0z"/>
+    <text x="15" y="14" class="badge-text" text-anchor="middle" transform="translate(0 523)">C</text>
+    <path class="badge" d="M35 523h35v20H35z"/>
+    <text x="52" y="14" class="badge-text" text-anchor="middle" transform="translate(0 523)">C#</text>
+    <path class="badge" d="M0 548h90v20H0z"/>
+    <text x="45" y="39" class="badge-text" text-anchor="middle" transform="translate(0 523)">Asm x64/MIPS</text>
+    <path class="badge" d="M0 573h95v20H0z"/>
+    <text x="47" y="64" class="badge-text" text-anchor="middle" transform="translate(0 523)">Shell Scripting</text>
+    <text class="cat-title" transform="translate(0 610)">Tools</text>
+    <path class="badge" d="M0 618h80v20H0z"/>
+    <text x="40" y="14" class="badge-text" text-anchor="middle" transform="translate(0 618)">Adobe PS</text>
+    <path class="badge" d="M85 618h40v20H85z"/>
+    <text x="105" y="14" class="badge-text" text-anchor="middle" transform="translate(0 618)">Git</text>
     <g transform="translate(0 665)">
       <text class="text-primary" font-weight="bold" font-size="16">Lingue</text>
       <path stroke="#30363d" d="M0 10h200"/>
@@ -95,8 +93,8 @@
       <rect y="120" width="60" height="4" fill="#238636" rx="2"/>
     </g>
     <text class="text-primary" font-weight="bold" font-size="16" transform="translate(0 820)">Interessi</text>
-    <path stroke="#30363d" d="M0 10h200" transform="translate(0 820)"/>
-    <g transform="translate(0 820) translate(0 15)">
+    <path stroke="#30363d" d="M0 830h200"/>
+    <g transform="translate(0 835)">
       <foreignObject x="0" y="0" width="210" height="190">
         <div xmlns="http://www.w3.org/1999/xhtml" style="color:#8b949e;font-family:Segoe UI,sans-serif;font-size:12px;line-height:1.4;text-align:Left">
           Appassionato di biologia e mondo Tech, dedico il mio tempo libero alla crescita culturale tra cinema e mostre d&apos;arte. Sono una persona attenta al sociale e donatore di sangue abituale.
@@ -115,16 +113,16 @@
     <path stroke="#30363d" d="M0 40h480"/>
     <text x="15" y="30" class="text-primary" font-weight="bold" font-size="14">👋 Hi, I&apos;m a Computer Science Student @ UNIMI</text>
     <foreignObject x="25" y="43" width="450" height="90">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="color:#8b949e;font-family:Segoe UI,sans-serif;font-size:13px;line-height:1.4; text-align:left;">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="color:#8b949e;font-family:Segoe UI,sans-serif;font-size:13px;line-height:1.4;text-align:left">
         Studente di informatica, appassionato di programmazione, con particolare interesse nello sviluppo di software, applicazioni e piattaforme web.  Cerco un&apos;opportunità come Junior Developer per contribuire attivamente allo sviluppo di soluzioni innovative e consolidare la mia crescita professionale all&apos;interno di un team strutturato.
       </div>
     </foreignObject>
   </g>
   <text class="text-primary" font-size="16" font-weight="600" transform="translate(280 270)">Public Github projects:</text>
-  <text x="480" class="text-secondary" font-size="12" text-anchor="end" transform="translate(280 270)">4/15 Repo</text>
+  <text x="480" class="text-secondary" font-size="12" text-anchor="end" transform="translate(280 270)">4/16 Repo</text>
   <g transform="translate(280 290)">
     <path class="card-bg" d="M0 0h230v110H0z"/>
-    <a href="https://t0ls.github.io/CV/" target="_blank">
+    <a target="_blank">
         <text x="15" y="25" class="text-link" font-weight="600" font-size="14">💼 CV site</text>
           </a>
     <foreignObject x="15" y="35" width="200" height="45">
@@ -137,7 +135,7 @@
   </g>
   <g transform="translate(530 290)">
     <path class="card-bg" d="M0 0h230v110H0z"/>
-    <a href="https://t0ls.github.io/typerScene---Cinematic/" target="_blank">
+    <a target="_blank">
     <text x="15" y="25" class="text-link" font-weight="600" font-size="14">&gt;_  typerScene---Cinematic</text>
       </a>
     <foreignObject x="15" y="35" width="200" height="45">
@@ -150,7 +148,7 @@
   </g>
   <g transform="translate(280 410)">
     <path class="card-bg" d="M0 0h230v110H0z"/>
-    <a href="https://t0ls.github.io/Gambling-CAPTCHA/" target="_blank">
+    <a target="_blank">
     <text x="15" y="25" class="text-link" font-weight="600" font-size="14">🎰 Gambling-CAPTCHA</text>
       </a>
     <foreignObject x="15" y="35" width="200" height="45">
@@ -163,20 +161,30 @@
   </g>
   <g transform="translate(530 410)">
     <path class="card-bg" d="M0 0h230v110H0z"/>
-    <a href="https://t0ls.github.io/archlike-landingpage/" target="_blank">
-    <text x="15" y="25" class="text-link" font-weight="600" font-size="14">🖥️ archlike-landingpage</text>
+    <a target="_blank">
+    <text x="15" y="25" class="text-link" font-weight="600" font-size="14">🖥️ faberFreelance</text>
       </a>
     <foreignObject x="15" y="35" width="200" height="45">
       <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
-        An hyperland Arch terminal-style landing page.
+        Personal portfolio website made for filmmaker and director Fabrizio Arrigo.
       </div>
     </foreignObject>
     <circle cx="20" cy="90" r="5" fill="#e34c26"/>
     <text x="32" y="94" class="text-secondary" font-size="11">HTML</text>
   </g>
   <text class="text-primary" font-size="16" font-weight="600" transform="translate(280 555)">Esperienze professionali</text>
-  <path class="timeline-line" d="M20 20v190" transform="translate(280 555)"/>
-  <g transform="translate(280 555) translate(0 30)">
+  <path class="timeline-line" d="M300 575v190"/>
+  <g transform="translate(280 585)">
+    <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/>
+    <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Sviluppatore Web</text>
+    <text x="40" y="28" class="text-secondary" font-size="12">Faber Freelance • gen 2026 - mar 2026</text>
+    <foreignObject x="40" y="35" width="400" height="45">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
+        Ho sviluppato il sito web di Fabrizio Arrigo, professionista nel settore filmmaking.
+      </div>
+    </foreignObject>
+  </g>
+  <g transform="translate(280 650)">
     <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/>
     <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Consulente IT / Ass. di produzione</text>
     <text x="40" y="28" class="text-secondary" font-size="12">Faber Films • apr 2023 - nov 2025</text>
@@ -186,7 +194,7 @@
       </div>
     </foreignObject>
   </g>
-  <g transform="translate(280 555) translate(0 110)">
+  <g transform="translate(280 735)">
     <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/>
     <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Tutor scolastico</text>
     <text x="40" y="28" class="text-secondary" font-size="12">Privato • mag 2023 - sett 2025</text>
@@ -196,24 +204,14 @@
       </div>
     </foreignObject>
   </g>
-  <g transform="translate(280 555) translate(0 180)">
-    <circle cx="20" cy="10" r="5" fill="#db61a2" stroke="#0d1117" stroke-width="2"/>
-    <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Alternanza scuola lavoro</text>
-    <text x="40" y="28" class="text-secondary" font-size="12">Manitese • sett 2020 - giu 2021</text>
-    <foreignObject x="40" y="35" width="400" height="45">
-      <div xmlns="http://www.w3.org/1999/xhtml" style="font-size:11px;color:#8b949e;text-align:left">
-        Ho lavorato come volontario presso Feltrinelli e NaturaSì per conto di Manitese, associazione no profit con missione umanitaria, realizzando pacchetti regalo ai clienti del negozio e chiedendo una donazione volontaria a supporto delle missioni dell&apos;associazione.
-      </div>
-    </foreignObject>
-  </g>
   <text class="text-primary" font-size="16" font-weight="600" transform="translate(280 845)">Titoli di studio &amp; Certificazioni</text>
-  <path class="timeline-line" d="M20 20v110" transform="translate(280 845)"/>
-  <g transform="translate(280 845) translate(0 30)">
+  <path class="timeline-line" d="M300 865v110"/>
+  <g transform="translate(280 875)">
     <circle cx="20" cy="10" r="5" fill="#238636" stroke="#0d1117" stroke-width="2"/>
     <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Diploma Superiore - Scienze Applicate</text>
     <text x="40" y="28" class="text-secondary" font-size="12">ITIS Feltrinelli • 2022</text>
   </g>
-  <g transform="translate(280 845) translate(0 100)">
+  <g transform="translate(280 945)">
     <circle cx="20" cy="10" r="5" fill="#238636" stroke="#0d1117" stroke-width="2"/>
     <text x="40" y="10" class="text-primary" font-size="14" font-weight="600">Mimo Web Development Certificate</text>
     <text x="40" y="28" class="text-secondary" font-size="12">Mimo Online • 2020</text>
