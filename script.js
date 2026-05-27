@@ -39,7 +39,7 @@ let allRepos = [];
 let allLanguages = new Set();
 let selectedLanguages = new Set();
 // Repos to pin 
-let pinnedRepos = ["CV", "typerScene---Cinematic", "nvim-config", "archlike-landingpage", "Gambling-CAPTCHA", "faberFreelance"];
+let pinnedRepos = ["CV", "typerScene---Cinematic", "nvim-config", "archlike-landingpage", "Speedrun-Bingo", "faberFreelance"];
 let pinnedFilterActive = false;
 
 // Cache helper function
